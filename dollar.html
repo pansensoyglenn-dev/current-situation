@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dollar Hegemony — The Greenback & Global Power</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --obsidian:       #0d0f12;
+    --obsidian-2:     #13161b;
+    --obsidian-3:     #1c2128;
+    --obsidian-4:     #252d38;
+    --py-blue:        #4b8bbe;
+    --py-blue-bright: #6aabde;
+    --py-blue-dim:    #2e5a7a;
+    --py-yellow:      #ffd343;
+    --py-yellow-dim:  #a88820;
+    --text:           #cdd9e5;
+    --text-muted:     #768390;
+    --text-dim:       #4d5566;
+    --rule:           #2a3240;
+    --pale:           #ddeaf5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--obsidian);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.78;
+    overflow-x: hidden;
+    text-align: justify;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 39px,
+        rgba(75,139,190,0.025) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 59px,
+        rgba(75,139,190,0.015) 60px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(75,139,190,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--py-blue-dim);
+    overflow: hidden;
+  }
+
+  .hero-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'EB Garamond', serif;
+    font-size: 28vw;
+    font-weight: 700;
+    color: rgba(75,139,190,0.07);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.1s;
+  }
+
+  .hero-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--py-yellow);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 .dollar-word {
+    color: var(--py-blue-bright);
+    display: block;
+    text-shadow: 0 0 60px rgba(106,171,222,0.35);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 24px auto 0;
+    max-width: 560px;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .ornament-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 28px 0 0;
+    color: var(--py-blue-dim);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+  .ornament-row::before,
+  .ornament-row::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--py-blue-dim));
+  }
+  .ornament-row::after {
+    background: linear-gradient(90deg, var(--py-blue-dim), transparent);
+  }
+
+  .ticker {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.4s;
+  }
+
+  .tick-item {
+    padding: 28px 24px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+    transition: background 0.25s;
+    background: var(--obsidian-2);
+  }
+  .tick-item:last-child { border-right: none; }
+  .tick-item:hover { background: var(--obsidian-3); }
+
+  .tick-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--py-yellow);
+    display: block;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 20px rgba(255,211,67,0.3);
+  }
+
+  .tick-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 7px;
+    display: block;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 64px 48px 100px;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.65s;
+  }
+
+  @media (max-width: 680px) {
+    .content { padding: 40px 24px 80px; }
+    .ticker { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 60px 24px 48px; }
+    .two-col { column-count: 1 !important; }
+  }
+
+  .chapter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 20px;
+  }
+
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--py-blue);
+    white-space: nowrap;
+  }
+
+  .chapter-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--rule), transparent);
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
+    text-align: left;
+  }
+
+  h2 em { color: var(--py-blue-bright); font-style: italic; }
+
+  .two-col {
+    column-count: 2;
+    column-gap: 48px;
+    column-rule: 1px solid var(--rule);
+  }
+
+  p {
+    margin-bottom: 20px;
+    text-align: justify;
+    hyphens: auto;
+    color: var(--text);
+    font-size: 1rem;
+  }
+
+  strong { color: var(--pale); font-weight: 500; }
+
+  blockquote {
+    break-inside: avoid;
+    border-top: 1px solid var(--py-blue);
+    border-bottom: 1px solid var(--py-blue);
+    border-left: 3px solid var(--py-blue-bright);
+    padding: 22px 28px;
+    margin: 30px 0;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--py-blue-bright);
+    line-height: 1.6;
+    background: rgba(75,139,190,0.06);
+    text-align: justify;
+  }
+
+  blockquote cite {
+    display: block;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .infobox {
+    break-inside: avoid;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--py-yellow);
+    background: var(--obsidian-3);
+    padding: 22px 24px;
+    margin: 28px 0;
+  }
+
+  .infobox-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--py-yellow);
+    margin-bottom: 14px;
+  }
+
+  .infobox ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .infobox ul li {
+    padding: 5px 0 5px 18px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+    text-align: left;
+  }
+  .infobox ul li:last-child { border-bottom: none; }
+  .infobox ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--py-blue);
+    font-size: 0.75rem;
+  }
+
+  .infobox ul li strong { color: var(--text); font-weight: 500; }
+
+  .callout-wide {
+    border-top: 1px solid var(--py-blue-dim);
+    border-bottom: 1px solid var(--py-blue-dim);
+    padding: 40px 60px;
+    margin: 60px -48px;
+    background: linear-gradient(135deg, var(--obsidian-2), var(--obsidian-3));
+    text-align: center;
+    box-shadow: 0 0 60px rgba(75,139,190,0.07);
+  }
+
+  .callout-wide p {
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--text);
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    hyphens: none;
+  }
+
+  .callout-wide .attribution {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 16px;
+  }
+
+  .timeline {
+    margin: 32px 0;
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid var(--py-blue-dim);
+    break-inside: avoid;
+  }
+
+  .tl-item {
+    margin-bottom: 22px;
+    position: relative;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--py-blue-bright);
+    box-shadow: 0 0 10px rgba(106,171,222,0.5);
+  }
+
+  .tl-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--py-yellow);
+    text-transform: uppercase;
+  }
+
+  .tl-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 3px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .div-ornament {
+    text-align: center;
+    color: var(--py-blue-dim);
+    font-size: 1rem;
+    letter-spacing: 0.8em;
+    margin: 36px 0;
+    break-inside: avoid;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    padding: 36px 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1s;
+  }
+
+  footer p { text-align: center; hyphens: none; color: var(--text-dim); }
+
+  footer .seal {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 16px;
+    filter: grayscale(1) opacity(0.25);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-watermark">$</div>
+    <h3>
+      <span class="dollar-word">Dollar</span>
+      Hegemony
+    </h3>
+    <p class="hero-sub">How the United States dollar became the world's reserve currency — and why nations are beginning to question its reign</p>
+    <div class="ornament-row">✦ IN GOD WE TRUST ✦</div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="tick-item">
+    <span class="tick-num">~58%</span>
+    <span class="tick-label">Global FX reserves in USD</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-num">88%</span>
+    <span class="tick-label">Of all forex trades involve USD</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-num">$30T+</span>
+    <span class="tick-label">US national debt (2024)</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-num">1944</span>
+    <span class="tick-label">Year of Bretton Woods</span>
+  </div>
+</div>
+
+<main class="content">
+
+  <div class="chapter"><span class="chapter-num">Chapter I</span><div class="chapter-line"></div></div>
+  <h2>The Architecture of <em>Bretton Woods</em></h2>
+
+  <div class="two-col">
+    <p>In July 1944, with World War II still raging, delegates from 44 Allied nations gathered at the Mount Washington Hotel in Bretton Woods, New Hampshire. Their task: to design a new international monetary order that would prevent the competitive devaluations and trade wars that had worsened the Great Depression and contributed to global conflict.</p>
+
+    <p>The result was a dollar-centered system. Every participating nation would peg its currency to the US dollar at a fixed exchange rate; the dollar, in turn, would be convertible to gold at $35 per troy ounce. The United States emerged from the war holding nearly two-thirds of the world's monetary gold reserves. No other nation could anchor the system.</p>
+
+    <blockquote>
+      "The dollar is our currency, but your problem."
+      <cite>— John Connally, US Treasury Secretary, 1971</cite>
+    </blockquote>
+
+    <p>The institutions born at Bretton Woods — the International Monetary Fund (IMF) and the World Bank — reflected American predominance. The IMF would stabilize currencies; the World Bank would finance post-war reconstruction. Voting power in both was weighted to reflect economic size, embedding US influence into their governance structures from day one.</p>
+
+    <p>For a quarter-century, the system worked. US dollars flowed abroad through Marshall Plan aid, military spending, and foreign investment. Global trade expanded. Inflation remained low. The dollar became not just a medium of exchange but a symbol of confidence in the postwar liberal order.</p>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">1944</div>
+      <div class="tl-desc">Bretton Woods Conference establishes dollar-gold peg at $35/oz; IMF and World Bank created.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1960s</div>
+      <div class="tl-desc">Vietnam War spending and the Great Society programs create dollar glut; European central banks begin converting dollars to gold.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1971</div>
+      <div class="tl-desc">Nixon "closes the gold window" — ending dollar-gold convertibility. The world moves to a pure fiat dollar standard.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1974</div>
+      <div class="tl-desc">The petrodollar system is formalized: Saudi Arabia agrees to price oil exclusively in dollars in exchange for US security guarantees.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1990s–2000s</div>
+      <div class="tl-desc">Dollar's share of global reserves peaks above 70%. US Treasury market becomes the world's premier safe-haven asset.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2022–Present</div>
+      <div class="tl-desc">Russia sanctions accelerate dedollarization discussions. BRICS nations explore alternatives; dollar reserve share falls to ~58%.</div>
+    </div>
+  </div>
+
+  <div class="chapter"><span class="chapter-num">Chapter II</span><div class="chapter-line"></div></div>
+  <h2>The <em>Exorbitant Privilege</em></h2>
+
+  <div class="two-col">
+    <p>French Finance Minister Valéry Giscard d'Estaing — later president — coined the phrase in the 1960s, and it has never been bettered. Because the dollar is the world's reserve currency, the United States can borrow in its own currency at lower interest rates than any other nation. Foreign governments and institutions must hold dollar assets — US Treasury bonds — simply to participate in global trade. This creates a structural demand for US debt that has no peacetime parallel.</p>
+
+    <p>The privilege operates through several interlocking mechanisms. <strong>Seigniorage</strong> — the profit from issuing currency — accrues to the United States when foreign entities hold physical dollars or dollar-denominated assets. The US effectively receives an interest-free loan from the rest of the world. Estimates of the annual benefit range from tens of billions to over $100 billion per year.</p>
+
+    <div class="infobox">
+      <div class="infobox-title">Pillars of Dollar Dominance</div>
+      <ul>
+        <li>Oil priced and settled in dollars (petrodollar system)</li>
+        <li>US Treasury market — largest, most liquid safe asset globally</li>
+        <li>SWIFT messaging system — dollar-denominated flows</li>
+        <li>Deep, open US capital markets with rule of law</li>
+        <li>US military guarantees underwriting global trade routes</li>
+        <li>Dollar invoicing of ~50% of global trade (4× US trade share)</li>
+        <li>IMF Special Drawing Rights basket (41.7% USD weight)</li>
+      </ul>
+    </div>
+
+    <p>Beyond borrowing costs, dollar hegemony gives the United States extraordinary coercive power. Sanctions administered through the US Treasury's OFAC can effectively cut a nation off from the global financial system — not because the US controls that system by force, but because the dollar sits at its center. When Russia was cut off from SWIFT in 2022 and its central bank reserves were frozen, it was a demonstration of how dollar architecture can be weaponized.</p>
+
+    <p>Critics — including many American economists — note that the privilege has costs too. Persistent foreign demand for dollars keeps the currency stronger than it would otherwise be, making US exports less competitive and contributing to deindustrialization. The "Triffin Dilemma," identified by economist Robert Triffin in 1960, holds that a country whose currency serves as the global reserve must run persistent current account deficits to supply the world with that currency — a structural tension that cannot be resolved indefinitely.</p>
+  </div>
+
+  <div class="callout-wide">
+    <p>"America has an exorbitant privilege by virtue of the dollar being the world's reserve currency — a privilege it has not always used wisely."</p>
+    <div class="attribution">— Valéry Giscard d'Estaing, French Finance Minister, c. 1965</div>
+  </div>
+
+  <!-- III. THE PETRODOLLAR -->
+  <div class="chapter"><span class="chapter-num">Chapter III</span><div class="chapter-line"></div></div>
+  <h2>Black Gold, <em>Green Dollars</em></h2>
+
+  <div class="two-col">
+    <p>When Nixon ended dollar-gold convertibility in 1971, many analysts predicted the dollar's rapid decline as a reserve currency. What saved it — and arguably entrenched it more deeply — was oil. In 1974, Secretary of State Henry Kissinger and Treasury Secretary William Simon negotiated a landmark agreement with Saudi Arabia: the Kingdom would price its oil exports exclusively in US dollars and recycle its petrodollar surpluses into US Treasury bonds. In exchange, the United States provided military protection and arms sales.</p>
+
+    <p>The arrangement was extended informally to the rest of OPEC. Since oil is the lifeblood of industrial economies, every nation that imports oil must hold dollar reserves. The dollar's backing shifted from gold to black gold — transforming geopolitical relationships, US fiscal space, and the global financial architecture simultaneously.</p>
+
+    <div class="div-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+    <p>The petrodollar system helps explain why challenges to dollar oil pricing have been treated as existential threats by successive US administrations. Iraq's Saddam Hussein announced his intention to switch to euros for oil sales in 2000; Libya's Muammar Gaddafi proposed a gold-backed African dinar. Both countries subsequently experienced US military intervention, a correlation that has fueled considerable geopolitical speculation about the true costs of defecting from dollar pricing.</p>
+
+    <p>Today the system faces its most serious structural test. Saudi Arabia has publicly discussed accepting yuan for Chinese oil purchases. Russia prices energy exports to "friendly" nations in rubles and yuan. The share of oil contracts settled outside the dollar, while still modest, is rising. Whether this represents a genuine crack in the petrodollar architecture or a marginal adjustment remains fiercely debated.</p>
+  </div>
+
+  <div class="chapter"><span class="chapter-num">Chapter IV</span><div class="chapter-line"></div></div>
+  <h2>The <em>Dedollarization</em> Debate</h2>
+
+  <div class="two-col">
+    <p>The word "dedollarization" has moved from fringe economics into mainstream policy discussion. The proximate catalyst was the 2022 decision to freeze approximately $300 billion in Russian central bank reserves held in Western financial institutions following the invasion of Ukraine. For many governments — including those not hostile to the West — this was a demonstration that dollar-denominated reserves were not politically neutral assets but instruments subject to US foreign policy decisions.</p>
+
+    <p>The BRICS bloc (Brazil, Russia, India, China, South Africa — expanded in 2024) has made reducing dollar dependence a formal agenda item. China has developed the Cross-Border Interbank Payment System (CIPS) as an alternative to SWIFT for yuan-denominated transactions. The People's Bank of China has pursued bilateral swap arrangements with dozens of central banks, allowing trade settlement in yuan.</p>
+
+    <blockquote>
+      "No country should use its currency as a weapon. But that is precisely what weaponizing the dollar invites others to do in return."
+      <cite>— Brazilian President Lula da Silva, 2023</cite>
+    </blockquote>
+
+    <p>Yet the dollar's detractors face a profound structural problem: <strong>what replaces it?</strong> The euro is geopolitically constrained by EU fragmentation and the absence of a unified safe asset. The yuan is not freely convertible; China maintains capital controls incompatible with reserve currency status. Gold-backed alternatives face the same supply limitations that doomed the original Bretton Woods system. The IMF's Special Drawing Rights exist but have no independent market.</p>
+
+    <div class="infobox">
+      <div class="infobox-title">Challenges Facing Dollar Alternatives</div>
+      <ul>
+        <li><strong>Yuan:</strong> Capital controls, limited convertibility, opaque legal system</li>
+        <li><strong>Euro:</strong> No unified Eurobond market; fragmented fiscal policy</li>
+        <li><strong>Gold:</strong> Insufficient supply; deflationary when used as reserve</li>
+        <li><strong>SDRs:</strong> Not a market currency; cannot be used in private trade</li>
+        <li><strong>BRICS currency:</strong> Proposed but no agreed structure or timeline</li>
+        <li><strong>Crypto/stablecoins:</strong> Volatility, regulatory uncertainty, scalability</li>
+      </ul>
+    </div>
+
+    <p>Most monetary economists argue that dollar hegemony will erode gradually rather than collapse. Historical precedent — the sterling-to-dollar transition of the early 20th century — took decades even as British relative power declined rapidly. The dollar's network effects, the depth of US financial markets, and the absence of a credible alternative create powerful structural inertia. The more likely outcome, many argue, is a slow, multi-polar drift toward a world where the dollar remains dominant but no longer unchallenged.</p>
+  </div>
+
+  <div class="chapter"><span class="chapter-num">Chapter V</span><div class="chapter-line"></div></div>
+  <h2>Power, <em>Fragility</em> & the Road Ahead</h2>
+
+  <div class="two-col">
+    <p>Dollar hegemony is neither a conspiracy nor a natural law. It is a historical arrangement maintained by economic fundamentals, institutional inertia, geopolitical power, and — crucially — the willingness of the rest of the world to participate. Its continuation depends on the United States maintaining several qualities: deep and open capital markets, rule of law, macroeconomic credibility, and restraint in weaponizing the dollar in ways that make its alternatives more attractive.</p>
+
+    <p>The US national debt, exceeding $30 trillion, is sustainable precisely because dollar demand allows the government to borrow at favorable rates. A loss of reserve currency status would raise borrowing costs, compress living standards, and reduce American geopolitical leverage in ways that would be economically painful and politically destabilizing. This creates a genuine policy interest in preserving dollar hegemony — but also a temptation to exploit it in ways that gradually undermine it.</p>
+
+    <p>The coming decade will test whether the dollar system can adapt to a world of rising multipolarity, digital currencies, and deepening geopolitical rivalry — or whether it will follow the arc of all monetary hegemonies before it: a slow, contested, and ultimately irreversible decline.</p>
+
+    <blockquote>
+      "The dollar's dominance persists not because the United States deserves it, but because no alternative has yet earned it."
+      <cite>— Barry Eichengreen, Exorbitant Privilege, 2011</cite>
+    </blockquote>
+  </div>
+
+</main>
+
+<footer>
+  <span class="seal">💵</span>
+  <p>Dollar Hegemony &nbsp;·&nbsp;</p>
+
+</footer>
+
+</body>
+</html>
