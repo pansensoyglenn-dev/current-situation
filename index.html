@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Poetic Justice — Current Situation: Politics, Economy & Culture</title>
+  <meta name="description" content="A comprehensive, independent analysis of the current global political, economic, and cultural situation. No agenda. No apologies. Just the truth as it stands." />
+  <meta name="keywords" content="geopolitics, world politics, global economy, cultural analysis, current affairs, CRINK, ancient history, independent analysis" />
+  <meta name="author" content="pansensoyglenn-dev" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pansensoyglenn-dev.github.io/current-situation/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pansensoyglenn-dev.github.io/current-situation/" />
+  <meta property="og:title" content="Poetic Justice — Current Situation" />
+  <meta property="og:description" content="Independent analysis of the current global political, economic, and cultural situation." />
+  <meta property="og:image" content="https://pansensoyglenn-dev.github.io/current-situation/og-geopolitics.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@pansensoyglenn" />
+  <meta name="twitter:title" content="Poetic Justice — Current Situation" />
+  <meta name="twitter:description" content="Independent analysis of the current global political, economic, and cultural situation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obs-0: #0b0d0f;
+      --obs-1: #0f1215;
+      --obs-2: #141820;
+      --obs-3: #1a2030;
+      --obs-4: #1e2535;
+      --obs-border: #2a3448;
+      --obs-border-2: #364055;
+      --py-dark: #1a3a5c;
+      --py-mid: #2867a8;
+      --py-core: #3a7fd4;
+      --py-bright: #4e9de0;
+      --py-glow: #5fb3f5;
+      --py-yellow: #ffd43b;
+      --txt: #ffffff;
+      --txt-dim: #a0b8d0;
+      --shadow-blue: rgba(58,127,212,0.18);
+      --glow-blue: rgba(95,179,245,0.08);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      background: var(--obs-0);
+      color: var(--txt);
+      font-size: 16px;
+      line-height: 1.75;
+      text-align: justify;
+      hyphens: auto;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body::before {
+      content:''; position:fixed; inset:0;
+      background-image:
+        linear-gradient(rgba(58,127,212,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58,127,212,0.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events:none; z-index:0;
+    }
+    .ticker {
+      background: var(--py-mid); padding: 5px 0;
+      overflow: hidden; position: relative; z-index: 200;
+    }
+    .ticker-inner {
+      display:flex; gap:60px; white-space:nowrap;
+      animation: ticker-scroll 40s linear infinite;
+    }
+    .ticker-inner span {
+      font-family:'IBM Plex Mono',monospace; font-size:0.62rem;
+      letter-spacing:0.14em; text-transform:uppercase; color:#fff; flex-shrink:0;
+    }
+    .ticker-inner span::before { content:'▸ '; color:var(--py-yellow); }
+    @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    nav.topnav {
+      background: var(--obs-1);
+      border-bottom: 1px solid var(--obs-border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      position: sticky;
+      top: 0;
+      z-index: 150;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    }
+    nav.topnav::after {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+      background: linear-gradient(90deg, var(--py-yellow) 0%, var(--py-core) 40%, transparent 100%);
+    }
+    .brand {
+      font-family:'Syne',sans-serif; font-weight:800;
+      font-size:1.15rem; letter-spacing:0.12em; text-transform:uppercase;
+      background: linear-gradient(135deg, var(--py-yellow) 0%, var(--py-glow) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      text-decoration:none; flex-shrink:0;
+    }
+    .hamburger {
+      display:flex; flex-direction:column; justify-content:space-between;
+      width:26px; height:18px; cursor:pointer; z-index:160;
+      background:none; border:none; padding:0;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    .hamburger span {
+      display:block; height:2px; border-radius:2px;
+      background: var(--py-glow);
+      transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+      transform-origin: left center;
+    }
+    .hamburger span:nth-child(2) { width:70%; }
+    .hamburger span:nth-child(3) { width:50%; }
+    .hamburger.open span:nth-child(1) { transform: rotate(38deg) translateY(-1px); width:100%; background:var(--py-yellow); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:translateX(-10px); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-38deg) translateY(1px); width:100%; background:var(--py-yellow); }
+    .nav-menu {
+      position:absolute; top:64px; right:0;
+      background: var(--obs-2); border:1px solid var(--obs-border);
+      border-top: 3px solid var(--py-core);
+      min-width:280px; max-width:100vw; width:100%;
+      padding:8px 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      transform: translateY(-12px);
+      opacity:0; pointer-events:none;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+      z-index: 150;
+    }
+    .nav-menu.open { transform:translateY(0); opacity:1; pointer-events:all; }
+    .nav-menu a, .nav-menu button.nav-link {
+      display:flex; align-items:center; gap:12px;
+      padding:11px 22px;
+      font-family:'IBM Plex Mono',monospace; font-size:0.64rem;
+      letter-spacing:0.12em; text-transform:uppercase;
+      color: var(--txt-dim); text-decoration:none;
+      transition: background 0.18s, color 0.18s;
+      border:none; background:none; width:100%; cursor:pointer; text-align:left;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-menu a:hover, .nav-menu button.nav-link:hover {
+      background: var(--obs-3); color: var(--py-glow);
+    }
+    .nav-menu a .nav-icon, .nav-menu button.nav-link .nav-icon {
+      width:18px; height:18px; flex-shrink:0; opacity:0.6;
+    }
+    .nav-menu a:hover .nav-icon, .nav-menu button.nav-link:hover .nav-icon { opacity:1; }
+    .nav-divider { border:none; border-top:1px solid var(--obs-border); margin:6px 0; }
+    .nav-section-label {
+      padding:8px 22px 4px;
+      font-family:'IBM Plex Mono',monospace; font-size:0.54rem;
+      letter-spacing:0.18em; text-transform:uppercase; color:var(--py-bright);
+    }
+    .container { max-width:920px; margin:0 auto; padding:0 20px; position:relative; z-index:1; }
+    .hero {
+      padding: 70px 0 56px;
+      position:relative; overflow:hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-120px; right:-80px;
+      width:500px; height:500px; border-radius:50%;
+      background:radial-gradient(circle, rgba(58,127,212,0.08) 0%, transparent 65%);
+      pointer-events:none;
+    }
+    .hero-eyebrow {
+      font-family:'IBM Plex Mono',monospace; font-size:0.62rem;
+      letter-spacing:0.22em; text-transform:uppercase; color:var(--py-yellow);
+      margin-bottom:18px; display:flex; align-items:center; gap:10px;
+    }
+    .hero-eyebrow::before { content:''; display:inline-block; width:24px; height:2px; background:var(--py-yellow); }
+    .hero h1 {
+      font-family:'Syne',sans-serif;
+      font-size:1.1rem;
+      font-weight:800;
+      line-height:1.2;
+      text-transform:uppercase;
+      letter-spacing:0.05em;
+      color:#fff;
+      margin-bottom:20px;
+      max-width:780px;
+    }
+    .hero h1 em {
+      background:linear-gradient(90deg, var(--py-glow), var(--py-yellow));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      font-style:normal;
+    }
+    .hero-deck {
+      font-size:1rem;
+      font-weight:300; font-style:italic;
+      color:#fff; border-left:3px solid var(--py-core);
+      padding-left:18px; line-height:1.6;
+      margin-bottom:32px; max-width:700px;
+      text-align:justify;
+    }
+    .hero-lead {
+      font-size:0.8rem;
+      line-height:1.9; color:#fff;
+      max-width:740px; text-align:justify;
+      hyphens:auto;
+    }
+    .section-divider {
+      border:none; border-top:1px solid var(--obs-border);
+      margin:48px 0; position:relative;
+    }
+    .section-divider::after {
+      content:''; position:absolute; top:-1px; left:0;
+      width:80px; height:2px; background:var(--py-core);
+    }
+    h2.section-title {
+      font-family:'Syne',sans-serif;
+      font-size:1.1rem;
+      font-weight:800; text-transform:uppercase;
+      letter-spacing:0.06em; color:#fff;
+      margin-bottom:8px;
+      display:flex; align-items:center; gap:12px;
+    }
+    h2.section-title::before {
+      content:'//'; font-family:'IBM Plex Mono',monospace;
+      font-size:0.72rem; color:var(--py-yellow); letter-spacing:0;
+    }
+    h3.sub-title {
+      font-family:'Syne',sans-serif;
+      font-size:1rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:0.1em; color:var(--py-glow);
+      margin:28px 0 10px;
+      display:flex; align-items:center; gap:10px;
+    }
+    h3.sub-title::before {
+      content:'›'; font-family:'IBM Plex Mono',monospace;
+      font-size:0.8rem; color:var(--py-core);
+    }
+    p {
+      font-size:0.8rem;
+      line-height:1.9; color:#fff;
+      margin-bottom:16px;
+      text-align:justify; hyphens:auto;
+    }
+    p:last-child { margin-bottom:0; }
+    strong { font-weight:600; color:#fff; }
+    em.highlight {
+      font-style:normal; color:var(--py-yellow); font-weight:600;
+    }
+    .articles-grid {
+      display:grid; grid-template-columns:repeat(2,1fr); gap:20px;
+      margin:32px 0;
+    }
+    .article-card {
+      background:var(--obs-2); border:1px solid var(--obs-border);
+      border-top:3px solid var(--py-mid);
+      padding:24px 22px;
+      text-decoration:none; color:inherit;
+      display:flex; flex-direction:column;
+      transition: border-top-color 0.22s, box-shadow 0.22s, transform 0.22s;
+      position:relative; overflow:hidden;
+    }
+    .article-card::before {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg, var(--glow-blue) 0%, transparent 55%);
+      opacity:0; transition:opacity 0.22s; pointer-events:none;
+    }
+    .article-card:hover {
+      border-top-color:var(--py-glow);
+      box-shadow:0 0 24px var(--shadow-blue);
+      transform:translateY(-3px);
+    }
+    .article-card:hover::before { opacity:1; }
+    .card-tag {
+      font-family:'IBM Plex Mono',monospace; font-size:0.57rem;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--py-glow); background:var(--py-dark);
+      border:1px solid var(--py-mid); padding:2px 9px;
+      display:inline-block; margin-bottom:14px; width:fit-content;
+    }
+    .card-title {
+      font-family:'Syne',sans-serif; font-size:1rem;
+      font-weight:700; text-transform:uppercase;
+      letter-spacing:0.04em; color:#fff;
+      line-height:1.25; margin-bottom:10px;
+    }
+    .card-desc {
+      font-size:0.8rem; line-height:1.75;
+      color:#fff; flex:1; margin-bottom:18px;
+      text-align:justify; hyphens:auto;
+    }
+    .card-cta {
+      display:inline-flex; align-items:center; gap:8px;
+      font-family:'IBM Plex Mono',monospace; font-size:0.6rem;
+      letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--py-yellow); border-bottom:1px solid transparent;
+      transition:border-color 0.18s; margin-top:auto; width:fit-content;
+    }
+    .card-cta::after { content:'→'; transition:transform 0.18s; }
+    .article-card:hover .card-cta { border-color:var(--py-yellow); }
+    .article-card:hover .card-cta::after { transform:translateX(4px); }
+    .card-coming {
+      background:var(--obs-1); border:1px dashed var(--obs-border-2);
+      border-top:3px dashed var(--obs-border-2);
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; text-align:center; min-height:180px;
+      cursor:default; padding:24px;
+    }
+    .card-coming:hover { transform:none; box-shadow:none; }
+    .card-coming::before { display:none; }
+    .coming-icon {
+      font-family:'IBM Plex Mono',monospace; font-size:1.4rem;
+      color:var(--obs-border-2); margin-bottom:10px; display:block;
+    }
+    .coming-text {
+      font-family:'IBM Plex Mono',monospace; font-size:0.6rem;
+      color:var(--obs-border-2); letter-spacing:0.16em; text-transform:uppercase;
+    }
+    blockquote.pull-quote {
+      border-left:3px solid var(--py-core); margin:32px 0;
+      padding:20px 24px; background:var(--obs-3); position:relative; overflow:hidden;
+    }
+    blockquote.pull-quote::before {
+      content:'"'; position:absolute; top:-8px; left:14px;
+      font-family:'Syne',sans-serif; font-size:4rem;
+      color:var(--py-dark); line-height:1; pointer-events:none;
+    }
+    blockquote.pull-quote::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg,var(--glow-blue) 0%,transparent 55%); pointer-events:none;
+    }
+    blockquote.pull-quote p {
+      font-size:0.96rem; font-style:italic; color:#fff;
+      margin:0; text-align:justify; position:relative; z-index:1;
+    }
+    blockquote.pull-quote cite {
+      display:block; margin-top:10px;
+      font-family:'IBM Plex Mono',monospace; font-size:0.58rem;
+      color:var(--py-bright); letter-spacing:0.12em; text-transform:uppercase;
+      font-style:normal; position:relative; z-index:1;
+    }
+    .stat-row {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:28px 0;
+    }
+    .stat-box {
+      background:var(--obs-3); border:1px solid var(--obs-border);
+      border-bottom:3px solid var(--py-yellow); padding:16px 14px; text-align:center;
+    }
+    .stat-number {
+      font-family:'Syne',sans-serif; font-size:1.5rem; font-weight:800;
+      color:var(--py-yellow); display:block; line-height:1;
+    }
+    .stat-label {
+      font-family:'IBM Plex Mono',monospace; font-size:0.54rem;
+      color:#fff; letter-spacing:0.1em; text-transform:uppercase;
+      margin-top:6px; line-height:1.4; display:block;
+    }
+    .analysis-box {
+      background:var(--obs-3); border:1px solid var(--obs-border-2);
+      border-left:4px solid var(--py-yellow); padding:20px 20px; margin:24px 0;
+    }
+    .analysis-label {
+      font-family:'IBM Plex Mono',monospace; font-size:0.56rem;
+      color:var(--py-yellow); text-transform:uppercase; letter-spacing:0.16em;
+      margin-bottom:10px; display:block;
+    }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:24px 0; }
+    .two-col-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin:24px 0; }
+    .info-card {
+      background:var(--obs-2); border:1px solid var(--obs-border);
+      border-top:2px solid var(--py-core); padding:18px;
+    }
+    .info-card h4 {
+      font-family:'IBM Plex Mono',monospace; font-size:0.62rem;
+      color:var(--py-glow); text-transform:uppercase; letter-spacing:0.14em;
+      margin-bottom:8px;
+    }
+    .timeline { margin:20px 0; padding-left:26px; border-left:1px solid var(--obs-border-2); }
+    .tl-item { margin-bottom:20px; position:relative; }
+    .tl-item::before {
+      content:''; position:absolute; left:-32px; top:5px;
+      width:8px; height:8px; border-radius:50%;
+      background:var(--py-core); border:2px solid var(--obs-0);
+      box-shadow:0 0 6px var(--py-core);
+    }
+    .tl-date {
+      font-family:'IBM Plex Mono',monospace; font-size:0.57rem;
+      color:var(--py-yellow); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:3px;
+    }
+    .tl-event { font-size:0.8rem; color:#fff; line-height:1.6; text-align:justify; }
+    .closing-banner {
+      background:var(--obs-3); border:1px solid var(--py-dark);
+      border-left:4px solid var(--py-core); padding:32px 28px; margin:42px 0;
+      position:relative; overflow:hidden;
+    }
+    .closing-banner::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg,rgba(58,127,212,0.05) 0%,transparent 50%); pointer-events:none;
+    }
+    .closing-banner p { color:#fff; position:relative; z-index:1; }
+    .closing-banner .final {
+      font-family:'Syne',sans-serif; font-size:0.96rem; font-weight:700;
+      color:var(--py-yellow); margin-top:12px; line-height:1.4;
+    }
+    .subscribe-strip {
+      background:var(--obs-2); border:1px solid var(--obs-border);
+      border-top:3px solid var(--py-core); padding:42px 32px; margin:48px 0;
+      text-align:center; position:relative; overflow:hidden;
+    }
+    .subscribe-strip::before {
+      content:''; position:absolute; top:-70px; left:50%; transform:translateX(-50%);
+      width:280px; height:280px; border-radius:50%;
+      background:radial-gradient(circle,rgba(58,127,212,0.06) 0%,transparent 70%); pointer-events:none;
+    }
+    .subscribe-strip h2 {
+      font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800;
+      text-transform:uppercase; letter-spacing:0.08em;
+      background:linear-gradient(90deg,var(--py-glow),var(--py-yellow));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      margin-bottom:8px;
+    }
+    .subscribe-strip .deck { font-size:0.8rem; color:#fff; max-width:480px; margin:0 auto 24px; text-align:justify; }
+    .sub-form { display:flex; max-width:420px; margin:0 auto 12px; gap:8px; flex-wrap:wrap; justify-content:center; }
+    .sub-form input[type="email"] {
+      flex:1; min-width:200px; padding:11px 14px;
+      border:1px solid var(--obs-border-2); background:var(--obs-1);
+      color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.72rem;
+      outline:none; transition:border-color 0.2s;
+    }
+    .sub-form input::placeholder { color:rgba(255,255,255,0.3); }
+    .sub-form input:focus { border-color:var(--py-core); }
+    .sub-form button {
+      padding:11px 20px; background:linear-gradient(90deg,var(--py-mid),var(--py-core));
+      color:#fff; border:none; font-family:'IBM Plex Mono',monospace; font-size:0.62rem;
+      letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; white-space:nowrap; transition:opacity 0.2s;
+    }
+    .sub-form button:hover { opacity:0.88; }
+    .sub-perks { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; }
+    .sub-perk { font-family:'IBM Plex Mono',monospace; font-size:0.55rem; color:#fff; letter-spacing:0.08em; text-transform:uppercase; display:flex; align-items:center; gap:4px; }
+    .sub-perk::before { content:'✓'; color:var(--py-yellow); }
+    #sub-msg { margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:0.64rem; color:var(--py-yellow); min-height:18px; }
+    footer {
+      background:var(--obs-1); border-top:1px solid var(--obs-border);
+      position:relative; z-index:1;
+    }
+    .footer-top {
+      padding:48px 0 36px;
+      display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;
+    }
+    .footer-brand .brand-name {
+      font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800;
+      letter-spacing:0.12em; text-transform:uppercase;
+      background:linear-gradient(135deg,var(--py-yellow) 0%,var(--py-glow) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      display:block; margin-bottom:10px;
+    }
+    .footer-brand p {
+      font-size:0.75rem; color:#fff; line-height:1.7; max-width:280px;
+      text-align:justify; margin-bottom:18px;
+    }
+    .footer-social { display:flex; gap:10px; }
+    .social-btn {
+      width:34px; height:34px; border:1px solid var(--obs-border-2);
+      background:var(--obs-3); display:flex; align-items:center; justify-content:center;
+      transition:border-color 0.2s, background 0.2s; text-decoration:none;
+    }
+    .social-btn:hover { border-color:var(--py-core); background:var(--py-dark); }
+    .social-btn svg { width:14px; height:14px; fill:#fff; }
+    .footer-col h4 {
+      font-family:'IBM Plex Mono',monospace; font-size:0.6rem;
+      text-transform:uppercase; letter-spacing:0.18em; color:var(--py-bright);
+      margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--obs-border);
+    }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:8px; }
+    .footer-col ul li a {
+      font-family:'IBM Plex Mono',monospace; font-size:0.64rem;
+      color:#fff; text-decoration:none; letter-spacing:0.06em;
+      transition:color 0.18s; display:flex; align-items:center; gap:6px;
+    }
+    .footer-col ul li a::before { content:'›'; color:var(--obs-border-2); transition:color 0.18s; }
+    .footer-col ul li a:hover { color:var(--py-glow); }
+    .footer-col ul li a:hover::before { color:var(--py-core); }
+    .footer-bottom {
+      border-top:1px solid var(--obs-border);
+      padding:18px 0;
+      display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    }
+    .footer-bottom p {
+      font-family:'IBM Plex Mono',monospace; font-size:0.56rem;
+      color:var(--txt-dim); letter-spacing:0.08em; text-align:left; margin:0;
+    }
+    .footer-badges { display:flex; gap:8px; }
+    .badge {
+      border:1px solid var(--obs-border); padding:3px 10px;
+      font-family:'IBM Plex Mono',monospace; font-size:0.52rem;
+      color:var(--txt-dim); letter-spacing:0.1em; text-transform:uppercase;
+    }
+    #toast {
+      position:fixed; bottom:24px; left:50%;
+      transform:translateX(-50%) translateY(60px);
+      background:var(--obs-3); color:#fff;
+      border:1px solid var(--obs-border-2); border-left:3px solid var(--py-yellow);
+      font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.1em;
+      padding:10px 20px; transition:transform 0.3s ease; z-index:9999; white-space:nowrap;
+    }
+    #toast.show { transform:translateX(-50%) translateY(0); }
+    .template-guide {
+      display: none; 
+      color: var(--py-yellow);
+      font-family: monospace;
+      font-size: 0.7rem;
+      text-align: center;
+      margin: 10px 0;
+      border: 1px dashed var(--py-yellow);
+      padding: 4px;
+    }
+    @media (max-width: 760px) {
+      .articles-grid { grid-template-columns:1fr; }
+      .stat-row { grid-template-columns:1fr 1fr; }
+      .two-col, .two-col-3 { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; gap:28px; }
+      .footer-brand { grid-column:1/-1; }
+    }
+    @media (max-width: 560px) {
+      nav.topnav { padding:0 16px; }
+      .hero { padding:44px 0 36px; }
+      .hero h1 { font-size:1.05rem; }
+      .hero-deck { font-size:0.92rem; }
+      h2.section-title { font-size:1rem; }
+      h3.sub-title { font-size:0.92rem; }
+      .stat-row { grid-template-columns:1fr 1fr; }
+      .stat-number { font-size:1.2rem; }
+      .subscribe-strip { padding:28px 16px; }
+      .footer-top { grid-template-columns:1fr; padding:32px 0 24px; }
+      .footer-bottom { flex-direction:column; align-items:flex-start; }
+      .container { padding:0 14px; }
+      .brand { font-size:1rem; }
+      blockquote.pull-quote { padding:14px 16px; }
+      blockquote.pull-quote p { font-size:0.88rem; }
+      .nav-menu {
+        min-width: unset;
+        width: 100%;
+        right: 0;
+        left: 0;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero h1 { font-size:0.95rem; }
+      .stat-row { grid-template-columns:1fr; }
+      .hamburger {
+        width: 24px;
+        height: 16px;
+      }
+    }
+    .share-bar {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      margin: 32px 0 8px;
+    }
+    .share-bar-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--py-bright);
+      flex-shrink: 0;
+    }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 14px;
+      border: 1px solid var(--obs-border-2); background: var(--obs-3);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #fff; cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .share-btn svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .share-btn:hover { border-color: var(--py-core); background: var(--py-dark); color: var(--py-glow); }
+    .share-btn.ai-generate {
+      border-color: var(--py-yellow); color: var(--py-yellow); background: rgba(255,212,59,0.06);
+    }
+    .share-btn.ai-generate:hover { background: rgba(255,212,59,0.14); }
+    .share-btn.ai-generate svg { fill: var(--py-yellow); }
+    .share-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+      z-index: 9000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s;
+    }
+    .share-modal-overlay.open { opacity: 1; pointer-events: all; }
+    .share-modal {
+      background: var(--obs-2); border: 1px solid var(--obs-border-2);
+      border-top: 3px solid var(--py-core);
+      width: min(540px, 94vw); padding: 28px 28px 24px;
+      position: relative; box-shadow: 0 16px 60px rgba(0,0,0,0.7);
+      transform: translateY(20px); transition: transform 0.25s;
+    }
+    .share-modal-overlay.open .share-modal { transform: translateY(0); }
+    .share-modal-close {
+      position: absolute; top: 12px; right: 14px;
+      background: none; border: none; color: var(--txt-dim);
+      font-size: 1.2rem; cursor: pointer; line-height: 1; padding: 4px;
+    }
+    .share-modal-close:hover { color: #fff; }
+    .share-modal h3 {
+      font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.08em; color: #fff;
+      margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+    }
+    .share-modal h3::before {
+      content: '//'; font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem; color: var(--py-yellow);
+    }
+    .share-modal-sub {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem;
+      color: var(--txt-dim); letter-spacing: 0.1em; margin-bottom: 18px;
+    }
+    .platform-tabs {
+      display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .platform-tab {
+      padding: 5px 12px; border: 1px solid var(--obs-border);
+      background: var(--obs-1); color: var(--txt-dim);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 5px;
+    }
+    .platform-tab.active { border-color: var(--py-core); color: var(--py-glow); background: var(--obs-3); }
+    .platform-tab svg { width: 11px; height: 11px; fill: currentColor; }
+    .ai-caption-box {
+      background: var(--obs-1); border: 1px solid var(--obs-border);
+      border-left: 3px solid var(--py-core);
+      padding: 14px 16px; min-height: 100px; margin-bottom: 12px; position: relative;
+    }
+    .ai-caption-text {
+      font-family: 'IBM Plex Serif', serif; font-size: 0.82rem;
+      color: #fff; line-height: 1.7; white-space: pre-wrap;
+    }
+    .ai-caption-text.generating { color: var(--txt-dim); font-style: italic; }
+    .ai-cursor {
+      display: inline-block; width: 2px; height: 0.9em;
+      background: var(--py-bright); margin-left: 2px; vertical-align: text-bottom;
+      animation: blink 0.7s steps(1) infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .char-counter {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.52rem;
+      color: var(--txt-dim); text-align: right; margin-bottom: 10px;
+    }
+    .char-counter.over { color: #e05252; }
+    .share-modal-actions {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px;
+    }
+    .modal-btn {
+      flex: 1; min-width: 120px; padding: 9px 14px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1px solid var(--obs-border-2); background: var(--obs-3);
+      color: #fff; cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+    }
+    .modal-btn svg { width: 12px; height: 12px; fill: currentColor; }
+    .modal-btn:hover { border-color: var(--py-core); background: var(--py-dark); color: var(--py-glow); }
+    .modal-btn.primary {
+      background: linear-gradient(90deg, var(--py-mid), var(--py-core));
+      border-color: transparent; color: #fff;
+    }
+    .modal-btn.primary:hover { opacity: 0.88; }
+    .modal-btn.regen { border-color: var(--py-yellow); color: var(--py-yellow); background: rgba(255,212,59,0.06); }
+    .modal-btn.regen:hover { background: rgba(255,212,59,0.14); }
+    .modal-btn.copy-btn { min-width: 80px; flex: 0 0 auto; }
+    .share-hint {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.52rem;
+      color: var(--txt-dim); margin-top: 10px; letter-spacing: 0.06em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div id="toast"></div>
+
+<div class="share-modal-overlay" id="shareModalOverlay" role="dialog" aria-modal="true" aria-label="AI Social Share">
+  <div class="share-modal">
+    <button class="share-modal-close" id="shareModalClose" aria-label="Close">✕</button>
+    <h3>AI Social Share</h3>
+    <div class="share-modal-sub">AI-generated caption — edit freely before posting</div>
+    <div class="platform-tabs" id="platformTabs">
+      <button class="platform-tab active" data-platform="twitter">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X / Twitter
+      </button>
+      <button class="platform-tab" data-platform="facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </button>
+      <button class="platform-tab" data-platform="linkedin">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </button>
+    </div>
+    <div class="ai-caption-box">
+      <div class="ai-caption-text generating" id="aiCaptionText">Generating caption…<span class="ai-cursor"></span></div>
+    </div>
+    <div class="char-counter" id="charCounter">0 / 280</div>
+    <div class="share-modal-actions">
+      <button class="modal-btn regen" id="regenBtn">
+        <svg viewBox="0 0 24 24"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+        Regenerate
+      </button>
+      <button class="modal-btn copy-btn" id="copyBtn">
+        <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy
+      </button>
+      <button class="modal-btn primary" id="postNowBtn">
+        <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Post Now
+      </button>
+    </div>
+    <div class="share-hint" id="shareHint">Caption is AI-generated — always review before posting.</div>
+  </div>
+</div>
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Global debt surpasses $315 trillion — a historic threshold</span>
+    <span>CRINK axis fracturing as Operation Epic Fury reshapes Middle East</span>
+    <span>Dollar dominance reinforced as India exits BRICS project</span>
+    <span>AI displacement accelerates — 300M jobs at risk by 2030</span>
+    <span>Cultural polarization reaches historic highs across Western democracies</span>
+    <span>Ukraine peace talks resume following Putin-Trump communication</span>
+    <span>Energy transition wars: who controls the minerals controls the future</span>
+    <span>Global debt surpasses $315 trillion — a historic threshold</span>
+    <span>CRINK axis fracturing as Operation Epic Fury reshapes Middle East</span>
+    <span>Dollar dominance reinforced as India exits BRICS project</span>
+    <span>AI displacement accelerates — 300M jobs at risk by 2030</span>
+    <span>Cultural polarization reaches historic highs across Western democracies</span>
+    <span>Ukraine peace talks resume following Putin-Trump communication</span>
+    <span>Energy transition wars: who controls the minerals controls the future</span>
+  </div>
+</div>
+<nav class="topnav">
+  <a href="/" class="brand">Poetic Justice</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" type="button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-menu" id="navMenu" role="menu">
+    <div class="nav-section-label">Analysis</div>
+    <a href="geo-politics.html" role="menuitem">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      Geo-Politics
+    </a>
+    <a href="ancient-history.html" role="menuitem">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Ancient History
+    </a>
+    <a href="sovereignty.html" role="menuitem">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Alliance & Sovereignty
+    </a>
+    <hr class="nav-divider">
+    <a href="#subscribe" role="menuitem">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Subscribe to Intelligence List
+    </a>
+  </div>
+</nav>
+<div class="container">
+  <section class="hero">
+    <div class="hero-eyebrow">The World as It Actually Stands — March 2026</div>
+    <h1>The <em>World Is Being Rewritten</em> — and Most People Are Reading Yesterday's Script</h1>
+    <p class="hero-deck">We are living through the simultaneous collapse of the post-Cold War consensus, the fracturing of the post-WWII institutional order, and the emergence of a new configuration of global power whose final shape nobody can yet name. What follows is not prediction. It is an attempt to see clearly what is already happening.</p>
+    <p class="hero-lead">The geopolitical tectonic plates that defined the second half of the twentieth century — American unipolarity, the primacy of Western-designed international institutions, the assumption that economic interdependence prevents major conflict — are shifting in ways that are no longer subtle. The comfortable certainties that governed international relations since 1991 have not merely been questioned. They are being dismantled in real time, by actors who decided long ago that the existing order served other people's interests and not their own. The question is no longer whether the world is changing. The question is whether the people who care about freedom, prosperity, and stability are paying close enough attention to shape what comes next.</p>
+  </section>
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="stat-number">$315T</span>
+      <span class="stat-label">Global debt — record high in 2025</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">8.1B</span>
+      <span class="stat-label">World population at inflection point</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">54</span>
+      <span class="stat-label">Active armed conflicts globally</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">300M</span>
+      <span class="stat-label">Jobs at risk from AI by 2030</span>
+    </div>
+  </div>
+  <hr class="section-divider" />
+  <section>
+    <h2 class="section-title">The Political Situation</h2>
+    <h3 class="sub-title">The End of Unipolarity</h3>
+    <p>For thirty years following the Soviet Union's collapse, the world operated under a framework that political scientists called a "unipolar moment" — a period of unchallenged American primacy in which Washington's preferences shaped the global agenda, its military deterred major conflict, and its institutional architecture governed trade, finance, and international law. That moment is over. What has replaced it is not a clean multipolar order but something more unstable: a transition period in which the old rules no longer bind and the new rules have not yet been agreed upon.</p>
+    <p>The CRINK axis — China, Russia, Iran, North Korea — represents the most coherent challenge to that order, though "coherent" overstates the case. What these four states share is not a common vision of the future but a common opposition to the present. They each have grievances against the Western-designed order; they each benefit from weakening American power; and they each possess capabilities that, when combined, constitute a genuine strategic challenge. Operation Epic Fury's strike on Iran in 2025 was the most significant disruption of this axis since its informal formation — removing Iran's role as the operational node through which the other members coordinated military capability, energy flows, and financial evasion.</p>
+    <div class="analysis-box">
+      <span class="analysis-label">// Strategic Assessment: Power Transition Risks</span>
+      <p>Historical research on power transitions — the period when a rising challenger approaches parity with an established hegemon — finds that the risk of major conflict peaks during this window, not after. The United States and China are in that window now. Every major institution, alliance, and crisis of the next two decades will be shaped by how this transition is managed. The outcome is not predetermined. History records both successful transitions (British to American hegemony in the early 20th century) and catastrophic ones (Germany's challenge to Britain in 1914). The difference was, in part, the quality of the choices made by leaders on all sides.</p>
+    </div>
+    <h3 class="sub-title">Democracy Under Internal Pressure</h3>
+    <p>The threat to democratic governance in 2026 is not primarily external. Authoritarian states can destabilize democracies through disinformation, election interference, and economic coercion — and they do. But the more fundamental challenge is internal: the erosion of trust in institutions, the fragmentation of shared epistemic frameworks (the collapse of agreement on basic facts), and the weaponization of democratic procedures by actors who understand that the easiest way to defeat a system is to use its own rules against it. This is not a partisan observation. It describes a structural vulnerability that transcends any particular political party or figure.</p>
+    <p>Across the democratic world — from Europe to the Americas to East Asia — the pattern is consistent: declining trust in media, rising support for strongman leadership, growing belief that elections do not produce meaningful change, and the retreat of citizens from civic participation. These are symptoms of a legitimacy crisis that no single election can resolve. The societies that will navigate the coming decades most successfully are those that find ways to rebuild the shared infrastructure of truth and institutional trust without which self-governance becomes incoherent.</p>
+    <h3 class="sub-title">The Ukraine Inflection</h3>
+    <p>Russia's invasion of Ukraine on February 24, 2022, was the single most consequential geopolitical event since the September 11 attacks — and it is not over. What began as a war of territorial conquest has evolved into something more complex: a test of Western unity and resolve, a laboratory for 21st-century warfare (drone tactics, electronic warfare, industrial mobilization), and a proxy contest between competing visions of international order. The question of whether Ukraine will retain its sovereignty and territorial integrity is not merely a question about Ukraine. It is a question about whether the post-1945 norm against territorial conquest by force can survive as an operating principle of international relations.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Feb 2022</div>
+        <div class="tl-event">Russia's full-scale invasion of Ukraine shatters post-Cold War European security assumptions.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2022–2024</div>
+        <div class="tl-event">Iran supplies Shahed drones; North Korea supplies artillery shells; China provides dual-use goods — CRINK military convergence becomes operationally visible.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mid-2025</div>
+        <div class="tl-event">Operation Epic Fury disrupts IRGC infrastructure. Putin contacts Trump within 48 hours to request peace talks. The drone supply chain collapses.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2026</div>
+        <div class="tl-event">Negotiations ongoing. Outcome unresolved. The precedent set — whether territorial conquest is rewarded or reversed — will define the next fifty years of international order.</div>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider" />
+  <section>
+    <h2 class="section-title">The Economic Situation</h2>
+    <h3 class="sub-title">Debt, Inflation, and the Limits of the Post-War Settlement</h3>
+    <p>The global economy in 2026 is navigating the aftermath of the most aggressive monetary policy experiment in modern history. Between 2020 and 2022, central banks in the G7 economies injected an unprecedented volume of liquidity in response to the pandemic — and then spent the following years trying to reverse that injection without triggering a recession. The result is an economy characterized by persistent structural inflation, historically elevated debt levels (global debt now exceeds $315 trillion, or roughly 330% of global GDP), and a housing affordability crisis across virtually every major urban economy in the developed world.</p>
+    <p>The deeper problem is structural. The post-WWII economic model — characterized by growing labor's share of income, expanding middle classes, and intergenerational upward mobility — has been in retreat since the 1980s. What replaced it was a model dependent on asset price appreciation, financialization, and the suppression of wages through globalization. That model produced enormous wealth at the top of the distribution and stagnation across the middle. The political consequences of that stagnation are now the primary driver of the democratic instability described above. Economics and politics are not separate systems. They are the same system.</p>
+    <div class="two-col">
+      <div class="info-card">
+        <h4>The Dollar's Moment</h4>
+        <p>Despite decades of predictions about dollar decline, the U.S. dollar remains the world's reserve currency — and its position has actually been strengthened by the failure of the BRICS alternative currency project. India's strategic realignment with Washington removed the demographic and economic anchor the project needed. The dollar's dominance is not permanent, but its challengers have, for now, failed.</p>
+      </div>
+      <div class="info-card">
+        <h4>The Energy Transition Paradox</h4>
+        <p>The transition from fossil fuels to renewable energy is simultaneously the most important long-term economic project in human history and a profound source of near-term geopolitical instability. The minerals required for batteries, solar panels, and wind turbines are concentrated in a small number of countries — many of them unstable or adversarial. The race to control those minerals is already reshaping alliances, sparking conflicts, and creating new dependencies as dangerous as the old oil dependence.</p>
+      </div>
+    </div>
+    <h3 class="sub-title">The AI Economic Revolution</h3>
+    <p>Artificial intelligence is not a technology trend. It is a general-purpose technology — comparable in its transformative scope to electricity, the internal combustion engine, and the internet — that will restructure every sector of the economy over the next two to three decades. The economic implications are both enormously positive (productivity gains, acceleration of scientific discovery, expanded access to expertise) and enormously disruptive (labor displacement at a scale and speed that existing social safety nets were not designed to handle). The societies that will benefit most are those that invest now in the educational, institutional, and regulatory infrastructure needed to manage the transition — and the societies that will suffer most are those that treat AI as purely a technical problem rather than a political and social one.</p>
+    <blockquote class="pull-quote">
+      <p>"Every major economic disruption in history — the agricultural revolution, the industrial revolution, the digital revolution — created more total wealth and more total employment than it destroyed. The question was never whether the economy would adapt. The question was always who bore the cost of adaptation and whether those costs were distributed fairly."</p>
+      <cite>— The core question of AI economics</cite>
+    </blockquote>
+  </section>
+  <hr class="section-divider" />
+  <section>
+    <h2 class="section-title">The Cultural Situation</h2>
+    <h3 class="sub-title">The Fracture of Shared Reality</h3>
+    <p>Perhaps the most consequential and least discussed development of the past decade is the collapse of shared epistemic frameworks — the shared understanding of basic facts about the world that makes political community possible. This is not merely a matter of "misinformation" or "fake news," though those are real phenomena. It is a structural consequence of the information environment created by social media platforms optimized for engagement rather than accuracy, combined with the deliberate exploitation of that environment by state and non-state actors with an interest in confusion and division.</p>
+    <p>When citizens in a democracy cannot agree on basic facts — not just values, but facts — the democratic process becomes incapable of producing legitimate outcomes. You cannot resolve a policy dispute through deliberation if the two sides are operating from incompatible factual premises. This is not a problem that can be solved by fact-checking websites or media literacy campaigns, though both are valuable at the margins. It requires a rethinking of the information architecture of democratic societies — one that has barely begun.</p>
+    <h3 class="sub-title">The Identity Wars</h3>
+    <p>Across the Western world, politics has been reorganized around questions of identity — cultural, ethnic, religious, gender — in ways that cut across the traditional left-right economic axis that governed twentieth-century politics. This reorganization has produced new coalitions, new grievances, and new vocabularies that are often mutually incomprehensible. The result is political conversations that generate enormous heat and very little light — arguments that are experienced as existential by all participants but that rarely produce the clarity or compromise that democratic governance requires.</p>
+    <p>It would be a mistake to dismiss identity politics as mere distraction from "real" economic concerns, as some on the left and right do. Questions of recognition, dignity, and belonging are genuine human needs, and politics that ignores them will generate the resentments that currently fuel populism across the spectrum. But it would be equally mistaken to treat every political question as primarily a question of identity. Societies that lose the capacity to distinguish between the two will find themselves unable to address either effectively.</p>
+    <h3 class="sub-title">The Return of Religion</h3>
+    <p>The secularization thesis — the prediction, dominant in Western social science for most of the 20th century, that modernization would inevitably lead to the decline of religious belief and practice — has been empirically falsified by the global data. Religion is not declining. In most of the world, it is growing. Even in the most secular societies of Western Europe and North America, the retreat of institutional religion has not produced the secular humanism that optimists predicted — it has often produced a spiritual vacuum that is filled by various forms of political religion, therapeutic spirituality, or nihilism. The relationship between religious identity and political mobilization — from evangelical Christianity in the United States to political Islam in the Middle East to Hindu nationalism in India — is one of the defining dynamics of 21st-century politics, and it is one that secular liberal frameworks are poorly equipped to analyze.</p>
+    <div class="analysis-box">
+      <span class="analysis-label">// Cultural Synthesis: What Connects All of This</span>
+      <p>The political, economic, and cultural crises described above are not separate phenomena. They are different expressions of a single underlying condition: the breakdown of the institutional, epistemic, and normative frameworks that allowed modern industrial societies to function and govern themselves. Those frameworks — built painstakingly over centuries, with enormous sacrifice — are not self-sustaining. They require active maintenance, investment, and defense. The generation now inheriting them is the first in a century that must rebuild rather than merely inherit. Whether it rises to that task is the defining question of our historical moment.</p>
+    </div>
+  </section>
+  <hr class="section-divider" />
+  <section>
+    <h2 class="section-title">Explore the Analysis</h2>
+    <p style="max-width:620px; margin-bottom:8px;">Each article goes deep on a specific dimension of the current situation. New analyses are added as events develop. Subscribe to be notified.</p>
+    <div class="articles-grid">
+      <a href="geo-politics.html" class="article-card">
+        <span class="card-tag">Geopolitics</span>
+        <div class="card-title">The CRINK Doctrine: How One Strike Unraveled the Anti-Western Axis</div>
+        <p class="card-desc">Iran was not simply a hostile state. It was the operational cornerstone of the CRINK coalition — supplying oil to China, drones to Russia, and proxies to the Western Hemisphere. Operation Epic Fury removed that cornerstone. The reverberations are still spreading.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+      <a href="ancient-history.html" class="article-card">
+        <span class="card-tag">Ancient History</span>
+        <div class="card-title">The Patterns That Repeat: What Ancient Civilizations Teach Us About Now</div>
+        <p class="card-desc">The crises of the present are not unprecedented. Power transitions, institutional decay, cultural fragmentation, and the collapse of epistemic consensus have all happened before — in Rome, in Athens, in the late Bronze Age. History does not repeat, but it rhymes with disturbing precision.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+      <a href="sovereignty.html" class="article-card">
+        <span class="card-tag">Alliance & Sovereignty</span>
+        <div class="card-title">The Alliance that the Philippines needs so badly to close its doors from the thieves that steal its seas.</div>
+        <p class="card-desc">The significance of alliance matters most for the pursuit of protecting national independence.The alliance between the United States and the Philippines is one of the oldest and most strategically vital partnerships in the Indo-Pacific. Rooted in the 1951 Mutual Defense Treaty (MDT), it has evolved from a Cold War necessity into a modern cornerstone of regional security.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+      <a href="current-war.html" class="article-card">
+        <span class="card-tag">Impact of the current war in Iran</span>
+        <div class="card-title">The impact of the current war in Iran</div>
+        <p class="card-desc">As of March 4, 2026, the ongoing conflict involving Iran — which began on February 28, 2026 — remains active and has entered its seventh day. The United States and Israel are conducting coordinated large-scale airstrikes under Operation Epic Fury, targeting Iranian military infrastructure, air defenses, missile facilities, naval assets, command centers, and elements associated with regime leadership and succession mechanisms.
+         Key developments include:
+         Military progress: U.S. and Israeli forces have achieved air superiority over significant portions of Iran, including Tehran, and have struck over 2,000 targets. This includes damage to missile bases, radar systems, naval vessels (with reports of 11–17 Iranian ships destroyed), and selected nuclear-related surface infrastructure (e.g., at Natanz, though core facilities appear largely intact per IAEA assessments).
+Leadership impact: Supreme Leader Ayatollah Ali Khamenei was reportedly killed in the initial phase, creating a succession crisis. An interim leadership structure has emerged, though the regime continues to function amid internal repression measures (e.g., internet restrictions and checkpoints).
+Iranian response: Iran has launched missile and drone attacks on U.S. military facilities, diplomatic sites, and energy infrastructure across the Gulf region (including Saudi Arabia, Kuwait, UAE, and others). Proxy forces, notably Hezbollah in Lebanon, have intensified operations, prompting Israeli ground incursions into southern Lebanon.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+    </div>
+  </section>
+  <div class="share-bar">
+    <span class="share-bar-label">Share this analysis:</span>
+    <button class="share-btn ai-generate" id="openShareModal">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+      AI-Generate Caption &amp; Share
+    </button>
+    <a class="share-btn" id="quickShareTwitter" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X
+    </a>
+    <a class="share-btn" id="quickShareFacebook" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+    <a class="share-btn" id="quickShareLinkedIn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+  </div>
+
+  <div class="closing-banner">
+    <p>This publication exists because the most important things happening in the world right now are poorly explained, selectively reported, and actively obscured by the noise of the 24-hour news cycle. The connections between geopolitics, economics, culture, and history are not accidents — they are the structure of reality. Understanding them is not an intellectual luxury. It is a survival skill for citizens who want to remain free.</p>
+    <p class="final">Poetic Justice is the attempt to see that structure clearly — and to describe it without fear, without agenda, and without the comfortable evasions that pass for analysis in most of what you read.</p>
+  </div>
+  <div class="subscribe-strip" id="subscribe">
+    <h2>Join the Intelligence List</h2>
+    <p class="deck">45,000+ readers receive weekly deep-dives into global power shifts — the connections that matter, before they become obvious. Free forever. No spam. Unsubscribe anytime.</p>
+    <div class="sub-form">
+      <input type="email" id="subEmail" placeholder="your@email.com" />
+      <button id="subBtn" type="button">Subscribe Free</button>
+    </div>
+    <div class="sub-perks">
+      <span class="sub-perk">Weekly analysis</span>
+      <span class="sub-perk">No spam, ever</span>
+      <span class="sub-perk">Unsubscribe anytime</span>
+      <span class="sub-perk">Free forever</span>
+    </div>
+    <div id="sub-msg"></div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">Poetic Justice</span>
+        <p>Independent analysis of the current global political, economic, and cultural situation. No agenda. No apologies. No comfortable evasions. Just the truth as it stands — and the courage to say it plainly.</p>
+        <p>Published at <strong>pansensoyglenn-dev.github.io/current-situation/</strong></p>
+        <div class="footer-social">
+          <a href="https://twitter.com/pansensoyglenn" class="social-btn" target="_blank" rel="noopener" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="RSS Feed">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Analysis</h4>
+        <ul>
+          <li><a href="geo-politics.html">Geo-Politics</a></li>
+          <li><a href="ancient-history.html">Ancient History</a></li>
+          <li><a href="sovereignty.html">Alliance & Sovereignty</a></li>
+          <li><a href="current-war.html">War in Iran:Day 7</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="geo-politics.html">CRINK Doctrine</a></li>
+          <li><a href="geo-politics.html">Iran & Operation Epic Fury</a></li>
+          <li><a href="dollar.html">BRICS & Dollar Hegemony</a></li>
+          <li><a href="ancient-history.html">Historical Patterns</a></li>
+          <li><a href="sovereignty.html">Alliance & Sovereignty</a></li>
+          <li><a href="current-war.html">War in Iran:Day 7</a></li>
+           <li><a href="ai-as-weapons.html">AI as Weapons</a></li>
+           <li><a href="collapse.html">Collapse of Trust</a></li>
+           <li><a href="nuclear.html">Nuclear War Threat</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="mailto:pansensoyglenn@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <p>© 2025–2026 Poetic Justice · pansensoyglenn-dev.github.io/current-situation/</p>
+        <p style="margin-top:4px;">All content represents independent analytical interpretation, not advocacy. Readers are encouraged to consult multiple sources.</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge">Independent</span>
+        <span class="badge">Purely Objective</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('navMenu');
+hamburger.addEventListener('click', function(e){
+  e.stopPropagation(); e.preventDefault();
+  const isOpen = navMenu.classList.contains('open');
+  navMenu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(!isOpen));
+});
+document.addEventListener('click', function(e){
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    shareModalOverlay.classList.remove('open');
+  }
+});
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+document.getElementById('subBtn').addEventListener('click', async function(){
+  const email = document.getElementById('subEmail').value.trim();
+  const msg = document.getElementById('sub-msg'), btn = this;
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.style.color = '#e05252'; msg.textContent = 'Please enter a valid email address.'; return;
+  }
+  btn.disabled = true; btn.textContent = 'Subscribing…'; msg.textContent = '';
+  await new Promise(r => setTimeout(r, 800));
+  const subs = JSON.parse(localStorage.getItem('pj_subscribers') || '[]');
+  if (subs.includes(email)) {
+    msg.style.color = '#ffd43b'; msg.textContent = 'You\'re already subscribed. Thank you.';
+  } else {
+    subs.push(email); localStorage.setItem('pj_subscribers', JSON.stringify(subs));
+    msg.style.color = '#ffd43b'; msg.textContent = '✓ Subscribed. Your first analysis arrives shortly.';
+    document.getElementById('subEmail').value = '';
+  }
+  btn.disabled = false; btn.textContent = 'Subscribe Free';
+});
+
+const PAGE_URL   = encodeURIComponent(window.location.href);
+const PAGE_TITLE = encodeURIComponent(document.title);
+
+document.getElementById('quickShareTwitter').href =
+  `https://twitter.com/intent/tweet?url=${PAGE_URL}&text=${PAGE_TITLE}`;
+document.getElementById('quickShareFacebook').href =
+  `https://www.facebook.com/sharer/sharer.php?u=${PAGE_URL}`;
+document.getElementById('quickShareLinkedIn').href =
+  `https://www.linkedin.com/sharing/share-offsite/?url=${PAGE_URL}`;
+
+const shareModalOverlay = document.getElementById('shareModalOverlay');
+const shareModalClose   = document.getElementById('shareModalClose');
+const platformTabs      = document.getElementById('platformTabs');
+const aiCaptionText     = document.getElementById('aiCaptionText');
+const charCounter       = document.getElementById('charCounter');
+const regenBtn          = document.getElementById('regenBtn');
+const copyBtn           = document.getElementById('copyBtn');
+const postNowBtn        = document.getElementById('postNowBtn');
+const shareHint         = document.getElementById('shareHint');
+
+let currentPlatform = 'twitter';
+let currentCaption  = '';
+let isGenerating    = false;
+
+const CHAR_LIMITS = { twitter: 280, facebook: 63206, linkedin: 3000 };
+const PLATFORM_LABELS = { twitter: 'X / Twitter', facebook: 'Facebook', linkedin: 'LinkedIn' };
+
+function getPageContext() {
+  const headings = Array.from(document.querySelectorAll('h1, h2.section-title, h3.sub-title'))
+    .slice(0, 8).map(h => h.textContent.replace(/\/\/\s*/g,'').replace(/›\s*/g,'').trim()).join(' | ');
+  const firstPara = document.querySelector('.hero-deck')?.textContent?.trim() || '';
+  return `${headings}\n\n${firstPara}`;
+}
+
+function buildPrompt(platform, context) {
+  const url = window.location.href;
+  const tones = {
+    twitter: `Write a compelling, thought-provoking tweet to share this geopolitical analysis article. 
+Rules: Under 250 characters (leave room for the URL). Use 1–2 relevant hashtags (#Geopolitics #WorldAffairs). 
+No quotes around the whole thing. Be punchy and direct. End with the URL: ${url}
+Article context: ${context}`,
+    facebook: `Write a compelling Facebook post to share this geopolitical analysis article. 
+Rules: 2–3 sentences max, conversational but intelligent tone. Include the article URL: ${url}
+Can use 1–2 emojis if they add impact. Make readers want to click. 
+Article context: ${context}`,
+    linkedin: `Write a professional LinkedIn post to share this geopolitical analysis article. 
+Rules: 3–5 sentences. Professional, analytical tone. Mention a key insight from the article. 
+Include the article URL: ${url} at the end. Add 3–5 relevant hashtags on a new line.
+Article context: ${context}`
+  };
+  return tones[platform];
+}
+
+async function generateCaption(platform) {
+  if (isGenerating) return;
+  isGenerating = true;
+  currentCaption = '';
+  aiCaptionText.className = 'ai-caption-text generating';
+  aiCaptionText.innerHTML = 'Generating caption…<span class="ai-cursor"></span>';
+  charCounter.textContent = '0 / ' + CHAR_LIMITS[platform];
+  charCounter.className = 'char-counter';
+  regenBtn.disabled = true;
+  postNowBtn.disabled = true;
+
+  const context = getPageContext();
+  const prompt  = buildPrompt(platform, context);
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        stream: true,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    if (!response.ok) throw new Error(`API error ${response.status}`);
+
+    const reader  = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+
+    aiCaptionText.className = 'ai-caption-text';
+    aiCaptionText.innerHTML = '<span class="ai-cursor"></span>';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const data = line.slice(6).trim();
+        if (data === '[DONE]') continue;
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.type === 'content_block_delta' && parsed.delta?.type === 'text_delta') {
+            currentCaption += parsed.delta.text;
+            const limit = CHAR_LIMITS[platform];
+            const count = currentCaption.length;
+            aiCaptionText.innerHTML = currentCaption + '<span class="ai-cursor"></span>';
+            charCounter.textContent = `${count} / ${limit}`;
+            charCounter.className = 'char-counter' + (count > limit ? ' over' : '');
+          }
+        } catch (_) {}
+      }
+    }
+
+    aiCaptionText.innerHTML = currentCaption || 'No caption generated. Try regenerating.';
+    aiCaptionText.className = 'ai-caption-text';
+    const finalCount = currentCaption.length;
+    const limit = CHAR_LIMITS[platform];
+    charCounter.textContent = `${finalCount} / ${limit}`;
+    charCounter.className = 'char-counter' + (finalCount > limit ? ' over' : '');
+
+  } catch (err) {
+    aiCaptionText.className = 'ai-caption-text generating';
+    aiCaptionText.textContent = `⚠ Could not generate caption: ${err.message}. Check your connection and try again.`;
+    currentCaption = '';
+  } finally {
+    isGenerating = false;
+    regenBtn.disabled = false;
+    postNowBtn.disabled = false;
+  }
+}
+
+function openShareModal() {
+  shareModalOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  generateCaption(currentPlatform);
+}
+
+function closeShareModal() {
+  shareModalOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('openShareModal').addEventListener('click', openShareModal);
+shareModalClose.addEventListener('click', closeShareModal);
+shareModalOverlay.addEventListener('click', function(e) {
+  if (e.target === shareModalOverlay) closeShareModal();
+});
+
+platformTabs.addEventListener('click', function(e) {
+  const tab = e.target.closest('.platform-tab');
+  if (!tab || isGenerating) return;
+  document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  currentPlatform = tab.dataset.platform;
+  generateCaption(currentPlatform);
+});
+
+regenBtn.addEventListener('click', function() {
+  if (!isGenerating) generateCaption(currentPlatform);
+});
+
+copyBtn.addEventListener('click', function() {
+  if (!currentCaption) return;
+  navigator.clipboard.writeText(currentCaption).then(() => {
+    copyBtn.textContent = '✓ Copied';
+    setTimeout(() => {
+      copyBtn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy';
+    }, 1800);
+    showToast('Caption copied to clipboard!');
+  });
+});
+
+postNowBtn.addEventListener('click', function() {
+  if (!currentCaption) return;
+  const encodedCaption = encodeURIComponent(currentCaption);
+  const encodedUrl = encodeURIComponent(window.location.href);
+  let shareUrl = '';
+
+  if (currentPlatform === 'twitter') {
+    shareUrl = `https://twitter.com/intent/tweet?text=${encodedCaption}`;
+  } else if (currentPlatform === 'facebook') {
+    navigator.clipboard.writeText(currentCaption).catch(() => {});
+    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+    shareHint.textContent = 'Caption copied — paste it into your Facebook post!';
+    showToast('Caption copied — paste into Facebook!');
+  } else if (currentPlatform === 'linkedin') {
+    navigator.clipboard.writeText(currentCaption).catch(() => {});
+    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+    shareHint.textContent = 'Caption copied — paste it into your LinkedIn post!';
+    showToast('Caption copied — paste into LinkedIn!');
+  }
+
+  if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=520,noopener,noreferrer');
+  closeShareModal();
+});
+</script>
+</body>
+</html>
