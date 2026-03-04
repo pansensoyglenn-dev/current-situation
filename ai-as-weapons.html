@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomous Weapons & AI Ethics — Policy Analysis</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,500;0,700;1,300&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --obsidian:        #0c0e11;
+    --obsidian-2:      #12151a;
+    --obsidian-3:      #1a1f28;
+    --obsidian-4:      #222a36;
+    --obsidian-5:      #2b3444;
+    --py-blue:         #4b8bbe;
+    --py-blue-bright:  #6aabde;
+    --py-blue-dim:     #2d5f8a;
+    --py-yellow:       #ffd343;
+    --py-yellow-dim:   #a88520;
+    --danger:          #e05c5c;
+    --text:            #cdd9e5;
+    --text-muted:      #7a8fa0;
+    --text-dim:        #4a5568;
+    --rule:            #1f2b38;
+    --glow-blue:       rgba(75,139,190,0.15);
+    --glow-yellow:     rgba(255,211,67,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--obsidian);
+    color: var(--text);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.85;
+    background-image:
+      radial-gradient(ellipse at 10% 0%, rgba(75,139,190,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 100%, rgba(255,211,67,0.05) 0%, transparent 50%);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(75,139,190,0.025) 40px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(75,139,190,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 60px 44px 120px;
+  }
+
+  .masthead {
+    text-align: center;
+    border-top: 1px solid var(--py-blue);
+    border-bottom: 1px solid var(--py-blue);
+    padding: 44px 0 36px;
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.1s;
+    position: relative;
+  }
+
+  .masthead::before,
+  .masthead::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--rule);
+  }
+  .masthead::before { top: 5px; }
+  .masthead::after  { bottom: 5px; }
+
+  .masthead .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--py-blue);
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+
+  .masthead h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.85rem, 4.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--text);
+    margin-bottom: 20px;
+    letter-spacing: -0.025em;
+  }
+
+  .masthead h1 em {
+    font-style: italic;
+    color: var(--py-blue-bright);
+    text-shadow: 0 0 28px rgba(106,171,222,0.45);
+  }
+
+  .masthead .deck {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .masthead .byline {
+    margin-top: 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 0 0 56px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.35s;
+  }
+
+  .stat-item {
+    background: var(--obsidian-2);
+    padding: 24px 16px;
+    text-align: center;
+    transition: background 0.25s;
+    cursor: default;
+  }
+
+  .stat-item:hover { background: var(--obsidian-3); }
+
+  .stat-item .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--py-yellow);
+    display: block;
+    line-height: 1;
+    text-shadow: 0 0 22px rgba(255,211,67,0.32);
+  }
+
+  .stat-item .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 8px;
+    display: block;
+  }
+
+  .body-text {
+    column-count: 2;
+    column-gap: 48px;
+    column-rule: 1px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.55s;
+  }
+
+  @media (max-width: 680px) {
+    .body-text { column-count: 1; }
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
+    .page { padding: 36px 20px 80px; }
+  }
+
+  .section-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--py-blue-bright);
+    margin: 40px 0 14px;
+    break-after: avoid;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .section-head::before {
+    content: '// ';
+    color: var(--py-yellow);
+  }
+
+  p {
+    margin-bottom: 18px;
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  strong {
+    color: var(--py-blue-bright);
+    font-weight: 600;
+  }
+
+  blockquote {
+    break-inside: avoid;
+    border-left: 3px solid var(--py-blue);
+    background: var(--obsidian-3);
+    padding: 18px 22px;
+    margin: 28px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: italic;
+    font-size: 0.86rem;
+    color: var(--py-blue-bright);
+    line-height: 1.65;
+    box-shadow: inset 0 0 30px rgba(75,139,190,0.06);
+  }
+
+  blockquote cite {
+    display: block;
+    font-family: 'Crimson Pro', serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  .callout {
+    break-inside: avoid;
+    background: var(--obsidian-3);
+    border: 1px solid var(--obsidian-5);
+    border-left: 3px solid var(--py-yellow);
+    padding: 20px 22px;
+    margin: 28px 0;
+  }
+
+  .callout-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    margin-bottom: 12px;
+    color: var(--py-yellow);
+    text-transform: uppercase;
+  }
+
+  .callout ul {
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .callout ul li { margin-bottom: 7px; }
+
+  .callout ul li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .callout-danger {
+    border-left-color: var(--danger);
+  }
+
+  .callout-danger .callout-title {
+    color: var(--danger);
+  }
+
+  .ornament {
+    text-align: center;
+    color: var(--py-blue);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.7em;
+    margin: 34px 0;
+    break-inside: avoid;
+    opacity: 0.5;
+  }
+
+  .full-pull {
+    column-span: all;
+    border-top: 1px solid var(--py-blue);
+    border-bottom: 1px solid var(--py-blue);
+    background: linear-gradient(135deg, var(--obsidian-2) 0%, var(--obsidian-3) 100%);
+    padding: 32px 36px;
+    margin: 40px 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    box-shadow: 0 0 50px rgba(75,139,190,0.09);
+  }
+
+  .timeline {
+    column-span: all;
+    margin: 48px 0;
+    position: relative;
+  }
+
+  .timeline-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--py-yellow);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .tl-item {
+    background: var(--obsidian-2);
+    padding: 20px 18px;
+    transition: background 0.2s;
+  }
+
+  .tl-item:hover { background: var(--obsidian-3); }
+
+  .tl-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--py-blue-bright);
+    display: block;
+    margin-bottom: 6px;
+    text-shadow: 0 0 16px rgba(106,171,222,0.3);
+  }
+
+  .tl-event {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .matrix {
+    column-span: all;
+    margin: 44px 0;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+
+  .matrix-header {
+    background: var(--obsidian-3);
+    padding: 14px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    color: var(--py-yellow);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  .matrix th {
+    background: var(--obsidian-3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    font-weight: 500;
+  }
+
+  .matrix td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-weight: 300;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .matrix tr:last-child td { border-bottom: none; }
+
+  .matrix tr:hover td { background: var(--obsidian-3); }
+
+  .matrix td:first-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--py-blue-bright);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+
+  .badge-ban  { background: rgba(224,92,92,0.15); color: var(--danger); border: 1px solid rgba(224,92,92,0.3); }
+  .badge-reg  { background: rgba(75,139,190,0.15); color: var(--py-blue-bright); border: 1px solid rgba(75,139,190,0.3); }
+  .badge-vol  { background: rgba(255,211,67,0.1); color: var(--py-yellow); border: 1px solid rgba(255,211,67,0.25); }
+  .badge-opp  { background: rgba(100,100,100,0.15); color: var(--text-dim); border: 1px solid rgba(100,100,100,0.25); }
+
+  footer {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    padding-top: 30px;
+    margin-top: 70px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.9s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="kicker">Policy Brief &nbsp;·&nbsp; International Security &nbsp;·&nbsp; AI Governance</div>
+    <h1>Machines That<br><em>Decide to Kill</em></h1>
+    <p class="deck">The global debate over autonomous weapons, artificial intelligence, and the laws of war — who is accountable when an algorithm pulls the trigger?</p>
+    <div class="byline">In-Depth Analysis &nbsp;·&nbsp; March 2026</div>
+  </header>
+
+  <div class="stat-bar">
+    <div class="stat-item">
+      <span class="num">90+</span>
+      <span class="label">Nations in formal UN debate</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">0</span>
+      <span class="label">Binding international treaties on AWS</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">2013</span>
+      <span class="label">Year CCW began AWS discussions</span>
+    </div>
+    <div class="stat-item">
+      <span class="num">50+</span>
+      <span class="label">Countries developing military AI</span>
+    </div>
+  </div>
+
+  <article class="body-text">
+
+    <h2 class="section-head">The Question at the Heart of It All</h2>
+    <p>For centuries, warfare has demanded that a human being — however imperfectly — make the decision to use lethal force. That foundational assumption is now under profound pressure. Autonomous weapon systems (AWS), sometimes called "lethal autonomous weapons" (LAWS), are military platforms that can select and engage targets without direct human intervention. Powered increasingly by artificial intelligence, these systems have moved from science fiction to the procurement lists of major military powers.</p>
+
+    <p>The central ethical and legal dilemma is not merely technical. It is moral: can a machine bear responsibility for killing? And if not, who does? The question cuts to the core of how civilized nations have tried — imperfectly — to constrain the violence of war for more than a century.</p>
+
+    <blockquote>
+      "Meaningful human control is not a slogan — it is the minimum condition under which international humanitarian law can function."
+      <cite>— ICRC Position Paper, 2023</cite>
+    </blockquote>
+
+    <h2 class="section-head">The Landscape of International Law</h2>
+    <p>International Humanitarian Law (IHL) — codified in the Geneva Conventions and their Additional Protocols — rests on several principles that autonomous systems strain to satisfy. The principle of <strong>distinction</strong> requires combatants to differentiate between civilians and fighters. <strong>Proportionality</strong> demands that anticipated civilian harm not be excessive relative to military advantage. <strong>Precaution</strong> requires constant care to spare civilians.</p>
+
+    <p>Human rights lawyers and military ethicists increasingly argue that no current AI system is capable of reliably applying these judgments in the chaotic, ambiguous environment of armed conflict. A soldier who mistakes a civilian for a combatant bears criminal liability under military law. Who bears that liability when the decision is made by an algorithm trained on incomplete or biased data?</p>
+
+    <div class="callout">
+      <div class="callout-title">Core IHL Principles at Stake</div>
+      <ul>
+        <li><strong>Distinction</strong> — separating combatants from civilians at all times</li>
+        <li><strong>Proportionality</strong> — balancing military gain vs. civilian harm in each attack</li>
+        <li><strong>Precaution</strong> — taking all feasible measures to minimize incidental casualties</li>
+        <li><strong>Accountability</strong> — attributing legal responsibility for violations</li>
+        <li><strong>Humanity</strong> — prohibiting weapons that cause unnecessary suffering</li>
+        <li><strong>Martens Clause</strong> — protecting civilians under principles of humanity even where no specific rule exists</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">The UN Process: Progress and Paralysis</h2>
+    <p>Since 2013, the Convention on Certain Conventional Weapons (CCW) — the primary UN forum for discussing AWS — has convened expert groups and formal meetings. More than 90 states have participated. Yet the CCW operates by consensus, giving any single state veto power over outcomes. Major military powers, including the United States, Russia, and China, have consistently opposed a legally binding ban, preferring voluntary "codes of conduct" or national-level policies.</p>
+
+    <p>A coalition of smaller states, NGOs, and academic institutions — many organized under the Campaign to Stop Killer Robots — have pushed for a preemptive prohibition treaty, analogous to bans on cluster munitions and anti-personnel mines. Proponents argue that waiting for deployment evidence before regulating repeats historical mistakes made with chemical weapons and landmines. By the time the harms become undeniable, countermeasures are decades behind.</p>
+
+    <div class="full-pull">
+      "The accountability gap created by autonomous lethal systems may be the defining legal crisis of 21st-century warfare."
+    </div>
+
+    <h2 class="section-head">The "Meaningful Human Control" Standard</h2>
+    <p>The International Committee of the Red Cross (ICRC) has proposed that all AWS be subject to "meaningful human control" — a concept requiring humans to retain genuine decision-making authority over individual attacks. In 2023, the ICRC called for new binding rules specifying that humans must make the ultimate choice to use lethal force in any given engagement, with sufficient time, context, and information to do so responsibly.</p>
+
+    <p>Defenders of AWS development dispute this framing. They argue that human-in-the-loop requirements could disadvantage militaries in high-speed electronic warfare, drone swarm engagements, or cyber-physical attacks where decision cycles are measured in milliseconds. Some military strategists contend that AI systems could, in theory, be more precise and less emotionally impulsive than humans — potentially reducing civilian casualties in certain narrow scenarios.</p>
+
+    <blockquote>
+      "The speed at which modern conflict operates may render human-in-the-loop requirements tactically obsolete — that is precisely what makes them strategically essential."
+      <cite>— Arms Control Association, Briefing Paper</cite>
+    </blockquote>
+
+    <h2 class="section-head">State Positions & the Emerging Divide</h2>
+    <p>The geopolitical landscape of AWS governance reveals sharp divisions. The <strong>United States</strong> has issued Defense Department Directive 3000.09 requiring "appropriate levels" of human judgment but stopping short of mandating human approval for every engagement. The <strong>European Union</strong> has signaled support for stronger multilateral rules, with the European Parliament passing a non-binding resolution calling for a ban on fully autonomous lethal systems.</p>
+
+    <p><strong>Russia</strong> has argued that any international regulation infringes on sovereign military development rights. <strong>China</strong> has expressed support for banning the use of fully autonomous weapons but not their development — a position critics call a strategic loophole that permits unlimited R&D while claiming the moral high ground. Meanwhile, several non-aligned states and the African Union bloc have advocated most forcefully for a comprehensive prohibition treaty, often citing the historical tendency of powerful states to deploy destabilizing weapons in weaker nations first.</p>
+
+    <div class="callout">
+      <div class="callout-title">Major Stakeholder Positions</div>
+      <ul>
+        <li><strong>United States:</strong> Voluntary guidelines; no binding ban; DoD Directive 3000.09</li>
+        <li><strong>EU / Most European states:</strong> Support legally binding rules; EP non-binding ban resolution</li>
+        <li><strong>Russia:</strong> Opposes any binding regulation; sovereignty argument</li>
+        <li><strong>China:</strong> Ban use, not development — contested loophole</li>
+        <li><strong>Global South bloc:</strong> Push for comprehensive prohibition treaty</li>
+        <li><strong>Israel:</strong> Active AWS developer; opposes binding restrictions</li>
+        <li><strong>ICRC / NGOs:</strong> Binding prohibition; meaningful human control standard</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">The Accountability Gap</h2>
+    <p>Perhaps no issue is more contested than accountability. Under existing law, criminal responsibility for war crimes flows through a clear chain: the soldier who acts, the commander who orders, the state that deploys. Autonomous systems disrupt each link in that chain. If an AI system unlawfully kills civilians, is the programmer liable? The procurement officer? The commanding general who authorized deployment? The state that purchased the system?</p>
+
+    <p>Legal scholars have termed this the "responsibility gap" — a zone of impunity that autonomous systems may create simply by their nature. No existing body of law cleanly resolves it. Product liability frameworks, which might hold manufacturers responsible, were not designed for weapons of war. Military command responsibility doctrines were designed for human chains of command, not distributed software systems developed by private contractors in peacetime and deployed in battlefield conditions no test environment can fully simulate.</p>
+
+    <div class="ornament">— ✦ —</div>
+
+    <h2 class="section-head">AI Bias and Targeting Errors</h2>
+    <p>Beyond the philosophical accountability gap lies a concrete technical risk: algorithmic bias in target recognition. Military AI systems trained predominantly on data from specific conflicts, geographies, or demographics may perform radically differently when deployed in new environments. Object recognition models have demonstrated documented failures distinguishing between civilian and military vehicles, between weapons and tools, and between combatants and civilians based on posture or clothing.</p>
+
+    <p>The problem is compounded by adversarial manipulation. Nation-state and non-state actors are actively researching methods to deceive autonomous targeting systems — through camouflage patterns, electronic countermeasures, or deliberately planted training data. An autonomous system that can be fooled into targeting civilians, or that systematically misidentifies members of a particular ethnic or demographic group, would represent not merely a legal violation but a systemic atrocity engine operating at machine speed.</p>
+
+    <div class="callout callout-danger">
+      <div class="callout-title">Known Technical Failure Modes in Military AI</div>
+      <ul>
+        <li><strong>Distribution shift:</strong> Models fail when battlefield conditions differ from training data</li>
+        <li><strong>Adversarial inputs:</strong> Deliberate deception of sensor and classification systems</li>
+        <li><strong>Sensor fusion errors:</strong> Conflicting signals from multiple sensors misread at decision speed</li>
+        <li><strong>Demographic bias:</strong> Training data imbalances producing differential targeting accuracy</li>
+        <li><strong>Context blindness:</strong> Inability to read surrender signals, protected site markers, or medical activity</li>
+        <li><strong>Cascading failures:</strong> Errors in one system propagating through coordinated drone swarms</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Ethical Frameworks in Tension</h2>
+    <p>Philosophers and ethicists approach autonomous weapons through competing lenses. A <strong>deontological</strong> perspective — grounded in the work of thinkers like Kant — holds that killing requires a moral agent capable of bearing responsibility; delegating lethal decisions to machines therefore violates the inherent dignity of human life, of both victim and combatant. A machine cannot be held culpable, and a death without a culpable agent is a form of moral nullity that IHL cannot tolerate.</p>
+
+    <p>A <strong>consequentialist</strong> analysis is more ambivalent. If AI-guided precision weapons demonstrably reduce civilian casualties compared to imprecise human-directed attacks in specific scenarios, consequentialists may argue the technology is ethically preferable — provided robust safeguards exist. The empirical record, however, is deeply contested, and the risks of algorithmic bias, sensor failure, and adversarial manipulation complicate any utilitarian calculus beyond confidence.</p>
+
+    <p>A third perspective, rooted in <strong>virtue ethics</strong>, asks not only what consequences result, but what kind of moral actors states and militaries become when they remove human judgment from killing. The act of taking a life, even in war, carries moral weight precisely because it is borne by a person. Delegating it entirely to software may degrade not only accountability but the moral seriousness with which war is treated — potentially lowering the threshold for its initiation.</p>
+
+    <div class="ornament">— ✦ —</div>
+
+    <h2 class="section-head">Policy Recommendations</h2>
+    <p>Given the pace of military AI development and the failure of the CCW consensus process to produce binding outcomes, a growing body of experts and institutions has converged on several concrete policy proposals that do not require unanimous great-power agreement to begin implementation.</p>
+
+    <div class="callout">
+      <div class="callout-title">Priority Policy Interventions (2026)</div>
+      <ul>
+        <li><strong>Binding human control threshold:</strong> Establish by treaty that any autonomous lethal action against a human target requires verifiable human authorization within a defined decision window</li>
+        <li><strong>Export controls on military AI:</strong> Treat autonomous targeting systems as controlled dual-use technology under existing export regimes (Wassenaar Arrangement)</li>
+        <li><strong>Bias audit requirements:</strong> Mandate independent technical audits of targeting AI for demographic and contextual bias before any deployment</li>
+        <li><strong>Accountability chain legislation:</strong> National legislation closing the "responsibility gap" by establishing command liability for foreseeable autonomous system failures</li>
+        <li><strong>UN Group of Governmental Experts:</strong> Elevate CCW discussions to a dedicated treaty negotiation process outside the consensus veto structure</li>
+        <li><strong>AI incident reporting:</strong> Create a confidential international database of autonomous weapons malfunctions, analogous to aviation incident reporting</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Where the Debate Stands Today</h2>
+    <p>As of early 2026, no binding international treaty on autonomous weapons exists. The CCW process continues without resolution, and the pace of military AI development is widely understood to be outrunning diplomatic progress. The ICRC, the UN Secretary-General, and a growing coalition of states have called for negotiations on new legally binding instruments to begin — a deadline now upon us as armed conflicts on multiple continents involve AI-assisted targeting systems deployed at operational scale.</p>
+
+    <p>What is clear is that the question of autonomous weapons is not merely a technical arms-control problem. It sits at the intersection of military strategy, international law, moral philosophy, and the governance of artificial intelligence itself. How the world answers it will shape both the future of warfare and the precedent by which humanity governs AI's role in decisions of life and death more broadly.</p>
+
+    <blockquote>
+      "We cannot allow the machines of war to outpace the laws meant to constrain them."
+      <cite>— UN Secretary-General, Report to the General Assembly, 2025</cite>
+    </blockquote>
+
+  </article>
+
+  <div class="timeline">
+    <div class="timeline-title">// Chronology of the AWS Governance Debate</div>
+    <div class="timeline-grid">
+      <div class="tl-item">
+        <span class="tl-year">2013</span>
+        <span class="tl-event">CCW convenes first informal expert meeting on LAWS in Geneva. Human Rights Watch publishes "Losing Humanity."</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2014</span>
+        <span class="tl-event">US DoD Directive 3000.09 updated, requiring human judgment for lethal force — the first national-level AWS policy of its kind.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2017</span>
+        <span class="tl-event">Over 100 AI and robotics executives sign open letter to UN urging preemptive ban on autonomous weapons. CCW establishes formal Group of Governmental Experts.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2019</span>
+        <span class="tl-event">CCW GGE adopts eleven "guiding principles" on LAWS — non-binding, but the first multilateral consensus document in the field.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2021</span>
+        <span class="tl-event">UN Panel of Experts report cites first alleged use of an autonomous lethal drone (Kargu-2) in Libya — contested but widely discussed.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2023</span>
+        <span class="tl-year" style="font-size:0.9rem"></span>
+        <span class="tl-event">ICRC calls for new legally binding rules. US, UK, Australia release joint statement of principles. EU Parliament passes resolution calling for preemptive ban.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2024</span>
+        <span class="tl-event">UN General Assembly passes first-ever resolution on autonomous weapons, calling for international norms. Non-binding, passed 164–5.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2026</span>
+        <span class="tl-event">Treaty negotiation deadline arrives. Multiple active conflicts involve AI-assisted targeting. CCW consensus deadlock persists. Pressure mounts for alternative forum.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="matrix">
+    <div class="matrix-header">// State & Institution Positions — Governance Matrix</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Actor</th>
+          <th>Treaty Position</th>
+          <th>Human Control Standard</th>
+          <th>Key Concern</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>United States</td>
+          <td><span class="badge badge-vol">Voluntary</span></td>
+          <td>"Appropriate levels" — undefined</td>
+          <td>Preserving operational superiority; allied interoperability</td>
+        </tr>
+        <tr>
+          <td>European Union</td>
+          <td><span class="badge badge-reg">Binding Rules</span></td>
+          <td>Explicit human authorization required</td>
+          <td>IHL compliance; civilian protection; multilateral norms</td>
+        </tr>
+        <tr>
+          <td>Russia</td>
+          <td><span class="badge badge-opp">Opposes Any</span></td>
+          <td>National discretion</td>
+          <td>Sovereignty; technological parity with US/China</td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td><span class="badge badge-vol">Partial Ban</span></td>
+          <td>Supports ban on "use" only</td>
+          <td>Development rights; strategic ambiguity</td>
+        </tr>
+        <tr>
+          <td>Global South Bloc</td>
+          <td><span class="badge badge-ban">Full Ban</span></td>
+          <td>Strict prohibition on autonomous targeting</td>
+          <td>Disproportionate deployment risk in weaker states</td>
+        </tr>
+        <tr>
+          <td>ICRC</td>
+          <td><span class="badge badge-ban">Binding Treaty</span></td>
+          <td>Meaningful human control — defined standard</td>
+          <td>IHL compliance; accountability; human dignity</td>
+        </tr>
+        <tr>
+          <td>Campaign to Stop Killer Robots</td>
+          <td><span class="badge badge-ban">Preemptive Ban</span></td>
+          <td>No autonomous lethal targeting at all</td>
+          <td>Moral agency; accountability gap; arms race dynamics</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Policy Analysis &nbsp;·&nbsp; Autonomous Weapon Systems &nbsp;·&nbsp; International Humanitarian Law &nbsp;·&nbsp; AI Governance</p>
+    <p style="margin-top:8px;">For educational and research purposes. Sources: ICRC, CCW/UN, Arms Control Association, Campaign to Stop Killer Robots, Human Rights Watch, US DoD.</p>
+  </footer>
+
+</div>
+</body>
+</html>
