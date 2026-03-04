@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>Nuclear Threshold · Poetic Justice</title>
+  <meta name="description" content="Deep analysis: the nuclear threshold, why it's lowering, and how close we are to atomic use in 2026." />
+  <meta name="author" content="Poetic Justice" />
+  <meta property="og:title" content="The Nuclear Threshold — 2026 Briefing" />
+  <meta property="og:description" content="Tactical nukes, crumbling taboos, and the trapdoor to escalation. Essential reading." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Literata:opsz,wght@7..72,300;7..72,400;7..72,600;7..72,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --obs-0: #0b0d0f; --obs-1: #0f1215; --obs-2: #141820; --obs-3: #1a2030; --obs-4: #1e2535;
+      --obs-border: #2a3448; --obs-border-2: #364055;
+      --py-blue-dark: #1d3f5c;
+      --py-blue-mid: #2b5f8a;
+      --py-blue-core: #3776ab;
+      --py-blue-bright: #4f8fc9;
+      --py-blue-glow: #70b0e6;
+      --accent-yellow: #ffd43b;
+      --accent-red: #e05252;
+      --txt: #ffffff; --txt-dim: #a0b8d0;
+      --font-serif: 'Literata', Georgia, serif;
+      --font-sans: 'Syne', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-serif); background: var(--obs-0); color: var(--txt);
+      font-size: 16px; line-height: 1.65; overflow-x: hidden;
+      text-align: justify; hyphens: auto; -webkit-hyphens: auto; -ms-hyphens: auto;
+    }
+    body::before {
+      content:''; position:fixed; inset:0;
+      background-image: linear-gradient(rgba(55,118,171,0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(55,118,171,0.02) 1px, transparent 1px);
+      background-size: 44px 44px; pointer-events:none; z-index:0;
+    }
+
+    .ticker { background: var(--py-blue-mid); padding: 5px 0; overflow: hidden; position: relative; z-index: 200; }
+    .ticker-inner { display:flex; gap:48px; white-space:nowrap; animation: ticker-scroll 55s linear infinite; }
+    .ticker-inner span { font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#fff; flex-shrink:0; line-height:1.4; }
+    .ticker-inner span::before { content:'▸ '; color:var(--accent-yellow); }
+    @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    nav.topnav { background: var(--obs-1); border-bottom: 1px solid var(--obs-border); padding: 0 16px; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 150; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .brand { font-family:var(--font-sans); font-weight:800; font-size:1rem; letter-spacing:0.1em; text-transform:uppercase; background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--py-blue-glow) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; text-decoration:none; }
+    .hamburger { display:flex; flex-direction:column; justify-content:space-between; width:30px; height:20px; cursor:pointer; background:none; border:none; padding:5px 0; }
+    .hamburger span { display:block; height:2px; border-radius:2px; background: var(--py-blue-glow); transition: 0.2s; transform-origin:left; }
+    .hamburger span:nth-child(2) { width:70%; } .hamburger span:nth-child(3) { width:50%; }
+    .hamburger.open span:nth-child(1) { transform: rotate(38deg) translateY(-1px); width:100%; background:var(--accent-yellow); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:translateX(-10px); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-38deg) translateY(1px); width:100%; background:var(--accent-yellow); }
+    .nav-menu { position:absolute; top:57px; left:0; right:0; width:100%; background: var(--obs-2); border-bottom: 3px solid var(--py-blue-core); border-top: 1px solid var(--obs-border); padding:6px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.6); transform: translateY(-10px); opacity:0; pointer-events:none; transition: transform 0.25s ease, opacity 0.2s; max-height: calc(100vh - 60px); overflow-y: auto; z-index: 150; }
+    .nav-menu.open { transform:translateY(0); opacity:1; pointer-events:all; }
+    .nav-menu a, .nav-menu button.nav-link { display:flex; align-items:center; gap:14px; padding:12px 20px; font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--txt-dim); text-decoration:none; border:none; background:none; width:100%; cursor:pointer; text-align:left; }
+    .nav-menu a:hover, .nav-menu button.nav-link:hover { background: var(--obs-3); color: var(--py-blue-glow); }
+    .nav-divider { border:none; border-top:1px solid var(--obs-border); margin:6px 0; }
+    .nav-section-label { padding:8px 20px 4px; font-size:0.55rem; letter-spacing:0.16em; color:var(--py-blue-bright); font-family:var(--font-mono); text-transform:uppercase; }
+
+    .container { max-width:920px; margin:0 auto; padding:0 18px; position:relative; z-index:1; }
+
+    .hero { padding: 52px 0 40px; }
+    .hero-eyebrow { font-family:var(--font-mono); color:var(--accent-yellow); font-size:0.6rem; margin-bottom:14px; display:flex; align-items:center; gap:8px; letter-spacing:0.1em; text-transform:uppercase; }
+    .hero-eyebrow::before { content:''; width:24px; height:2px; background:var(--accent-yellow); flex-shrink:0; }
+    .hero h1 { font-family:var(--font-sans); font-size:clamp(1.4rem,3.5vw,2.2rem); font-weight:800; line-height:1.18; text-transform:uppercase; color:#fff; margin-bottom:18px; max-width:720px; }
+    .hero h1 em { background:linear-gradient(90deg, var(--py-blue-glow), var(--accent-yellow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-style:normal; }
+    .hero-deck { font-size:1rem; font-style:italic; border-left:3px solid var(--py-blue-core); padding-left:18px; margin-bottom:24px; color: var(--txt-dim); line-height:1.75; text-align:justify; hyphens:auto; }
+
+    .stat-row { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:28px 0; }
+    .stat-box { background:var(--obs-3); border:1px solid var(--obs-border); border-bottom:3px solid var(--accent-yellow); padding:16px 10px; text-align:center; transition: background 0.2s; }
+    .stat-box:hover { background: var(--obs-4); }
+    .stat-number { font-family:var(--font-sans); font-size:clamp(1.2rem,2.5vw,1.6rem); font-weight:800; color:var(--accent-yellow); display:block; line-height:1.1; margin-bottom:4px; text-shadow: 0 0 20px rgba(255,212,59,0.3); }
+    .stat-label { font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.1em; color:var(--txt-dim); text-transform:uppercase; display:block; text-align:center; }
+
+    h2.section-title { font-family:var(--font-sans); font-size:clamp(1.1rem,2.5vw,1.4rem); font-weight:800; text-transform:uppercase; margin-bottom:12px; display:flex; align-items:center; gap:8px; color:#fff; }
+    h2.section-title::before { content:'#'; color:var(--accent-yellow); font-family:var(--font-mono); font-size:0.9em; }
+    h3.sub-title { font-family:var(--font-sans); font-size:1rem; font-weight:700; text-transform:uppercase; color:var(--py-blue-glow); margin:30px 0 10px; display:flex; align-items:center; gap:8px; }
+    h3.sub-title::before { content:'›'; font-family:var(--font-mono); color:var(--py-blue-core); font-size:1.1em; }
+
+    p { font-size:0.88rem; line-height:1.75; color: #ddeaf5; margin-bottom:14px; text-align:justify; hyphens:auto; -webkit-hyphens:auto; }
+    p strong { color: #fff; }
+
+    .analysis-box { background:var(--obs-3); border-left:4px solid var(--accent-yellow); padding:18px 18px; margin:22px 0; }
+    .analysis-box.red { border-left-color: var(--accent-red); }
+    .analysis-box.blue { border-left-color: var(--py-blue-core); }
+    .analysis-label { font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.16em; color:var(--accent-yellow); margin-bottom:10px; display:block; text-transform:uppercase; }
+    .analysis-box.red .analysis-label { color: var(--accent-red); }
+    .analysis-box.blue .analysis-label { color: var(--py-blue-bright); }
+
+    .timeline { margin:18px 0; padding-left:24px; border-left:1px solid var(--obs-border-2); }
+    .tl-item { margin-bottom:20px; position:relative; }
+    .tl-item::before { content:''; left:-28px; top:5px; width:8px; height:8px; background:var(--py-blue-core); border:2px solid var(--obs-0); box-shadow:0 0 8px var(--py-blue-core); position:absolute; border-radius:50%; }
+    .tl-date { font-family:var(--font-mono); font-size:0.58rem; color:var(--accent-yellow); letter-spacing:0.12em; margin-bottom:3px; text-transform:uppercase; }
+    .tl-event { font-size:0.85rem; color:#ddeaf5; line-height:1.65; text-align:justify; hyphens:auto; }
+
+    .section-divider { border:none; border-top:1px solid var(--obs-border); margin:44px 0; position:relative; }
+    .section-divider::after { content:''; position:absolute; top:-1px; left:0; width:60px; height:2px; background:var(--py-blue-core); }
+
+    blockquote.pull-quote { border-left:3px solid var(--py-blue-core); margin:28px 0; padding:18px 20px; background:var(--obs-3); }
+    blockquote.pull-quote p { font-size:0.92rem; font-style:italic; color: var(--txt-dim); text-align:justify; hyphens:auto; }
+
+    .arsenal-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--obs-border); border:1px solid var(--obs-border); margin:24px 0; }
+    .arsenal-item { background:var(--obs-2); padding:16px 14px; transition: background 0.2s; }
+    .arsenal-item:hover { background: var(--obs-3); }
+    .arsenal-country { font-family:var(--font-sans); font-size:0.85rem; font-weight:800; color:#fff; margin-bottom:4px; }
+    .arsenal-num { font-family:var(--font-sans); font-size:1.3rem; font-weight:800; color:var(--accent-yellow); line-height:1; }
+    .arsenal-detail { font-family:var(--font-mono); font-size:0.58rem; color:var(--txt-dim); margin-top:5px; letter-spacing:0.06em; line-height:1.6; text-align:left; }
+    .arsenal-bar { height:3px; background:var(--obs-border-2); margin-top:10px; border-radius:2px; overflow:hidden; }
+    .arsenal-fill { height:100%; background: linear-gradient(90deg, var(--py-blue-core), var(--py-blue-glow)); border-radius:2px; }
+
+    .risk-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.82rem; }
+    .risk-table th { background:var(--obs-3); font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--txt-dim); padding:10px 12px; text-align:left; border-bottom:1px solid var(--obs-border); }
+    .risk-table td { padding:11px 12px; border-bottom:1px solid var(--obs-border); vertical-align:top; line-height:1.55; color:#ddeaf5; text-align:justify; hyphens:auto; }
+    .risk-table tr:last-child td { border-bottom:none; }
+    .risk-table tr:hover td { background:var(--obs-3); }
+    .risk-badge { display:inline-block; font-family:var(--font-mono); font-size:0.58rem; padding:2px 8px; border-radius:2px; font-weight:600; letter-spacing:0.06em; }
+    .risk-critical { background:rgba(224,82,82,0.15); color:var(--accent-red); border:1px solid rgba(224,82,82,0.3); }
+    .risk-high { background:rgba(255,140,0,0.12); color:#ffaa44; border:1px solid rgba(255,140,0,0.25); }
+    .risk-medium { background:rgba(255,212,59,0.1); color:var(--accent-yellow); border:1px solid rgba(255,212,59,0.25); }
+    .risk-low { background:rgba(79,143,201,0.1); color:var(--py-blue-bright); border:1px solid rgba(79,143,201,0.25); }
+
+    .doctrine-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; margin:24px 0; }
+    .doctrine-card { background:var(--obs-3); border:1px solid var(--obs-border); border-top:3px solid var(--py-blue-core); padding:16px 14px; }
+    .doctrine-card.warn { border-top-color: var(--accent-red); }
+    .doctrine-name { font-family:var(--font-sans); font-size:0.82rem; font-weight:800; color:#fff; margin-bottom:6px; }
+    .doctrine-stance { font-family:var(--font-mono); font-size:0.6rem; color:var(--accent-yellow); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; display:block; }
+    .doctrine-card.warn .doctrine-stance { color: var(--accent-red); }
+    .doctrine-body { font-size:0.78rem; color:var(--txt-dim); line-height:1.6; text-align:justify; hyphens:auto; }
+
+    .conclusion-box { background:var(--obs-3); border-left:4px solid var(--py-blue-core); padding:26px 20px; margin:36px 0; }
+    .conclusion-box p { margin-bottom:12px; text-align:justify; hyphens:auto; }
+    .conclusion-box p:last-child { margin-bottom:0; }
+
+    .share-bar { background: var(--obs-2); border: 1px solid var(--obs-border); padding: 18px 16px; margin: 36px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+    .share-label { font-family: var(--font-mono); font-size:0.6rem; color: var(--py-blue-bright); text-transform: uppercase; letter-spacing: 0.12em; text-align:left; }
+    .share-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .share-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--obs-3); border: 1px solid var(--obs-border); padding: 8px 18px; font-family: var(--font-mono); font-size:0.72rem; color: #fff; text-decoration: none; cursor: pointer; transition: 0.15s; }
+    .share-btn:hover { background: var(--py-blue-dark); border-color: var(--py-blue-glow); }
+
+    .subscribe-strip { background:var(--obs-2); border:1px solid var(--obs-border); border-top:3px solid var(--py-blue-core); padding:36px 18px; margin:44px 0; text-align:center; }
+    .subscribe-strip h2 { font-family:var(--font-sans); font-size:1.2rem; margin-bottom:8px; }
+    .subscribe-strip p { font-size:0.85rem; color:var(--txt-dim); margin-bottom:0; text-align:justify; hyphens:auto; }
+    .sub-form { display:flex; flex-direction:column; gap:10px; max-width:360px; margin:18px auto 12px; }
+    .sub-form input[type="email"] { width:100%; padding:12px 14px; border:1px solid var(--obs-border-2); background:var(--obs-1); color:#fff; font-family:var(--font-serif); font-size:0.9rem; }
+    .sub-form input[type="email"]::placeholder { color: var(--txt-dim); }
+    .sub-form button { padding:12px 16px; background:linear-gradient(90deg,var(--py-blue-mid),var(--py-blue-core)); border:none; color:#fff; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.08em; cursor:pointer; transition:0.15s; }
+    .sub-form button:hover { background:linear-gradient(90deg,var(--py-blue-core),var(--py-blue-bright)); }
+
+    .comment-section { background: var(--obs-2); border-left: 4px solid var(--py-blue-core); padding: 28px 20px; margin: 44px 0; }
+    .comment-section h3 { font-family: var(--font-sans); display: flex; align-items: center; gap: 10px; font-size: 1.1rem; margin-bottom: 18px; font-weight:800; text-transform:uppercase; }
+    .comment-form { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; background: var(--obs-1); padding: 20px; border: 1px solid var(--obs-border); }
+    .comment-form input, .comment-form textarea { background: var(--obs-0); border: 1px solid var(--obs-border-2); padding: 12px; color: #fff; font-family: var(--font-serif); font-size:0.88rem; }
+    .comment-form textarea { resize:vertical; min-height:70px; }
+    .comment-form button { align-self: flex-start; background: linear-gradient(90deg, var(--py-blue-mid), var(--py-blue-core)); border: none; padding: 10px 28px; color: white; font-family: var(--font-mono); letter-spacing:0.1em; font-size:0.7rem; cursor: pointer; }
+    .comment-list { list-style: none; margin-top: 22px; }
+    .comment-item { background: var(--obs-3); padding: 16px; border-left: 2px solid var(--accent-yellow); margin-bottom: 14px; }
+    .comment-meta { font-size:0.6rem; color: var(--py-blue-bright); margin-bottom: 6px; display: flex; gap: 16px; font-family: var(--font-mono); }
+    .comment-body { font-size:0.85rem; color:#ddeaf5; line-height:1.65; text-align:justify; hyphens:auto; }
+
+    footer { background: var(--obs-1); border-top: 1px solid var(--obs-border); margin-top: 60px; padding: 0; }
+    .footer-top { display:grid; grid-template-columns:1fr; gap:32px; padding:40px 0 30px; }
+    .footer-brand .brand-name { font-family:var(--font-sans); font-weight:800; font-size:1.1rem; letter-spacing:0.08em; text-transform:uppercase; background:linear-gradient(135deg,var(--accent-yellow),var(--py-blue-glow)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:block; margin-bottom:8px; }
+    .footer-brand p { font-size:0.72rem; color:var(--txt-dim); margin-bottom:0; text-align:justify; hyphens:auto; }
+    .footer-col h4 { font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.16em; color:var(--py-blue-bright); margin-bottom:10px; border-bottom:1px solid var(--obs-border); padding-bottom:6px; text-transform:uppercase; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li a { font-size:0.65rem; color:#fff; text-decoration:none; display:flex; align-items:center; gap:4px; padding:5px 0; font-family:var(--font-mono); transition:color 0.15s; }
+    .footer-col ul li a:hover { color: var(--py-blue-glow); }
+    .footer-col ul li a::before { content:'›'; color:var(--obs-border-2); }
+    .footer-bottom { border-top:1px solid var(--obs-border); padding:18px 0; font-size:0.55rem; color:var(--txt-dim); font-family:var(--font-mono); letter-spacing:0.06em; text-align:left; }
+
+    #toast { position:fixed; bottom:24px; left:16px; right:16px; transform:translateY(70px); background:var(--obs-3); color:#fff; border-left:3px solid var(--accent-yellow); padding:10px 18px; font-size:0.7rem; transition:transform 0.25s; z-index:9999; border-radius:2px; font-family:var(--font-mono); }
+    #toast.show { transform:translateY(0); }
+
+    @media (min-width: 640px) {
+      .stat-row { grid-template-columns:repeat(4,1fr); }
+      .hero h1 { font-size:1.9rem; }
+      .footer-top { grid-template-columns:2fr 1fr 1fr; }
+      .sub-form { flex-direction:row; }
+    }
+    @media (max-width: 380px) {
+      .stat-row { grid-template-columns:1fr; }
+      .share-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Nine states possess ~12,500 warheads — 90% belong to US/Russia</span>
+    <span>Doomsday Clock: 89 seconds to midnight — closest ever recorded</span>
+    <span>Russia revised nuclear doctrine in Nov 2024 — lower use threshold</span>
+    <span>Pakistan: ~170 warheads — TNW doctrine targets advancing Indian forces</span>
+    <span>China expanding arsenal rapidly — est. 500+ warheads by 2027</span>
+    <span>New START expired Feb 2026 — no successor arms control treaty</span>
+    <span>Iran breakout time: 1–2 weeks for weapons-grade uranium</span>
+    <span>North Korea: 40–50 warheads, expanding ICBM capability</span>
+    <span>Nine states possess ~12,500 warheads — 90% belong to US/Russia</span>
+    <span>Doomsday Clock: 89 seconds to midnight — closest ever recorded</span>
+    <span>Russia revised nuclear doctrine in Nov 2024 — lower use threshold</span>
+    <span>Pakistan: ~170 warheads — TNW doctrine targets advancing Indian forces</span>
+    <span>China expanding arsenal rapidly — est. 500+ warheads by 2027</span>
+    <span>New START expired Feb 2026 — no successor arms control treaty</span>
+    <span>Iran breakout time: 1–2 weeks for weapons-grade uranium</span>
+    <span>North Korea: 40–50 warheads, expanding ICBM capability</span>
+  </div>
+</div>
+
+<nav class="topnav">
+  <a href="./index.html" class="brand">Poetic Justice</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-menu" id="navMenu" role="menu">
+    <div class="nav-section-label">Analysis</div>
+    <a href="#" onclick="showToast('Geo-politics preview — coming soon');return false;">🌍 Geo-Politics</a>
+    <a href="#" onclick="showToast('Ancient History — coming soon');return false;">🏛️ Ancient History</a>
+    <a href="#" onclick="showToast('Alliance & Sovereignty — coming soon');return false;">⚔️ Alliance & Sovereignty</a>
+    <hr class="nav-divider">
+    <div class="nav-section-label">Briefings</div>
+    <a href="ai-as-weapons.html">🤖 AI as Weapons</a>
+    <a href="collapse.html">🏛️ Collapse of Trust</a>
+    <a href="dollar.html">💵 Dollar Hegemony</a>
+    <hr class="nav-divider">
+    <a href="#subscribe" onclick="navMenu.classList.remove('open'); hamburger.classList.remove('open');">📬 Subscribe</a>
+    <a href="#comments" onclick="navMenu.classList.remove('open'); hamburger.classList.remove('open');">💬 Reader Forum</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-eyebrow">special briefing — March 2026</div>
+    <h1>The <em>Nuclear Threshold</em> — how close are we to the unthinkable?</h1>
+    <p class="hero-deck">For 80 years, since Nagasaki, no nuclear weapon has been used in war. That taboo is weakening. As conventional deterrence erodes, arms control frameworks collapse, and new tactical systems blur the line between conventional and atomic war, the threshold to nuclear use is lower than at any point since the Cuban Missile Crisis.</p>
+  </section>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="stat-number">9</span>
+      <span class="stat-label">Nuclear-armed states</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">~12,500</span>
+      <span class="stat-label">Total warheads globally</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">89″</span>
+      <span class="stat-label">Doomsday Clock — closest ever</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number">0</span>
+      <span class="stat-label">Active arms control treaties</span>
+    </div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">What is the nuclear threshold?</h2>
+    <p>The nuclear threshold is the figurative line between conventional conflict and the first use of a nuclear weapon. It is not a fixed point — it shifts with military doctrine, technology, leadership psychology, and crisis intensity. Crossing it would shatter the 80-year norm of non-use, with consequences for escalation that no model fully predicts and no leader fully controls.</p>
+    <p>The concept encompasses not only the decision to fire, but the <strong>conditions</strong> states publicly or secretly accept as justifications — defense of territory, avoidance of regime collapse, signaling resolve, or deterring an adversary's conventional advance. These doctrinal conditions have quietly changed in multiple capitals since 2022.</p>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// the current landscape</span>
+      <p><strong>Russia</strong> revised its nuclear doctrine in November 2024, explicitly lowering the conditions for atomic use: any conventional attack "creating a critical threat to sovereignty" may now trigger a nuclear response — a dramatic broadening from prior policy. <strong>Pakistan</strong> fields tactical nuclear weapons (TNW) specifically to offset Indian conventional superiority, meaning a limited border incursion could theoretically provoke atomic retaliation. <strong>North Korea</strong> has enshrined pre-emptive nuclear strike in law. Meanwhile, <strong>New START</strong> — the last remaining US-Russia arms limitation treaty — expired in February 2026 with no successor, removing the last structural constraint on superpower arsenals for the first time since 1972.</p>
+    </div>
+
+    <h3 class="sub-title">The tactical nuclear danger</h3>
+    <p>Tactical nuclear weapons (lower yield, battlefield range) are often characterised as "more usable" than strategic warheads. Russia possesses an estimated 2,000 tactical warheads — the largest TNW stockpile in the world. The US maintains approximately 200 B61 gravity bombs forward-deployed across five NATO countries in Europe. The belief that a "limited" nuclear exchange could be controlled and contained is widely considered among strategic analysts to be one of the most dangerous illusions in contemporary security thinking.</p>
+    <p>Every serious wargame and simulation conducted by institutions including RAND, CSIS, and the Naval War College finds that once any nuclear weapon is detonated in a conflict context — even a demonstrative low-yield airburst over uninhabited territory — the probability of further nuclear use rapidly escalates above 50%. Command structures fracture under pressure, information degrades, and retaliation instincts are often faster than deliberate decision-making.</p>
+
+    <blockquote class="pull-quote">
+      <p>"A nuclear war cannot be won and must never be fought." — Ronald Reagan & Mikhail Gorbachev, Geneva Summit, 1985. Today, military planners in multiple capitals actively game limited first use as if it were a controllable, reversible option.</p>
+    </blockquote>
+
+    <h3 class="sub-title">Threshold-lowering factors in 2026</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Doctrinal shifts</div>
+        <div class="tl-event">Russia, Pakistan, and North Korea have all explicitly lowered published nuclear use thresholds since 2022. US and NATO maintain "calculated ambiguity" — which can prevent miscalculation, but can also backfire by leaving adversaries uncertain about red lines.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Command & control pressure</div>
+        <div class="tl-event">In crisis conditions, some tactical systems may be pre-delegated to field commanders to prevent "decapitation" of command authority. This significantly increases the risk of unauthorized or accidental launch by lowering the decision threshold to the unit level.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Collapse of arms control</div>
+        <div class="tl-event">New START expired February 2026. The Intermediate-Range Nuclear Forces (INF) Treaty collapsed in 2019. The Open Skies Treaty ended in 2020. The entire framework of verified nuclear restraint built since 1963 has been dismantled within a decade.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Conventional parity loss</div>
+        <div class="tl-event">States losing a conventional conflict — a militarily routed Pakistan, a collapsing front-line state — may use nuclear threats or detonations to coerce outside intervention or to prevent total defeat. Nuclear weapons become the weapon of the losing side.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">New technological domains</div>
+        <div class="tl-event">Cyberattacks on early-warning radar systems, anti-satellite weapons blinding nuclear command-and-control, and AI-accelerated decision timelines all create "use-or-lose" pressures — where leaders fear their weapons will be destroyed before they can respond, incentivizing pre-emption.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Generational leadership change</div>
+        <div class="tl-event">Leaders who built their worldviews during the Cold War — who understood the existential risk of nuclear exchange viscerally — are being replaced by a generation with no personal memory of 1962 or 1983. The institutional knowledge of how close humanity has come is fading.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Global Arsenal — Who Has What</h2>
+    <p>The nine nuclear-armed states hold approximately 12,500 warheads between them. Of these, roughly 9,400 are in active military service; the remainder are awaiting dismantlement. About 3,900 are deployed on missiles and aircraft ready for use.</p>
+
+    <div class="arsenal-grid">
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇷🇺 Russia</div>
+        <div class="arsenal-num">5,580</div>
+        <div class="arsenal-detail">Largest total stockpile<br>~1,700 deployed strategic<br>~2,000 tactical warheads</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:100%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇺🇸 United States</div>
+        <div class="arsenal-num">5,044</div>
+        <div class="arsenal-detail">~1,700 deployed strategic<br>~200 forward-deployed in Europe<br>Modernizing all three legs of triad</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:90%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇨🇳 China</div>
+        <div class="arsenal-num">~500</div>
+        <div class="arsenal-detail">Rapidly expanding — est. 1,000+ by 2030<br>Constructing 300+ new missile silos<br>Breaking from minimal deterrence doctrine</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:36%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇫🇷 France</div>
+        <div class="arsenal-num">290</div>
+        <div class="arsenal-detail">Independent deterrent<br>Submarine + air-launched<br>Stable, no declared changes</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:21%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇬🇧 United Kingdom</div>
+        <div class="arsenal-num">225</div>
+        <div class="arsenal-detail">Submarine-based (Trident)<br>Ceiling raised to 260 in 2021<br>Integrated with NATO posture</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:16%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇵🇰 Pakistan</div>
+        <div class="arsenal-num">~170</div>
+        <div class="arsenal-detail">Fastest-growing arsenal per capita<br>Tactical nukes deployed for battlefield use<br>First-use doctrine — most dangerous posture</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:12%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇮🇳 India</div>
+        <div class="arsenal-num">~172</div>
+        <div class="arsenal-detail">No-first-use doctrine (official)<br>Triad development underway<br>INS Arihant SSBN operational</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:12%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇮🇱 Israel</div>
+        <div class="arsenal-num">~90</div>
+        <div class="arsenal-detail">Undeclared — policy of "nuclear ambiguity"<br>Estimated gravity bombs + possibly sub-launched<br>"Samson Option" doctrine reported</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:7%"></div></div>
+      </div>
+      <div class="arsenal-item">
+        <div class="arsenal-country">🇰🇵 North Korea</div>
+        <div class="arsenal-num">40–50</div>
+        <div class="arsenal-detail">Rapidly developing ICBMs<br>Pre-emptive strike enshrined in law<br>No negotiation channel currently active</div>
+        <div class="arsenal-bar"><div class="arsenal-fill" style="width:4%"></div></div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem; color:var(--txt-dim); margin-top:-10px;">Sources: SIPRI Yearbook 2025, Bulletin of the Atomic Scientists, Federation of American Scientists. Figures approximate.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Escalation Ladders & Active Flashpoints</h2>
+    <p>Three active or latent conflict zones involve nuclear-armed parties, with direct confrontation increasingly plausible. A fourth — Taiwan — does not involve declared nuclear powers on both sides, but draws in the US and China in ways that nuclear planners cannot ignore.</p>
+
+    <div class="analysis-box red">
+      <span class="analysis-label">// ukraine — the hidden nuclear risk</span>
+      <p>Russia has threatened nuclear retaliation if conventional strikes "threaten its territorial integrity" — including occupied regions of Ukraine. Western nations have drawn implicit red lines around Russian chemical or nuclear use. A Russian nuclear detonation — even a demonstrative low-yield airburst over the Black Sea — would trigger a massive conventional NATO response, but no publicly articulated plan exists for what happens next. The danger of inadvertent escalation through misread intent is acute.</p>
+    </div>
+
+    <div class="analysis-box red">
+      <span class="analysis-label">// south asia — the most probable nuclear kindling</span>
+      <p>Pakistan's entire deterrence architecture rests on the credible threat of first use against advancing Indian conventional forces. Following a major terrorist attack traced to Pakistan-based groups, India might launch "surgical strikes" inside Pakistan. Pakistan's military doctrine explicitly plans to respond with tactical nuclear weapons on its own territory to "shock" India into de-escalation. This is not a theoretical scenario — it has been rehearsed. A nuclear exchange in South Asia, even limited, could put 1–2 billion people within range of direct effects or multi-year nuclear winter fallout.</p>
+    </div>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// middle east — israel, iran & threshold dynamics</span>
+      <p>Israel maintains an undeclared nuclear arsenal estimated at ~90 warheads. Iran is now assessed as a nuclear threshold state — with weapons-grade uranium enrichment breakout time measured in weeks. A conventional exchange escalating toward regime-threatening strikes on either side could trigger Israeli nuclear use under the so-called "Samson Option" — a last-resort strike if the state faces existential military defeat. US forces permanently stationed throughout the region would be exposed to any nuclear exchange in ways that risk direct superpower involvement.</p>
+    </div>
+
+    <div class="analysis-box blue">
+      <span class="analysis-label">// taiwan — the superpower trigger</span>
+      <p>A Chinese military operation against Taiwan would directly confront US treaty obligations and military presence. China has never declared a no-first-use policy toward Taiwan specifically, and its rapidly expanding arsenal introduces new uncertainty about Beijing's nuclear signaling during a crisis. A direct conventional exchange between US and Chinese forces in the Taiwan Strait would be the most dangerous nuclear-adjacent scenario involving great powers since 1962 — without the communication channels or mutual understanding built during the Cold War.</p>
+    </div>
+
+    <h3 class="sub-title">Escalation risk assessment — 2026</h3>
+    <table class="risk-table">
+      <thead>
+        <tr>
+          <th>Flashpoint</th>
+          <th>Nuclear parties involved</th>
+          <th>Escalation risk</th>
+          <th>Key trigger</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Russia–Ukraine / NATO</td>
+          <td>Russia (direct), US/France/UK (NATO)</td>
+          <td><span class="risk-badge risk-critical">Critical</span></td>
+          <td>Russian territorial loss / leadership crisis</td>
+        </tr>
+        <tr>
+          <td>India–Pakistan</td>
+          <td>India, Pakistan (both direct)</td>
+          <td><span class="risk-badge risk-critical">Critical</span></td>
+          <td>Major terrorist attack / conventional incursion</td>
+        </tr>
+        <tr>
+          <td>Israel–Iran</td>
+          <td>Israel (undeclared), Iran (threshold)</td>
+          <td><span class="risk-badge risk-high">High</span></td>
+          <td>Iranian breakout decision / existential strike</td>
+        </tr>
+        <tr>
+          <td>US–China / Taiwan</td>
+          <td>US, China (indirect nuclear shadow)</td>
+          <td><span class="risk-badge risk-high">High</span></td>
+          <td>Military blockade / kinetic exchange in Strait</td>
+        </tr>
+        <tr>
+          <td>Korean Peninsula</td>
+          <td>North Korea (direct), US/South Korea</td>
+          <td><span class="risk-badge risk-medium">Medium</span></td>
+          <td>Miscalculation / pre-emptive DPRK strike decision</td>
+        </tr>
+        <tr>
+          <td>Accidental / cyber-induced</td>
+          <td>Any nuclear state</td>
+          <td><span class="risk-badge risk-medium">Medium</span></td>
+          <td>False alert, EW system failure, cyberattack</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Nuclear Doctrines — State by State</h2>
+    <p>Nuclear doctrine — the conditions under which a state will use nuclear weapons — is the most important strategic variable in threshold analysis. Recent years have seen significant doctrinal shifts, mostly in the direction of lower thresholds and broader conditions for use.</p>
+
+    <div class="doctrine-grid">
+      <div class="doctrine-card warn">
+        <div class="doctrine-name">Russia</div>
+        <span class="doctrine-stance">⚠ Threshold lowered — 2024</span>
+        <div class="doctrine-body">Updated Nov 2024: nuclear use now permitted if Russia or Belarus faces a conventional attack "creating a critical threat to sovereignty." Also permits nuclear response to conventional strikes launched with nuclear-armed state support — a clear message to NATO.</div>
+      </div>
+      <div class="doctrine-card warn">
+        <div class="doctrine-name">Pakistan</div>
+        <span class="doctrine-stance">⚠ First-use — explicit TNW deployment</span>
+        <div class="doctrine-body">Full-spectrum deterrence: tactical nuclear weapons deployed to offset Indian conventional superiority. Nasr (Hatf-IX) short-range nuclear missile designed specifically for battlefield use. First-use threshold is deliberately ambiguous to maximize deterrent effect.</div>
+      </div>
+      <div class="doctrine-card warn">
+        <div class="doctrine-name">North Korea</div>
+        <span class="doctrine-stance">⚠ Pre-emptive strike — codified in law</span>
+        <div class="doctrine-body">2022 law enshrines pre-emptive nuclear strike right if leadership believes an attack is imminent. Kim Jong-un has publicly threatened nuclear use in multiple contingencies. No functioning back-channel with US or South Korea currently exists.</div>
+      </div>
+      <div class="doctrine-card">
+        <div class="doctrine-name">United States</div>
+        <span class="doctrine-stance">Calculated ambiguity</span>
+        <div class="doctrine-body">Will "only consider" nuclear use in "extreme circumstances" defending vital US interests — but explicitly does not rule out first use. Extended deterrence covers NATO allies and South Korea/Japan. 2022 Nuclear Posture Review slightly narrowed stated use conditions.</div>
+      </div>
+      <div class="doctrine-card">
+        <div class="doctrine-name">China</div>
+        <span class="doctrine-stance">No-first-use (declared) — contested</span>
+        <div class="doctrine-body">Official no-first-use policy since 1964. However, expanding arsenal, new silo fields, and sea-launched capabilities suggest a shift toward a more robust deterrent posture that some analysts interpret as eroding the NFU commitment in practice.</div>
+      </div>
+      <div class="doctrine-card">
+        <div class="doctrine-name">India</div>
+        <span class="doctrine-stance">No-first-use (declared)</span>
+        <div class="doctrine-body">Official no-first-use policy with "massive retaliation" response to any nuclear attack. However, 2019 statements from the Defense Minister suggested the NFU policy "depends on circumstances" — introducing deliberate ambiguity vis-à-vis Pakistan.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">The Collapse of Arms Control</h2>
+    <p>The architecture of nuclear restraint — built painstakingly between 1963 and 2011 — has been almost entirely dismantled in the past decade. The world in 2026 has fewer verified constraints on nuclear arsenals than at any time since the Kennedy administration.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">1963 — Partial Test Ban Treaty</div>
+        <div class="tl-event">Banned nuclear testing in atmosphere, underwater, and outer space. First multilateral nuclear restraint agreement. Still in force — but not signed by China, France, or India.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1968 — Non-Proliferation Treaty (NPT)</div>
+        <div class="tl-event">191 signatories. Foundation of the global non-proliferation regime. But three nuclear states (India, Pakistan, Israel) never joined, and North Korea withdrew in 2003. The five recognized nuclear states have made minimal progress on disarmament obligations under Article VI.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1987 — INF Treaty</div>
+        <div class="tl-event">US-Soviet agreement eliminating intermediate-range nuclear missiles — the most dangerous first-strike weapons. <strong>Collapsed 2019</strong> after US accused Russia of violations. China was never a party and has deployed hundreds of INF-range missiles since.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1992 — Open Skies Treaty</div>
+        <div class="tl-event">Allowed unarmed surveillance flights over signatory nations — a critical confidence-building and verification tool. <strong>US withdrew 2020; Russia withdrew 2021.</strong> Eliminated a key layer of strategic transparency.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2011 — New START Treaty</div>
+        <div class="tl-event">Last remaining US-Russia strategic arms limitation treaty. Capped deployed strategic warheads at 1,550 each and allowed on-site inspections. Russia suspended participation in February 2023. <strong>Treaty expired February 2026.</strong> No successor framework under negotiation.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2021 — Treaty on the Prohibition of Nuclear Weapons</div>
+        <div class="tl-event">Entered into force with 93 signatories — but <strong>no nuclear-armed state has signed or ratified it.</strong> Represents strong normative pressure from the non-nuclear majority but has no enforcement mechanism against the states that matter most.</div>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote">
+      <p>"The world is sleepwalking into a nuclear catastrophe. The warning signs are everywhere. Yet the political will to step back from the brink remains absent in the capitals that matter most." — UN Secretary-General, 2025 Disarmament Report</p>
+    </blockquote>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">How Close Are We Today?</h2>
+    <p>The Bulletin of the Atomic Scientists set the Doomsday Clock at <strong>89 seconds to midnight</strong> in January 2024 — the closest it has ever been in the 77 years since its creation. The decision incorporated the Ukraine war, worsening South Asian tensions, the erosion of arms control, and the rapid modernisation of multiple nuclear arsenals simultaneously. When the clock was first set in 1947, it stood at seven minutes to midnight.</p>
+    <p>More leaders in more capitals explicitly believe nuclear weapons are "usable" in limited scenarios than at any time since the early 1980s. Strategic communication — the back-channels, hotlines, and shared understandings that reduced accidental risk during the Cold War — is weaker. The institutional memory of how close humanity came in 1962 and 1983 is fading from the rooms where decisions are made.</p>
+
+    <div class="conclusion-box">
+      <p>Crossing the nuclear threshold would not be "the end of the world" in the cinematic sense of total extinction. But it would end the world as it has existed since 1945: the post-war order, the 80-year taboo, the assumption that nuclear weapons are weapons that cannot be used. That crossing would open a door that no one knows how to close — to further use, to a global radiation health crisis, to nuclear winter effects threatening agriculture for billions, and to a new strategic order in which the nuclear firebreak no longer exists.</p>
+      <p>Understanding the threshold — who controls it, what moves it, and what might push us across it — is no longer a specialist concern. It is the central strategic fact of this decade, and the most consequential question of our time.</p>
+      <p style="font-family:var(--font-sans); font-size:0.92rem; color:var(--accent-yellow); margin-top:4px;">— Poetic Justice, Nuclear Risk Series, March 2026</p>
+    </div>
+  </section>
+
+  <div class="share-bar" id="aiShareBar">
+    <span class="share-label" id="shareLabel">⚡ Share this briefing</span>
+    <div class="share-buttons">
+      <a href="#" class="share-btn" id="shareFb"><i>f</i> Facebook</a>
+      <a href="#" class="share-btn" id="shareLi"><i>in</i> LinkedIn</a>
+      <a href="#" class="share-btn" id="shareX"><i>𝕏</i> X / Twitter</a>
+    </div>
+  </div>
+
+  <div class="subscribe-strip" id="subscribe">
+    <h2>☢️ Receive threshold updates</h2>
+    <p>Nuclear risk analysis, early warnings, and de-escalation briefs. Free, no spam.</p>
+    <div class="sub-form">
+      <input type="email" id="subEmail" placeholder="you@domain.com" />
+      <button id="subBtn" type="button">Subscribe Free</button>
+    </div>
+    <div id="sub-msg" style="font-size:0.72rem; margin-top:6px;"></div>
+  </div>
+
+  <section class="comment-section" id="comments">
+    <h3>💬 Reader comments · thoughtful discussion</h3>
+    <div class="comment-form">
+      <input type="text" id="commentName" placeholder="Name / handle" maxlength="30">
+      <textarea id="commentText" placeholder="Your insight on nuclear risk, deterrence, or diplomacy..." rows="3"></textarea>
+      <button id="postCommentBtn" type="button">Post comment</button>
+    </div>
+    <ul class="comment-list" id="commentList"></ul>
+  </section>
+
+  <hr class="section-divider" />
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">Poetic Justice</span>
+        <p>Independent analysis. No biases. Truth-based data.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Analysis</h4>
+        <ul>
+          <li><a href="#">🌍 Geo-Politics</a></li>
+          <li><a href="#">🏛️ Ancient History</a></li>
+          <li><a href="#">⚔️ Alliance & Sovereignty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Briefings</h4>
+        <ul>
+          <li><a href="ai-as-weapons.html">🤖 AI as Weapons</a></li>
+          <li><a href="collapse.html">🏛️ Collapse of Trust</a></li>
+          <li><a href="dollar.html">💵 Dollar Hegemony</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Poetic Justice · Independent · Nuclear Risk Series · Purely Objective Thoughts</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  const isOpen = navMenu.classList.contains('open');
+  navMenu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(!isOpen));
+});
+
+document.addEventListener('click', function(e) {
+  if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+  }
+});
+
+document.getElementById('subBtn').addEventListener('click', function() {
+  const email = document.getElementById('subEmail').value.trim();
+  const msgDiv = document.getElementById('sub-msg');
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msgDiv.style.color = '#e05252';
+    msgDiv.textContent = 'A valid email address is required.';
+    return;
+  }
+  msgDiv.style.color = '#ffd43b';
+  msgDiv.textContent = '✓ Subscribed. (demo — no data stored)';
+  document.getElementById('subEmail').value = '';
+});
+
+const COMMENT_STORAGE_KEY = 'pj_comments_nuclear_v2';
+
+function escapeHtml(unsafe) {
+  return unsafe.replace(/[&<>"]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    if (m === '"') return '&quot;';
+    return m;
+  });
+}
+
+function loadComments() {
+  const list = document.getElementById('commentList');
+  let comments = [];
+  try {
+    comments = JSON.parse(localStorage.getItem(COMMENT_STORAGE_KEY) || '[]');
+  } catch(e) { comments = []; }
+  list.innerHTML = '';
+  if (comments.length === 0) {
+    list.innerHTML = '<li style="color:var(--txt-dim); padding:12px; font-family:var(--font-mono); font-size:0.72rem;">— no comments yet — be the first —</li>';
+    return;
+  }
+  comments.slice().reverse().forEach(c => {
+    const li = document.createElement('li');
+    li.className = 'comment-item';
+    li.innerHTML = `<div class="comment-meta"><span>${escapeHtml(c.name || 'anonymous')}</span><span>${new Date(c.date).toLocaleString()}</span></div><div class="comment-body">${escapeHtml(c.text)}</div>`;
+    list.appendChild(li);
+  });
+}
+
+document.getElementById('postCommentBtn').addEventListener('click', function() {
+  const nameIn = document.getElementById('commentName').value.trim() || 'anonymous';
+  const textIn = document.getElementById('commentText').value.trim();
+  if (!textIn) { showToast('Write something before posting.'); return; }
+  let comments = [];
+  try { comments = JSON.parse(localStorage.getItem(COMMENT_STORAGE_KEY) || '[]'); } catch(e) {}
+  comments.push({ name: nameIn.slice(0, 30), text: textIn.slice(0, 500), date: new Date().toISOString() });
+  try { localStorage.setItem(COMMENT_STORAGE_KEY, JSON.stringify(comments)); } catch(e) {}
+  document.getElementById('commentText').value = '';
+  loadComments();
+  showToast('Comment posted.');
+});
+
+loadComments();
+
+(function setupSharing() {
+  const summary = encodeURIComponent("Tactical nukes, crumbling taboos, and the trapdoor to escalation — the nuclear threshold briefing, March 2026.");
+  const url = encodeURIComponent(window.location.href);
+  const fbBtn = document.getElementById('shareFb');
+  const liBtn = document.getElementById('shareLi');
+  const xBtn = document.getElementById('shareX');
+  fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${summary}`;
+  liBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  xBtn.href = `https://twitter.com/intent/tweet?text=${summary}%20${url}`;
+  [fbBtn, liBtn, xBtn].forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(btn.href, '_blank', 'noopener,noreferrer,width=600,height=500');
+    });
+  });
+  const hour = new Date().getHours();
+  const shareLabel = document.getElementById('shareLabel');
+  if (hour < 6 || hour > 21) shareLabel.innerHTML = '🌙 Share this briefing:';
+  else shareLabel.innerHTML = '⚡ Share this briefing:';
+})();
+</script>
+</body>
+</html>
