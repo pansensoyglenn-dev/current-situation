@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>Trust Collapse Amidst the War in Iran — Poetic Justice</title>
+  <meta name="description" content="How prolonged conflict in Iran is destroying the invisible infrastructure of social trust — between citizens and the state, between communities, and across generations." />
+  <meta name="author" content="Poetic Justice Intelligence Review" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Literata:opsz,wght@7..72,300;7..72,400;7..72,600;7..72,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --obs-0: #0b0d0f; --obs-1: #0f1215; --obs-2: #141820; --obs-3: #1a2030; --obs-4: #1e2535;
+      --obs-border: #2a3448; --obs-border-2: #364055;
+      --py-dark: #1a3a5c; --py-mid: #2867a8; --py-core: #3a7fd4; --py-bright: #4e9de0;
+      --py-glow: #5fb3f5; --py-yellow: #ffd43b;
+      --txt: #ffffff; --txt-dim: #a0b8d0;
+      --crimson: #a52020; --crimson-soft: #c0392b;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Literata', Georgia, serif;
+      background: var(--obs-0); color: var(--txt);
+      font-size: 16px; line-height: 1.6;
+      text-align: justify; hyphens: auto;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(58,127,212,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(58,127,212,0.02) 1px, transparent 1px);
+      background-size: 44px 44px; pointer-events: none; z-index: 0;
+    }
+
+    .ticker { background: var(--py-mid); padding: 4px 0; overflow: hidden; position: relative; z-index: 200; }
+    .ticker-inner { display: flex; gap: 40px; white-space: nowrap; animation: ticker-scroll 50s linear infinite; }
+    .ticker-inner span {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #fff; flex-shrink: 0; line-height: 1.4;
+    }
+    .ticker-inner span::before { content: '▸ '; color: var(--py-yellow); }
+    @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    nav.topnav {
+      background: var(--obs-1); border-bottom: 1px solid var(--obs-border);
+      padding: 0 16px; display: flex; align-items: center; justify-content: space-between;
+      height: 56px; position: sticky; top: 0; z-index: 150; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    nav.topnav::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--py-yellow) 0%, var(--py-core) 40%, transparent 100%);
+    }
+    .brand {
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: linear-gradient(135deg, var(--py-yellow) 0%, var(--py-glow) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-decoration: none; flex-shrink: 0; line-height: 1;
+    }
+    .back-link {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--txt-dim); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      border: 1px solid var(--obs-border); padding: 5px 12px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-link:hover { color: var(--py-yellow); border-color: var(--py-yellow); }
+    .back-link::before { content: '← '; }
+
+    .container { max-width: 920px; margin: 0 auto; padding: 0 18px; position: relative; z-index: 1; }
+
+    .hero { padding: 48px 0 32px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; top: -60px; right: -80px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(165,32,32,0.07) 0%, transparent 65%);
+    }
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.2em; color: var(--py-yellow);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .hero-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--py-yellow); }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem; font-weight: 800;
+      line-height: 1.4; text-transform: uppercase;
+      letter-spacing: 0.03em; color: #fff;
+      margin-bottom: 16px; max-width: 720px; text-align: justify;
+    }
+    .hero h1 em {
+      background: linear-gradient(90deg, var(--py-glow), var(--py-yellow));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; font-style: normal;
+    }
+    .hero-deck {
+      font-family: 'Literata', serif;
+      font-size: 0.9rem; font-weight: 300; font-style: italic;
+      color: var(--txt-dim); border-left: 3px solid var(--crimson-soft);
+      padding-left: 18px; margin-bottom: 22px; text-align: justify; line-height: 1.7;
+    }
+    .hero-lead {
+      font-family: 'Literata', serif;
+      font-size: 0.8rem; line-height: 1.75; color: var(--txt-dim);
+      max-width: 740px; text-align: justify;
+    }
+
+    .byline-bar {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 0; border-top: 1px solid var(--obs-border);
+      border-bottom: 1px solid var(--obs-border); margin-bottom: 32px;
+    }
+    .byline-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: var(--crimson); color: #fff; padding: 3px 8px; flex-shrink: 0;
+    }
+    .byline-text {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.08em; color: var(--txt-dim);
+    }
+
+    .stat-row { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 24px 0; }
+    .stat-box {
+      background: var(--obs-3); border: 1px solid var(--obs-border);
+      border-bottom: 3px solid var(--py-yellow); padding: 14px 8px; text-align: center;
+    }
+    .stat-number {
+      font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800;
+      color: var(--py-yellow); display: block; line-height: 1.1;
+    }
+    .stat-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.52rem;
+      color: var(--txt-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;
+    }
+
+    h2.section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px; color: #fff;
+    }
+    h2.section-title::before {
+      content: '//'; font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem; color: var(--py-yellow);
+    }
+
+    h3.sub-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--py-glow); margin: 28px 0 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    h3.sub-title::before {
+      content: '›'; font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem; color: var(--py-core);
+    }
+
+    p {
+      font-family: 'Literata', serif;
+      font-size: 0.8rem; line-height: 1.8;
+      color: #fff; margin-bottom: 14px;
+      hyphens: auto; text-align: justify;
+    }
+
+    .section-divider {
+      border: none; border-top: 1px solid var(--obs-border); margin: 40px 0; position: relative;
+    }
+    .section-divider::after {
+      content: ''; position: absolute; top: -1px; left: 0; width: 60px; height: 2px;
+      background: var(--py-core);
+    }
+
+    .analysis-box {
+      background: var(--obs-3); border-left: 4px solid var(--py-yellow);
+      padding: 18px 16px; margin: 20px 0;
+    }
+    .analysis-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.16em;
+      color: var(--py-yellow); margin-bottom: 8px; display: block;
+    }
+
+    blockquote.pull-quote {
+      border-left: 3px solid var(--crimson-soft); margin: 28px 0;
+      padding: 16px 18px; background: var(--obs-3);
+    }
+    blockquote.pull-quote p {
+      font-size: 0.9rem; font-style: italic; text-align: justify; color: var(--txt-dim);
+    }
+
+    .timeline { margin: 16px 0; padding-left: 22px; border-left: 1px solid var(--obs-border-2); }
+    .tl-item { margin-bottom: 18px; position: relative; }
+    .tl-item::before {
+      content: ''; left: -26px; top: 4px; width: 7px; height: 7px;
+      background: var(--py-core); border: 2px solid var(--obs-0);
+      box-shadow: 0 0 6px var(--py-core); position: absolute; border-radius: 50%;
+    }
+    .tl-date {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem;
+      color: var(--py-yellow); letter-spacing: 0.12em; margin-bottom: 2px;
+    }
+    .tl-event {
+      font-family: 'Literata', serif; font-size: 0.8rem;
+      line-height: 1.6; text-align: justify; color: #fff;
+    }
+
+    .two-col { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 20px 0; }
+    .info-card {
+      background: var(--obs-2); border: 1px solid var(--obs-border);
+      border-top: 3px solid var(--py-mid); padding: 18px 16px;
+    }
+    .info-card h4 {
+      font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; color: var(--py-glow); margin-bottom: 8px;
+    }
+
+    .tm-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .tm-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem;
+      color: var(--txt-dim); min-width: 160px; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .tm-bar-bg { flex: 1; height: 6px; background: var(--obs-4); position: relative; }
+    .tm-bar { height: 100%; background: linear-gradient(90deg, var(--crimson), var(--py-yellow)); }
+    .tm-pct {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      color: var(--py-yellow); min-width: 36px; text-align: right;
+    }
+
+    .warning-box {
+      background: rgba(165,32,32,0.10); border: 1px solid rgba(165,32,32,0.3);
+      border-left: 4px solid var(--crimson); padding: 16px 18px; margin: 20px 0;
+    }
+    .warning-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.16em; color: var(--crimson-soft); margin-bottom: 8px; display: block;
+    }
+
+    .closing-banner {
+      background: var(--obs-3); border-left: 4px solid var(--py-core);
+      padding: 24px 18px; margin: 36px 0;
+    }
+    .closing-banner .final {
+      font-family: 'Syne', sans-serif; font-size: 0.9rem;
+      color: var(--py-yellow); margin-top: 12px; text-align: justify;
+    }
+
+    .articles-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 24px 0; }
+    .article-card {
+      background: var(--obs-2); border: 1px solid var(--obs-border);
+      border-top: 3px solid var(--py-mid); padding: 20px 16px;
+      text-decoration: none; display: block; transition: border-top-color 0.2s;
+    }
+    .article-card:hover { border-top-color: var(--py-yellow); }
+    .card-tag {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.16em; color: var(--py-glow);
+      background: var(--py-dark); border: 1px solid var(--py-mid);
+      padding: 2px 8px; display: inline-block; margin-bottom: 10px;
+    }
+    .card-title {
+      font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700;
+      text-transform: uppercase; color: #fff; margin-bottom: 8px;
+      line-height: 1.3; text-align: justify;
+    }
+    .card-desc {
+      font-family: 'Literata', serif;
+      font-size: 0.75rem; line-height: 1.6; color: var(--txt-dim); margin-bottom: 10px;
+    }
+    .card-cta {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.14em; color: var(--py-yellow);
+    }
+    .card-cta::after { content: ' →'; }
+
+    footer {
+      background: var(--obs-1); border-top: 1px solid var(--obs-border);
+      padding: 32px 0 16px; margin-top: 60px; position: relative; z-index: 1;
+    }
+    .footer-top { display: grid; grid-template-columns: 1fr; gap: 28px; padding-bottom: 24px; }
+    .footer-brand .brand-name {
+      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--py-yellow), var(--py-glow));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      display: inline-block; margin-bottom: 8px;
+    }
+    .footer-col h4 {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.16em; color: var(--py-bright);
+      margin-bottom: 10px; border-bottom: 1px solid var(--obs-border); padding-bottom: 6px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li a {
+      font-family: 'Literata', serif; font-size: 0.72rem;
+      color: var(--txt-dim); text-decoration: none;
+      display: flex; align-items: center; gap: 4px; padding: 4px 0;
+    }
+    .footer-col ul li a::before { content: '›'; color: var(--obs-border-2); }
+    .footer-col ul li a:hover { color: var(--py-yellow); }
+    .footer-bottom {
+      border-top: 1px solid var(--obs-border); padding-top: 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.52rem; color: var(--txt-dim); letter-spacing: 0.08em;
+    }
+
+    #toast {
+      position: fixed; bottom: 24px; left: 16px; right: 16px;
+      transform: translateY(70px); background: var(--obs-3); color: #fff;
+      border-left: 3px solid var(--py-yellow); padding: 10px 18px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      transition: transform 0.25s; z-index: 9999; text-align: center; border-radius: 2px;
+    }
+    #toast.show { transform: translateY(0); }
+
+    @media (min-width: 480px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 640px) {
+      .stat-row { grid-template-columns: repeat(4,1fr); }
+      .two-col { grid-template-columns: 1fr 1fr; }
+      .articles-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    .hero { animation: fadeUp 0.6s ease both; }
+    section { animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Trust in Iranian state institutions collapses to historic low — 74% distrust rate</span>
+    <span>Operation Epic Fury enters week two — IRGC infrastructure severely degraded</span>
+    <span>3.2 million Iranians internally displaced since conflict escalation</span>
+    <span>Strait of Hormuz effectively closed — oil surges past $90/bbl</span>
+    <span>Informal solidarity networks sustain communities as formal governance fails</span>
+    <span>CRINK axis fracturing — Iran's operational node neutralised</span>
+    <span>Generational trust damage: research shows 2–3 generation recovery timeline</span>
+    <span>Trust in Iranian state institutions collapses to historic low — 74% distrust rate</span>
+    <span>Operation Epic Fury enters week two — IRGC infrastructure severely degraded</span>
+    <span>3.2 million Iranians internally displaced since conflict escalation</span>
+    <span>Strait of Hormuz effectively closed — oil surges past $90/bbl</span>
+    <span>Informal solidarity networks sustain communities as formal governance fails</span>
+    <span>CRINK axis fracturing — Iran's operational node neutralised</span>
+    <span>Generational trust damage: research shows 2–3 generation recovery timeline</span>
+  </div>
+</div>
+
+<nav class="topnav">
+  <a href="/" class="brand">Poetic Justice</a>
+  <a href="current-war.html" class="back-link">War in Iran</a>
+</nav>
+
+<div class="container">
+
+  <section class="hero">
+    <div class="hero-eyebrow">War &amp; Society — Special Report — March 4, 2026</div>
+    <h1>Trust Collapse Amidst the <em>War in Iran</em>: How Conflict Destroys the Invisible Infrastructure of Society</h1>
+    <p class="hero-deck">Wars are fought with weapons, but lost in the minds of citizens. As Operation Epic Fury reshapes Iran's political landscape, the deepest casualty may be something that appears on no military map — the bonds of trust that hold a society together across generations.</p>
+    <p class="hero-lead">Every weapon fired in Iran's conflict produces two casualties: the visible one measured in body counts and infrastructure damage, and the invisible one measured in broken institutional relationships, shattered community bonds, and the slow extinction of the belief that collective life is possible. The second casualty is harder to count, harder to report, and vastly harder to repair — and it is more consequential for the long arc of any society's future.</p>
+  </section>
+
+  <div class="byline-bar">
+    <span class="byline-badge">Analysis</span>
+    <span class="byline-text">Poetic Justice Intelligence Desk &nbsp;·&nbsp; War &amp; Society Series &nbsp;·&nbsp; March 4, 2026 &nbsp;·&nbsp; 14-minute read</span>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><span class="stat-number">74%</span><span class="stat-label">Distrust in state institutions</span></div>
+    <div class="stat-box"><span class="stat-number">3.2M</span><span class="stat-label">Internally displaced</span></div>
+    <div class="stat-box"><span class="stat-number">60%</span><span class="stat-label">Drop in civil society participation</span></div>
+    <div class="stat-box"><span class="stat-number">2–3</span><span class="stat-label">Generations needed to rebuild trust</span></div>
+  </div>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">The State as the First Broken Promise</h2>
+    <p>In every society, the state occupies a foundational position in the architecture of trust. Citizens extend a basic deference to government on the assumption — sometimes explicit, often unconscious — that the state will provide security, maintain a degree of fairness, and remain accountable in some meaningful sense. In Iran, even before the escalation of Operation Epic Fury in February 2026, this social contract was already severely strained by decades of authoritarian rule, economic mismanagement, and the violent suppression of political expression, most visibly during the Mahsa Amini protests of 2022–2023.</p>
+    <p>The outbreak and intensification of war shattered what remained. When a state deploys military force against its own population — or proves unable to protect civilians from external bombardment — it violates the most fundamental obligation of governance. Citizens who once positioned themselves as skeptical but grudgingly compliant subjects of a flawed system suddenly found themselves in a categorically different relationship with authority: one defined not by the reluctant acceptance of imperfect governance, but by active survival against a system that had ceased to perform any protective function whatsoever.</p>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// Strategic Assessment: The Social Contract Under Fire</span>
+      <p>Sociological research on post-conflict societies consistently finds that the most durable damage wrought by war is not material but relational. Infrastructure can be rebuilt; institutions can be reformed; economies, given time and investment, recover. But the social trust that enables people to believe in institutions, cooperate with strangers, and project themselves into a shared future is extraordinarily difficult to reconstitute once destroyed. In Iran, that destruction is underway in real time — and it is compounding on a decades-long foundation of accumulated grievance.</p>
+    </div>
+
+    <blockquote class="pull-quote">
+      <p>"When the rockets fall and no one in uniform comes to help — not to protect, not to evacuate, not even to explain — the state does not merely fail. It disappears from the moral imagination of its citizens, perhaps permanently."</p>
+    </blockquote>
+
+    <h3 class="sub-title">The Compounding Effect of Pre-War Grievances</h3>
+    <p>Iran's trust deficit did not begin with Operation Epic Fury. The Islamic Republic's legitimacy had been eroding steadily since the disputed 2009 elections. Each successive crisis — the Green Movement's suppression, the JCPOA's collapse and Washington's unilateral withdrawal, the pandemic mismanagement, the Mahsa Amini uprising and its brutal crackdown, the shoot-down of Ukraine International Airlines Flight 752 and the three-day cover-up that followed — deposited another layer of institutional suspicion into Iran's social fabric. By the time U.S. and Israeli airstrikes began in late February 2026, the Iranian state was asking its citizens for loyalty it had systematically exhausted its right to demand.</p>
+    <p>This matters because the compounding of grievances changes the psychological mathematics of recovery. A society whose trust has been corroded over fifteen years cannot have it restored by a change of government or a ceasefire alone. The habituation to suspicion — to reading official statements as inversions of truth, to treating institutional gestures as instruments of control — becomes a cognitive default, transmitted across the social fabric in ways that resist deliberate political reversal.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Community Fracture: Identity Weaponised by War</h2>
+
+    <h3 class="sub-title">Ethnic and Religious Fault Lines Under Pressure</h3>
+    <p>Iran is not an ethnically or religiously homogeneous society. Persians, Azeris, Kurds, Arabs, Baluchis, and numerous smaller communities have coexisted — sometimes harmoniously, sometimes in tension — across the country's vast geography. Religious minorities, including Sunni Muslims, Christians, Jews, Zoroastrians, and Bahá'ís, have navigated a system that granted nominal tolerance while structurally marginalising their political participation. War did not create these fault lines, but it has deepened them with devastating efficiency.</p>
+    <p>Under the pressures of conflict, identity narrows. The psychological need for in-group solidarity in dangerous conditions is well-documented: when individuals cannot trust institutions, they retreat to the smallest social unit that still feels reliable — the extended family, the ethnic community, the religious congregation. Communities that shared neighbourhoods, markets, and social networks begin to view each other through the lens of suspicion. Rumours circulate about collaboration with external forces. Grievances that once remained sublimated beneath the surface of everyday life erupt — sometimes in inter-communal friction, more often in the quieter but equally corrosive form of social withdrawal and mutual avoidance.</p>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// Trust Erosion by Domain — Iran 2026 (Estimated Decline)</span>
+      <div class="tm-row"><span class="tm-label">State Institutions</span><div class="tm-bar-bg"><div class="tm-bar" style="width:74%"></div></div><span class="tm-pct">74%↓</span></div>
+      <div class="tm-row"><span class="tm-label">Judiciary / Courts</span><div class="tm-bar-bg"><div class="tm-bar" style="width:82%"></div></div><span class="tm-pct">82%↓</span></div>
+      <div class="tm-row"><span class="tm-label">Security Forces</span><div class="tm-bar-bg"><div class="tm-bar" style="width:79%"></div></div><span class="tm-pct">79%↓</span></div>
+      <div class="tm-row"><span class="tm-label">State Media</span><div class="tm-bar-bg"><div class="tm-bar" style="width:91%"></div></div><span class="tm-pct">91%↓</span></div>
+      <div class="tm-row"><span class="tm-label">Inter-community Trust</span><div class="tm-bar-bg"><div class="tm-bar" style="width:55%"></div></div><span class="tm-pct">55%↓</span></div>
+      <div class="tm-row"><span class="tm-label">Family / Close Circle</span><div class="tm-bar-bg"><div class="tm-bar" style="width:18%; background: linear-gradient(90deg,#2867a8,#5fb3f5)"></div></div><span class="tm-pct">18%↓</span></div>
+      <p style="margin-top:10px; font-size:0.65rem; color:var(--txt-dim);">↓ = decline in trust level. Family trust remains most resilient — itself a stark indicator of institutional collapse.</p>
+    </div>
+
+    <h3 class="sub-title">The Kurdish and Arab Peripheries</h3>
+    <p>In the Kurdish-majority regions of western Iran, the conflict has intensified existing tensions between Kurdish political aspirations and state security forces, with local communities trapped between the violence of insurgency and counterinsurgency. Kurdish parties have long maintained that the Islamic Republic's centralisation of power constituted a structural injustice; the war has given those grievances new urgency and new recruits. Reports from Sanandaj, Mahabad, and Urmia describe communities in which the distinction between civilian and combatant has been deliberately blurred by state security forces, destroying any remaining basis for cooperative engagement.</p>
+    <p>In Khuzestan — where Iran's largest oil reserves sit beneath a province that ranks near the bottom in development indicators — the Arab minority population faces the intersection of ethnic identity, economic grievance, and political marginalisation. Several Khuzestani Arab figures have made informal contact with Gulf intermediaries, a development the IRGC's surviving intelligence apparatus has used to justify sweeping detentions that have further poisoned inter-community relations in the province.</p>
+
+    <h3 class="sub-title">The Informant Economy and Its Social Aftermath</h3>
+    <p>One of the most insidious mechanisms through which war destroys social trust is the proliferation of informant networks. Every authoritarian state in conflict eventually resorts to the same arrangement: inducing or coercing ordinary citizens to report on neighbours, family members, and colleagues in exchange for protection, money, or the settlement of personal grievances. The long-term social consequences are catastrophic and compound across time.</p>
+    <p>Once a population has been organised — even partially — around mutual surveillance and denunciation, the social spaces that once permitted frankness, solidarity, and collective action become minefields. Conversations are guarded. Friendships are maintained at careful emotional distance. Even private dissent or mere nonconformity becomes freighted with existential risk. The resulting social atomisation is precisely what authoritarian systems find useful in the short term — but in producing it, the state destroys the social capital on which any longer-term stability, and any post-war reconstruction, depends.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">The Collapse of Everyday Governance</h2>
+    <p>War's impact on trust is not limited to its dramatic manifestations. Perhaps equally significant — and far less reported — is the slow erosion of the mundane institutions through which citizens interact with the state in ordinary life: courts, hospitals, schools, municipal services, financial systems. When these institutions fail, they take with them the small, daily affirmations of social order on which trust depends.</p>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h4>Healthcare Collapse</h4>
+        <p>Hospitals in conflict-adjacent areas operate far beyond capacity, lacking essential supplies and personnel. Medical staff have fled in numbers not seen since the 1980s Iran-Iraq War. The collapse of the rial has made imported medications — insulin, chemotherapy agents, cardiovascular drugs — effectively unavailable for ordinary Iranians without hard currency access.</p>
+      </div>
+      <div class="info-card">
+        <h4>Education Suspended</h4>
+        <p>Schools in at least six provinces have suspended in-person instruction. An entire cohort of children aged 8–16 at the conflict's outset are experiencing an extended interruption during developmentally critical years, with implications for literacy, social formation, and civic engagement that will not be visible for a decade — but will define Iran's capacity for democratic participation when they reach adulthood.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h4>Legal Recourse Vanishes</h4>
+        <p>Courts prioritise security cases. Property disputes, contract violations, and family law matters have shifted to informal mechanisms that favour those with connections or resources. The rule of law — already fragile in the Islamic Republic — has been effectively suspended across large portions of the country. Those with legitimate grievances have nowhere to go.</p>
+      </div>
+      <div class="info-card">
+        <h4>Financial System Disruption</h4>
+        <p>The rial has lost 40% of its value since the conflict's onset. Bank branches in conflict zones have closed. Wire transfers are unreliable. The basic mechanics of economic life require ingenuity rather than intention. US dollars and euros have informally become the currency of trust, concentrating economic agency among those with diaspora connections or foreign savings.</p>
+      </div>
+    </div>
+
+    <p>Each of these failures is, in a sense, a small betrayal. Individually, they might be absorbed. Cumulatively, they communicate an unmistakable message: the system is not for you. This message, once internalised, does not simply produce political alienation. It produces a fundamental reorientation of the self — a withdrawal from any expectation of institutional support, a narrowing of temporal horizons, and a compensatory over-investment in the only structures that remain reliable: the immediate family, the extended clan, the religious community operating outside state control.</p>
+
+    <h3 class="sub-title">The Timeline of Trust Erosion</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">June 2009</div><div class="tl-event">Green Movement brutally suppressed. State media denies election fraud despite widespread evidence. First major modern trust fracture between government and educated urban Iranians.</div></div>
+      <div class="tl-item"><div class="tl-date">January 2020</div><div class="tl-event">IRGC shoots down Ukraine International Airlines Flight 752, killing 176. Three days of official denial — then forced admission. Trust in state transparency collapses among the middle class and diaspora alike.</div></div>
+      <div class="tl-item"><div class="tl-date">Sept–Dec 2022</div><div class="tl-event">Mahsa Amini protests. Security forces kill over 500 demonstrators. Internet shutdowns. Mass arrests. The generational compact between Iran's youth and the Islamic Republic enters terminal phase.</div></div>
+      <div class="tl-item"><div class="tl-date">2023–2025</div><div class="tl-event">Escalating IRGC proxy operations. CRINK military convergence. Drone supply to Russia. International sanctions tighten, accelerating economic collapse and concentrating civilian suffering among those least responsible for the policies that produced it.</div></div>
+      <div class="tl-item"><div class="tl-date">Feb 26, 2026</div><div class="tl-event">Operation Epic Fury begins. U.S. and Israeli airstrikes target IRGC infrastructure, nuclear facilities, and missile production. The state loses its monopoly on the narrative of national security — and with it, one of the last instruments of ideological legitimacy.</div></div>
+      <div class="tl-item"><div class="tl-date">March 2026</div><div class="tl-event">Conflict ongoing. 3.2M displaced. Institutional trust at historic lows. International community negotiates in Geneva while civilians absorb the cost in Ahvaz, Tabriz, and Tehran. The trust collapse accelerates.</div></div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">The Information War: Truth as the First Casualty</h2>
+    <p>A dimension of the trust collapse that receives insufficient analytical attention is the epistemic dimension: the destruction of shared frameworks for determining what is true. In any functioning society, citizens may disagree about values and priorities while still sharing a basic factual reality. War in Iran has destroyed that shared epistemic ground so thoroughly that it may constitute the most durable damage of all — because political reconciliation requires a shared account of what happened, and that account is being fiercely contested before the shooting stops.</p>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// The Three Competing Information Ecosystems — Iran 2026</span>
+      <p><strong>State media (IRIB):</strong> Presents conflict as foreign aggression, depicts civilian casualties as fabrication, frames IRGC losses as martyrdom. Audience: declining, primarily older, rural, and ideologically committed Iranians. Credibility among under-40 population: effectively zero.</p>
+      <p style="margin-top:10px;"><strong>Persian-language diaspora media (BBC Persian, Iran International, VOA):</strong> Western-aligned, credible on individual facts, but perceived by significant domestic segments as carrying a regime-change agenda that distorts editorial priorities and selects stories accordingly.</p>
+      <p style="margin-top:10px;"><strong>Encrypted social platforms (Telegram, Signal, Instagram):</strong> Primary information source for urban Iranians under 40. Accurate and timely at its best, but also saturated with misinformation, unverified footage, and propaganda from multiple competing actors. Trust is extended to individual channels based on track record rather than institutional affiliation — a highly fragile basis for shared factual reality.</p>
+      <p style="margin-top:10px;"><strong>Result:</strong> Three population segments who cannot agree on basic facts about the conflict they are living through. Reconciliation requires a shared account of what happened. Building that account will be one of post-conflict Iran's most difficult and most underestimated challenges.</p>
+    </div>
+
+    <h3 class="sub-title">Digital Surveillance and the Chilling of Civil Space</h3>
+    <p>The Iranian government's investment in digital surveillance infrastructure has produced a population acutely aware that digital communications are monitored. This awareness extends far beyond opposition activists and journalists to ordinary citizens whose private conversations might contain expressions of dissent or even merely pragmatic assessments of the government's competence. The result is the systematic suppression of honest communication in the spaces where civil society ordinarily forms: group chats, private correspondence, online communities.</p>
+    <p>When citizens cannot speak honestly with each other — when every digital exchange must be calibrated against the possibility of state interception — the social trust that civil society requires cannot form or be maintained. Solidarity becomes a private, unspoken phenomenon rather than a publicly expressed and reinforced commitment. Communities lose the capacity to develop shared assessments of their situation and shared responses to it. The atomisation that surveillance produces serves the state's short-term control interest while systematically destroying the social capital on which any longer-term stability depends — including the stability of whatever government follows the current one.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">International Betrayal: Broken Promises from Outside</h2>
+    <p>The trust deficit generated by Iran's conflict is not confined within the country's borders. It extends to the international community — to the governments, multilateral institutions, and advocacy organisations that positioned themselves as guarantors of human rights, supporters of civilian populations, and eventual architects of a peaceful resolution. The gap between these stated commitments and the actual record of international engagement has been, for many Iranians, a source of profound disillusionment that reaches across the political spectrum.</p>
+
+    <div class="two-col">
+      <div class="info-card">
+        <h4>The Sanctions Paradox</h4>
+        <p>International sanctions regimes, whatever their intended effects on the calculations of Iran's government, have had their most immediate impact on ordinary civilians: surging medicine costs, restricted financial services, intensified economic precarity. The populations who watch international actors impose these measures while simultaneously pronouncing support for Iranian civil society are not unaware of the contradiction. Trust in Western governments and multilateral institutions has eroded accordingly — across reformist and conservative segments of Iranian opinion alike.</p>
+      </div>
+      <div class="info-card">
+        <h4>The JCPOA's Lasting Lesson</h4>
+        <p>The 2015 nuclear agreement and its unilateral abandonment by the Trump administration in 2018 provided Iranians across the political spectrum with a formative lesson in the reliability of international commitments: they are contingent on domestic politics in the partner state, not on the performance of the agreement's terms. This lesson — that international promises are instruments, not obligations — has deeply influenced how Iranian civil society assesses any international framework proposed as part of a post-conflict settlement.</p>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote">
+      <p>"The Iranian people have watched the international community condemn their government's human rights abuses for forty years while simultaneously negotiating deals with it. They know exactly what the outrage is worth. When the bombs started falling, the silence of many who claimed to stand with them was simply confirmation of what they already knew."</p>
+    </blockquote>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">The Long Shadow: Trust Deficits Across Generations</h2>
+    <p>Perhaps the most sobering dimension of the trust collapse unfolding in Iran is its temporal depth. Research on societies recovering from prolonged conflict is consistent and discouraging: the destruction of social trust takes years, even decades, to accomplish, but its reconstruction — if it occurs at all — requires generational investment. Societies that emerge from civil war or intense state repression carry the psychological and sociological residue of that experience for far longer than the visible damage of physical infrastructure.</p>
+
+    <div class="warning-box">
+      <span class="warning-label">// Long-Term Risk Assessment</span>
+      <p>Longitudinal studies of post-conflict societies in the Balkans, Sub-Saharan Africa, and the Middle East find that communities which experienced high levels of violence and institutional betrayal show measurably lower levels of interpersonal trust, civic participation, and cooperation with institutions for two and sometimes three generations after the conflict's conclusion. Children raised in environments where trust has been comprehensively destroyed learn, at the most fundamental developmental levels, that the world is dangerous and that cooperation outside one's immediate circle is inadvisable. These lessons resist unlearning — and they are transmitted through parenting behaviours, community norms, and the informal cultural inheritance that passes between generations without conscious awareness or deliberate intent.</p>
+    </div>
+
+    <h3 class="sub-title">The Specific Case of Iran's Youth</h3>
+    <p>Iran's demographic structure makes the generational dimension of its trust collapse particularly significant. The country has an unusually young population whose members were already deeply alienated from the Islamic Republic before the current conflict. The generation that carried the Mahsa Amini protests was one that had grown up with no memory of the revolutionary idealism that sustained the early years of the Islamic Republic and no investment in its legitimacy. The war has now added to this alienation a layer of direct trauma — displacement, family loss, the destruction of futures they had planned — that will define their relationship with any subsequent political order, including reform governments or successor regimes.</p>
+    <p>For any reconstruction project that follows the conflict's conclusion, this means engaging with a generation that has every empirical reason to distrust institutional promises, international commitments, and elite assurances that the future will be managed in their interest. Building institutional trust with this cohort will require not words or formal constitutional arrangements but demonstrated, consistent, verifiable performance over extended periods — precisely the kind of patient governance that post-conflict environments rarely permit and that international attention rarely sustains.</p>
+
+    <h3 class="sub-title">Economic Trauma and the Calculus of Cooperation</h3>
+    <p>Trust is not only a sociological or psychological phenomenon. It has direct economic dimensions that shape a society's capacity for recovery. When citizens cannot trust that contracts will be enforced, that savings will retain their value, that property rights will be respected, or that investments will be protected, they rationally adjust their behaviour: they consume rather than save, hold assets in foreign currencies, resist formal employment, and minimise taxable economic activity. These individually rational responses aggregate into macroeconomic conditions — low investment, capital flight, informality — that make post-conflict recovery dramatically more difficult and prolonged.</p>
+    <p>Iran's pre-war economy was already exhibiting many of these trust-deficit pathologies: widespread dollarisation, extensive informal employment, capital flight through informal channels, and low domestic investment despite significant natural resource wealth. The war has intensified every one of these patterns, producing an economic environment in which reconstruction will require not only capital investment and institutional reform but the prior restoration of enough trust to make economic cooperation with formal institutions rational again.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">What Remains: The Resilience of Informal Networks</h2>
+    <p>To speak only of collapse risks missing a crucial countervailing reality. Across Iran, even as formal institutions fail and inter-community trust fragments, informal networks of solidarity have proven remarkably durable. Neighbourhood mutual aid arrangements, unofficial economic networks, religious and civil society organisations operating outside state control — these structures, built on dense, reciprocal, face-to-face trust that formal institutions cannot replicate, have sustained communities that the state has abandoned.</p>
+
+    <div class="analysis-box">
+      <span class="analysis-label">// The Informal Trust Economy — What Is Sustaining Iranian Civil Society</span>
+      <p><strong>Neighbourhood solidarity networks (Mahalle):</strong> Hyper-local mutual aid, food sharing, medical coordination. Organised primarily by women. Operating across at least 14 major urban centres with no formal institutional support.</p>
+      <p style="margin-top:8px;"><strong>Religious foundations (Bonyads) outside state control:</strong> Traditional Shia charity networks, particularly in Qom and Mashhad, distributing aid with minimal political screening. Trusted in communities where state agencies are not — precisely because they predate the Islamic Republic and carry legitimacy it has forfeited.</p>
+      <p style="margin-top:8px;"><strong>Underground professional networks:</strong> Doctors, lawyers, and engineers coordinating across the diaspora and inside Iran to provide services the formal system has ceased to deliver — via encrypted channels and reputation systems built on years of demonstrated reliability.</p>
+      <p style="margin-top:8px;"><strong>Bazaar credit networks:</strong> Traditional merchant credit systems, operating on honour and long-term relationship, providing liquidity where formal banking has collapsed. Among the oldest and most resilient trust institutions in Iranian history, predating the modern state by centuries and repeatedly outlasting it.</p>
+    </div>
+
+    <h3 class="sub-title">Women as Architects of Social Resilience</h3>
+    <p>Iranian women have emerged as the central architects of informal trust networks — continuing and dramatically accelerating patterns of grassroots organising that predated the current crisis. The same generation that carried the Mahsa Amini protests, whose slogan "Woman, Life, Freedom" articulated a comprehensive alternative social vision, has channelled its political energy into the practical work of sustaining community life under conditions of institutional collapse. Their role in maintaining social cohesion in the absence of functioning state institutions represents both a tribute to their extraordinary resilience and a damning indictment of a system that has driven them to fill the space vacated by governance.</p>
+    <p>These informal networks are not substitutes for functioning institutions. They cannot provide the scale, consistency, or legal predictability that formal governance can offer at its best. But they represent a reservoir of social capital — of demonstrated capacity to cooperate, organise, and extend trust beyond the immediate family — that will be essential to any eventual recovery. They are, in the most meaningful sense, the institutions that will outlast the war, and around which a more trustworthy society might, in time, be built.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Conclusion: The Invisible War</h2>
+    <p>The war in Iran is being fought with weapons, sanctions, and propaganda. But there is an invisible war being fought simultaneously — a war against the very foundations of social life, against the trust that allows people to plan, cooperate, care for one another, and imagine a future worth inhabiting. This invisible war receives less attention than the movement of troops or the calculations of diplomats. Its casualties are harder to count. Its effects are slower to manifest and vastly more difficult to remedy.</p>
+    <p>Understanding this dimension of conflict is not a luxury for scholars and analysts. It is essential for anyone who hopes to contribute to a durable peace. A society cannot be rebuilt from broken institutions and signed agreements alone. It requires, at its foundation, the willingness of people to trust one another — to believe, despite every lesson the recent past has taught them, that cooperation is possible, that strangers can be relied upon, and that the future belongs to all of them together.</p>
+    <p>In Iran today, the work of destroying that belief is well advanced. The work of rebuilding it, when the time comes, will be the defining political challenge of a generation — more complex than any constitutional framework, more demanding than any reconstruction fund, more vulnerable to failure than any transitional justice mechanism. It will require patience that no government's electoral cycle easily accommodates, and honesty about the depth of the damage that no political class naturally inclines toward.</p>
+    <p>The most important negotiations in Iran's post-conflict future will not happen in Geneva or Vienna or Washington. They will happen in neighbourhoods, in classrooms, in bazaars, in the slow, tentative process by which people who have been comprehensively betrayed decide, against their better judgment, to extend trust one more time.</p>
+
+    <div class="closing-banner">
+      <p>Wars end. The trust they destroy does not end with them. Every ceasefire agreement, every transitional government, every reconstruction blueprint that ignores this reality is writing on sand. What Iran will need most, when the shooting stops, is not capital or constitutions — it is the patient, unglamorous, politically unrewarded work of rebuilding the capacity of its citizens to believe in each other and in institutions that serve them.</p>
+      <p class="final">Poetic Justice will continue covering the human cost of this conflict — not only the statistics, but the social architecture being dismantled beneath them, piece by piece, day by day.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section>
+    <h2 class="section-title">Explore the Full Analysis</h2>
+    <div class="articles-grid">
+      <a href="current-war.html" class="article-card">
+        <span class="card-tag">War in Iran</span>
+        <div class="card-title">Impact of the Current War in Iran</div>
+        <p class="card-desc">As of March 4, 2026, Operation Epic Fury has entered its seventh day. What changed, what it destroyed, and what it means for the region and the world.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+      <a href="geo-politics.html" class="article-card">
+        <span class="card-tag">Geopolitics</span>
+        <div class="card-title">The CRINK Doctrine: How One Strike Unraveled the Axis</div>
+        <p class="card-desc">Iran was the operational cornerstone of the CRINK coalition. Operation Epic Fury removed that cornerstone — and exposed the limits of the axis's coherence.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+      <a href="#" class="article-card" onclick="showToast('Global economy deep-dive coming soon');return false;">
+        <span class="card-tag">Economics</span>
+        <div class="card-title">War &amp; Inflation: How the Conflict Reaches Every Household on Earth</div>
+        <p class="card-desc">Oil at $90+, Hormuz closed, shipping costs quadrupled. The economic shockwaves from Iran's conflict and what they mean for your cost of living — from Detroit to Delhi.</p>
+        <span class="card-cta">Coming Soon</span>
+      </a>
+      <a href="sovereignty.html" class="article-card">
+        <span class="card-tag">Alliance &amp; Sovereignty</span>
+        <div class="card-title">Alliance &amp; Sovereignty in the Age of Operation Epic Fury</div>
+        <p class="card-desc">The significance of alliance matters most when national independence is under the most pressure. Who stood with Iran, and who stood aside — and why it matters.</p>
+        <span class="card-cta">Read Full Analysis</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">Poetic Justice</span>
+        <p style="font-size:0.72rem; color:var(--txt-dim); margin-top:4px;">Independent analysis. No agenda. Purely Objective Thoughts.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Analysis</h4>
+        <ul>
+          <li><a href="geo-politics.html">Geo-Politics</a></li>
+          <li><a href="ancient-history.html">Ancient History</a></li>
+          <li><a href="sovereignty.html">Alliance &amp; Sovereignty</a></li>
+          <li><a href="current-war.html">War in Iran</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Topics</h4>
+        <ul>
+          <li><a href="#" onclick="showToast('CRINK Doctrine brief coming soon');return false;">CRINK Doctrine</a></li>
+          <li><a href="#" onclick="showToast('Operation Epic Fury details coming soon');return false;">Operation Epic Fury</a></li>
+          <li><a href="collapse.html" onclick="showToast('Trust Collapse — you are here');return false;">Trust Collapse</a></li>
+          <li><a href="nuclear.html" onclick="showToast('Nuclear threshold brief coming soon');return false;">Nuclear Threshold</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Series</h4>
+        <ul>
+          <li><a href="#" onclick="showToast('Dollar Hegemony coming soon');return false;">Dollar Hegemony</a></li>
+          <li><a href="ai-as-weapons">AI as Weapons</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025–2026 Poetic Justice &nbsp;·&nbsp; Independent &nbsp;·&nbsp; All analysis strictly non-partisan
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+</script>
+</body>
+</html>
