@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pansensoyglenn-dev.github.io/current-situation/sitemap.xml
