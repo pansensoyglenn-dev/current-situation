@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culture — The Commonplace</title>
+  <meta name="description" content="Observations on art, media, and the everyday habits and stories that shape how people live and create.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://current-situation.vercel.app/#/category/culture">
+  <meta name="theme-color" content="#3c2a1f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Commonplace">
+  <meta property="og:title" content="Culture — The Commonplace">
+  <meta property="og:description" content="Observations on art, media, and the everyday habits and stories that shape how people live and create.">
+  <meta property="og:url" content="https://current-situation.vercel.app/#/category/culture">
+
+  <link rel="icon" type="image/svg+xml" href="/current-situation/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="legal-page section-landing">
+    <a class="back-link" href="index.html">← The Commonplace</a>
+    <div class="section-cover-wrap" id="section-cover" style="display:none;"></div>
+    <h1>Culture</h1>
+    <p class="updated" style="font-family:'Source Serif 4', Georgia, serif; font-size:1.02rem; color:var(--text-secondary); text-transform:none; letter-spacing:0; margin-bottom:1.5rem;">Observations on art, media, and the everyday habits and stories that shape how people live and create.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="index.html#/category/culture" style="text-decoration:none; display:inline-block;">Browse Culture essays →</a>
+    </div>
+  </div>
+
+  <script>
+    // Looks for covers/culture.mp4 first, then covers/culture.jpg / .png / .webp.
+    // Drop a matching file in the covers/ folder — no code changes needed.
+    (function () {
+      var container = document.getElementById('section-cover');
+      var imageExts = ['jpg', 'jpeg', 'png', 'webp'];
+      function tryImage(idx) {
+        if (idx >= imageExts.length) { container.style.display = 'none'; return; }
+        var img = document.createElement('img');
+        img.className = 'section-cover';
+        img.alt = 'Culture';
+        img.loading = 'lazy';
+        img.onload = function () { container.style.display = ''; };
+        img.onerror = function () { tryImage(idx + 1); };
+        img.src = 'covers/culture.' + imageExts[idx];
+        container.innerHTML = '';
+        container.appendChild(img);
+      }
+      var video = document.createElement('video');
+      video.className = 'section-cover';
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute('aria-hidden', 'true');
+      video.onloadeddata = function () { container.style.display = ''; };
+      video.onerror = function () { tryImage(0); };
+      video.src = 'covers/culture.mp4';
+      container.appendChild(video);
+    })();
+  </script>
+</body>
+</html>
