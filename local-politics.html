@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Politics — The Commonplace</title>
+  <meta name="description" content="Commentary on the affairs closer to home — community, local government, and national politics as lived day to day.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://current-situation.vercel.app/#/category/local-politics">
+  <meta name="theme-color" content="#3c2a1f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Commonplace">
+  <meta property="og:title" content="Local Politics — The Commonplace">
+  <meta property="og:description" content="Commentary on the affairs closer to home — community, local government, and national politics as lived day to day.">
+  <meta property="og:url" content="https://current-situation.vercel.app/#/category/local-politics">
+
+  <link rel="icon" type="image/svg+xml" href="/current-situation/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="legal-page section-landing">
+    <a class="back-link" href="index.html">← The Commonplace</a>
+    <div class="section-cover-wrap" id="section-cover" style="display:none;"></div>
+    <h1>Local Politics</h1>
+    <p class="updated" style="font-family:'Source Serif 4', Georgia, serif; font-size:1.02rem; color:var(--text-secondary); text-transform:none; letter-spacing:0; margin-bottom:1.5rem;">Commentary on the affairs closer to home — community, local government, and national politics as lived day to day.</p>
+    <div class="btn-row">
+      <a class="btn-primary" href="index.html#/category/local-politics" style="text-decoration:none; display:inline-block;">Browse Local Politics essays →</a>
+    </div>
+  </div>
+
+  <script>
+    // Looks for covers/local-politics.mp4 first, then covers/local-politics.jpg / .png / .webp.
+    // Drop a matching file in the covers/ folder — no code changes needed.
+    (function () {
+      var container = document.getElementById('section-cover');
+      var imageExts = ['jpg', 'jpeg', 'png', 'webp'];
+      function tryImage(idx) {
+        if (idx >= imageExts.length) { container.style.display = 'none'; return; }
+        var img = document.createElement('img');
+        img.className = 'section-cover';
+        img.alt = 'Local Politics';
+        img.loading = 'lazy';
+        img.onload = function () { container.style.display = ''; };
+        img.onerror = function () { tryImage(idx + 1); };
+        img.src = 'covers/local-politics.' + imageExts[idx];
+        container.innerHTML = '';
+        container.appendChild(img);
+      }
+      var video = document.createElement('video');
+      video.className = 'section-cover';
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.setAttribute('aria-hidden', 'true');
+      video.onloadeddata = function () { container.style.display = ''; };
+      video.onerror = function () { tryImage(0); };
+      video.src = 'covers/local-politics.mp4';
+      container.appendChild(video);
+    })();
+  </script>
+</body>
+</html>
