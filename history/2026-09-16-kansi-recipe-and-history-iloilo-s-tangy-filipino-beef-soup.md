@@ -3,7 +3,7 @@ title: Kansi Recipe and History: Iloilo’s Tangy Filipino Beef Soup
 date: 2026-09-16
 category: history
 category_name: History
-tags: [kansi, kansi soup, kansiy, cansey, filipino beef soup, iloilo food]
+tags: [kansi, kansi soup, cansi, filipino beef soup, iloilo food]
 has_video: true
 ---
 
