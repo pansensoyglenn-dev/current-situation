@@ -4,6 +4,7 @@ date: 2026-09-17
 category: programming
 category_name: Programming
 content_type: html
+has_photo: true
 ---
 
 <!DOCTYPE html>
