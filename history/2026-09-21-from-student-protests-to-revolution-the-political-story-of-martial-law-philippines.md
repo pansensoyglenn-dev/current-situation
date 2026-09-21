@@ -9,6 +9,7 @@ has_video: true
 ---
 
 Martial Law in the Philippines (1972–1986): Causes, Repression, and the Road to People Power
+
 The declaration of martial law on September 21, 1972, marked a turning point in Philippine history. President Ferdinand Marcos presented Proclamation No. 1081 as a necessary response to rising civil unrest, student protests, and an expanding communist insurgency. In reality, the declaration gave the executive sweeping powers that reshaped political life, curtailed civil liberties, and opened the door to large-scale corruption.
 Roots of unrest and the rise of activism
 During the late 1960s and early 1970s the Philippines experienced growing political frustration. Economic inequality, visible corruption, and declining living standards drove many students, intellectuals, and urban poor toward protest movements. The First Quarter Storm of 1970—an intense series of demonstrations led mainly by student groups—highlighted the energy and organization of progressive movements. These campus movements produced influential leaders and broadened public awareness of social grievances.
