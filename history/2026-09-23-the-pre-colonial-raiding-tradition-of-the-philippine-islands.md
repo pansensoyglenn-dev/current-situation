@@ -6,6 +6,7 @@ category_name: History
 content_type: html
 tags: [pangangayaw, pre-colonial philippines, philippine history, maritime raiding, sea raiding, visayan warriors]
 has_photo: true
+has_video: true
 ---
 
 <!DOCTYPE html>
