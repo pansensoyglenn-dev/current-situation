@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pansensoyglenn-dev.github.io/current-situation/sitemap.xml
+Sitemap: https://current-situation.vercel.app/sitemap.xml
