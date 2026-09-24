@@ -5,6 +5,8 @@ category: local-politics
 category_name: Local Politics
 content_type: html
 tags: [precolonialphilippines, philippinehistory, historyofthephilippines, filipinohistory, philippineculture, precolonialhistory]
+has_photo: true
+has_video: true
 ---
 
 <!DOCTYPE html>
