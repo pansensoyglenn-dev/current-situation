@@ -164,4 +164,4 @@ has_video: true
     <p>&copy; 2026 Current Situation</p>
   </footer>
 </body>
-</html>W
+</html>
