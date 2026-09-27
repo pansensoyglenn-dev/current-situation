@@ -146,20 +146,7 @@ has_video: true
       </script>
     </div>
 
-    <section class="card">
-      <h2>SEO Title Ideas</h2>
-      <ul>
-        <li>Lengua Estofado in Ilonggo Cuisine: History, Sugar Wealth, and Colonial Influence</li>
-        <li>How Lengua Estofado Became Part of Ilonggo Households</li>
-        <li>Spanish Roots and Ilonggo Flavor: The History of Lengua Estofado</li>
-        <li>From Spanish Stew to Ilonggo Heritage: The Story of Lengua Estofado</li>
-        <li>Why Lengua Estofado Is More Than Just a Holiday Dish in Iloilo</li>
-      </ul>
-      <p><strong>Meta description:</strong> Lengua estofado is a Spanish-influenced dish that became part of Ilonggo households through colonial history, sugar wealth, and local adaptation.</p>
-      <p><strong>Tags:</strong> Lengua Estofado, Ilonggo Cuisine, Filipino Food History, Spanish Influence, Philippine Cuisine, Iloilo Food, Visayan Food, Food Heritage, Culinary History, Colonial Philippines, Traditional Recipes, Pinoy Food, Regional Cuisine, Sugar History, Hiligaynon Culture</p>
-    </section>
-  </main>
-
+    
   <footer>
     <p>&copy; 2026 Current Situation</p>
   </footer>
