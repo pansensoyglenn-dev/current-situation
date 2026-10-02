@@ -37,7 +37,8 @@ has_video: true
   <meta property="article:tag" content="After the rain">
   <meta property="article:tag" content="Tropical farming">
   <meta property="article:tag" content="Smallholder farmer">
-  <meta property="article:tag" content="Dapitan">
+  <meta property="article:tag" content="
+Diplahan ">
   <meta property="article:tag" content="Zamboanga Peninsula">
   <meta property="article:tag" content="Philippine farming">
   <meta property="article:tag" content="Farm workers">
@@ -204,8 +205,8 @@ has_video: true
         <h1>The dry spell finally ended. Heavy rain, planting, and the second 14-14-14 application</h1>
         <div class="site-meta">
           <span>📍 <a href="https://current-situation.vercel.app/">current-situation.vercel.app</a></span>
-          <span>🌱 Farm journal · Dapitan, Zamboanga Peninsula</span>
-          <span>🗓️ April 2025</span>
+          <span>🌱 Farm journal ·Diplahan, Zamboanga Peninsula</span>
+          <span>🗓️ October 3,2026</span>
         </div>
       </header>
 
@@ -272,7 +273,7 @@ has_video: true
       </div>
 
       <footer class="footer-note">
-        <p>🌽 From the field journal · <a href="https://current-situation.vercel.app/">current-situation.vercel.app</a> · Dapitan, Zamboanga Peninsula</p>
+        <p>🌽 From the field journal · <a href="https://current-situation.vercel.app/">current-situation.vercel.app</a> · Diplahan,Zamboanga Peninsula</p>
         <p style="margin-top:0.5rem; font-size:0.8rem;">Balanced NPK, timely weed control, and careful scouting for pests — the quiet work that builds a harvest.</p>
       </footer>
     </article>
