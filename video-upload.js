@@ -68,7 +68,7 @@ module.exports = async (req, res) => {
     );
 
     // Public "friendly URL" for a public bucket, e.g. https://f005.backblazeb2.com/file/<bucket>/<key>
-    const cluster = 'f' + REGION.slice(-3);
+    const cluster = 'f005'; // Explicitly use the correct cluster for us-east-005
     const publicUrl = `https://${cluster}.backblazeb2.com/file/${bucket}/${key}`;
 
     res.status(200).json({ uploadUrl, publicUrl });
