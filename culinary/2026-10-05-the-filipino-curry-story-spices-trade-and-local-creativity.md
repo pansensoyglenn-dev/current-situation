@@ -177,18 +177,6 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
       <h1>The Filipino Curry Story: Spices, Trade, and Local Creativity</h1>
       <div class="subhead">From ancient sea routes to kulma, tiyula itum, and the debated origins of kare-kare — a journey through Philippine culinary adaptation.</div>
 
-      <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6428799122405621"
-             data-ad-slot="7101337142"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
       <p>When Filipinos hear the word <em>curry</em>, many people think of India. Others may think of Thailand, Indonesia, Malaysia, or perhaps the many curry dishes served across Asia. But the Philippines also has its own curry story—one shaped by ancient sea routes, regional trade, migration, religion, war, and the creativity of local cooks.</p>
 
       <p>Filipino curry is not one single recipe. It is not connected to only one country, one ethnic group, or one moment in history. Instead, it developed through a long process of cultural exchange. Ingredients, cooking techniques, and ideas traveled across the seas, reached Philippine communities, and changed according to local tastes and available resources.</p>
@@ -210,18 +198,6 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
       <p>However, Indian influence did not always travel directly from India to the Philippine islands. A cooking method might move through several communities before reaching the archipelago. A spice could travel from India to a port in Southeast Asia, then be carried by Malay, Javanese, Bornean, or other traders to Philippine shores.</p>
       <p>By the time a recipe arrived in the Philippines, it may already have been changed by many cultures. The original dish might have been altered in Java, adapted in Borneo, and then transformed again in Mindanao or the Sulu Archipelago.</p>
       <p>This is why it is more accurate to imagine a network of connections rather than a straight line from India to the Philippines. Filipino curry emerged from overlapping cultural routes.</p>
-
-      <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6428799122405621"
-             data-ad-slot="7101337142"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
 
       <h2>Filipino Ingredients Before Curry</h2>
       <p>Filipino cooks already had rich culinary traditions before the word “curry” became familiar. They knew how to combine local ingredients, preserve food, and create deep flavors through slow cooking.</p>
@@ -258,13 +234,6 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
       <p>These differences are not signs that one version is correct and another is wrong. They show how food traditions remain alive. A dish changes as it moves between islands, households, generations, and cultural communities.</p>
       <p>Kulma is therefore best understood as a regional food shaped by centuries of contact between Philippine, Malay, and Muslim culinary traditions.</p>
 
-      <h2>Tiyula Itum: Curry Blackened by Coconut</h2>
-      <p>Another important southern dish is <em>tiyula itum</em>, associated particularly with Tausug cuisine. Its name is often translated as “black soup” or “black stew,” referring to the dark color created by burnt coconut.</p>
-      <p>The dish is commonly prepared with beef, ginger, turmeric, lemongrass, chili, and other aromatics. The burnt coconut adds a smoky flavor and dark appearance. The result is very different from the bright yellow or orange curry often imagined by people outside the region.</p>
-      <p>Tiyula itum demonstrates an important principle in Filipino food history: color and flavor do not always come from imported curry powder. Local techniques can create equally complex dishes.</p>
-      <p>Toasted or burnt ingredients have long been used in many food traditions. In tiyula itum, burnt coconut becomes part of the identity of the dish. It gives depth, bitterness, smokiness, and aroma.</p>
-      <p>Although the dish may be compared with curry because of its use of spices and a richly flavored broth, it should not automatically be classified as Indian curry. It belongs to a distinct Tausug tradition shaped by local ingredients and southern Philippine history.</p>
-
       <div class="ad-container">
         <ins class="adsbygoogle"
              style="display:block"
@@ -276,6 +245,13 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
+
+      <h2>Tiyula Itum: Curry Blackened by Coconut</h2>
+      <p>Another important southern dish is <em>tiyula itum</em>, associated particularly with Tausug cuisine. Its name is often translated as “black soup” or “black stew,” referring to the dark color created by burnt coconut.</p>
+      <p>The dish is commonly prepared with beef, ginger, turmeric, lemongrass, chili, and other aromatics. The burnt coconut adds a smoky flavor and dark appearance. The result is very different from the bright yellow or orange curry often imagined by people outside the region.</p>
+      <p>Tiyula itum demonstrates an important principle in Filipino food history: color and flavor do not always come from imported curry powder. Local techniques can create equally complex dishes.</p>
+      <p>Toasted or burnt ingredients have long been used in many food traditions. In tiyula itum, burnt coconut becomes part of the identity of the dish. It gives depth, bitterness, smokiness, and aroma.</p>
+      <p>Although the dish may be compared with curry because of its use of spices and a richly flavored broth, it should not automatically be classified as Indian curry. It belongs to a distinct Tausug tradition shaped by local ingredients and southern Philippine history.</p>
 
       <h2>Kare-Kare and the Curry Debate</h2>
       <p>When discussing Filipino curry, one dish often enters the conversation: <em>kare-kare</em>. It is a thick Filipino stew commonly associated with oxtail, tripe, beef, pork, seafood, or vegetables cooked in a peanut-based sauce. It is often served with bagoong, or fermented shrimp paste.</p>
@@ -313,18 +289,6 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
       <p>This is how food traditions become local. A recipe may begin somewhere else, but after generations of use, modification, and cultural meaning, it becomes part of the identity of a new community.</p>
       <p>The history of Filipino curry is therefore not a story of imitation. It is a story of creative transformation.</p>
 
-      <div class="ad-container">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6428799122405621"
-             data-ad-slot="7101337142"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-
       <h2>Why the Story Matters</h2>
       <p>Understanding Filipino curry helps us understand the Philippines itself. The country has always been connected to neighboring societies through trade, migration, religion, and culture.</p>
       <p>Food provides evidence of these connections. A coconut-based stew may point toward Southeast Asian traditions. A spice combination may reflect maritime trade. A dish prepared for a wedding or religious celebration may preserve the history of a particular community.</p>
@@ -339,6 +303,18 @@ video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
       <p>Every bowl carries a history. Every spice suggests a journey. And every local variation proves that Filipino cuisine is not simply a collection of borrowed dishes. It is a living tradition—constantly adapting, remembering, and creating something new.</p>
 
       <hr>
+
+      <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6428799122405621"
+             data-ad-slot="7101337142"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
     </article>
   </div>
 </body>
