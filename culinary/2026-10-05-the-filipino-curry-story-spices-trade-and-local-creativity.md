@@ -4,7 +4,7 @@ date: 2026-10-05
 category: culinary
 category_name: "Culinary"
 content_type: html
-tags: ["**hashtags:**   #filipinocurry #filipinofood #philippinecuisine #foodhistory #filipinofoodhistory #curryhistory #kulma #karekare #mindanaocuisine #southeastasianfood  **tags:**   filipino curry", "filipino food history", "philippine cuisine history", "curry history philippines", "kulma filipino dish", "kare kare history"]
+tags: ["filipino curry", "filipino food history", "philippine cuisine history", "curry history philippines", "kulma filipino dish", "kare kare history"]
 has_photo: true
 has_video: true
 video_url: "https://www.youtube.com/watch?v=s6E6_OhMB14"
