@@ -4,7 +4,6 @@ date: 2026-10-05
 category: farming
 category_name: "Farming"
 content_type: html
-tags: ["string bean farming", "rainy season", "weed control", "farm diary", "vegetable patch", "manual weeding"]
 has_photo: true
 has_video: true
 video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
