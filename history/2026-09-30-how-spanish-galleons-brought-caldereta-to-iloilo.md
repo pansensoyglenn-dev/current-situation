@@ -1,12 +1,13 @@
 ---
-title: How Spanish Galleons Brought Caldereta to Iloilo
+title: "How Spanish Galleons Brought Caldereta to Iloilo"
 date: 2026-09-30
 category: history
-category_name: History
+category_name: "History"
 content_type: html
-tags: [ilonggofood, ilonggokaldereta, kaldereta, iloilocity, iloilohistory, filipinofoodhistory]
+tags: ["ilonggofood", "ilonggokaldereta", "kaldereta", "iloilocity", "iloilohistory", "filipinofoodhistory"]
 has_photo: true
 has_video: true
+video_url: "https://www.youtube.com/watch?v=7kDWW17mNAI"
 ---
 
 <!DOCTYPE html>
