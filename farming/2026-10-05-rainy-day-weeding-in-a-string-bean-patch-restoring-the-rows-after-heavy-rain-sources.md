@@ -4,6 +4,7 @@ date: 2026-10-05
 category: farming
 category_name: "Farming"
 content_type: html
+tags: ["philippinefarming"]
 has_photo: true
 has_video: true
 video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
@@ -16,20 +17,36 @@ video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>After the rain: Restoring a string bean patch | Farm diary &amp; weed control</title>
     <meta name="description" content="A patient farm diary after heavy rain: manual weeding in a string bean patch, weed control, crop care, organic mulch and rural life in Philippine agriculture.">
-    <meta name="keywords" content="string bean farming, rainy season, weed control, farm diary, vegetable patch, manual weeding, rural life, crop care, organic mulch, Philippine agriculture">
-    <link rel="canonical" href="https://current-situation.vercel.app/after-the-rain-string-bean-patch">
-    <meta property="og:title" content="After the rain: Restoring a string bean patch">
-    <meta property="og:description" content="A patient farm diary after heavy rain: manual weeding, weed control, crop care and organic mulch in a string bean patch.">
-    <meta property="og:url" content="https://current-situation.vercel.app/after-the-rain-string-bean-patch">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Current Situation Farm Diary">
-    <meta property="og:locale" content="en_PH">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="After the rain: Restoring a string bean patch">
-    <meta name="twitter:description" content="Manual weeding, crop care, and organic mulch in a rain-soaked string bean patch.">
+    <meta name="keywords" content="StringBeanFarming, BeanPatch, VegetablePatch, FarmDiary, FarmingLife, CropCare, ManualWeeding, WeedControl, OrganicMulch, RainySeason, RuralLife, PhilippineAgriculture, WeedManagement, HandWeeding, OrganicFarming, SoilCare, CropMaintenance, FarmWork, VegetableGrowing, LegumeFarming, GreenManure, Mulching, AfterTheRain, WetSeason, MonsoonFarming, TropicalFarming, RainyDayFarm, WeatherAndCrops, RainySeasonCrops, PinoyFarmer, PhilippineFarming, BukidLife, AgriPhilippines, Magsasaka, LocalFarm, FarmToTable, SustainablePH, FarmJournal, Homesteading, SimpleLiving, BackToTheLand, SlowLiving, CountryLife, FarmStories, DiaryOfAFarmer, StringBeans, Weeding, FarmLife, Vegetables, Agriculture, OrganicFarm, TropicalFarm, PHAgriculture">
+    <meta name="news_keywords" content="string bean farming, rainy season, weed control, farm diary, vegetable patch, manual weeding, rural life, crop care, organic mulch, Philippine agriculture">
     <meta name="author" content="Glenn">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="theme-color" content="#2e5e1e">
+    <link rel="canonical" href="https://current-situation.vercel.app/after-the-rain-string-bean-patch">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="After the rain: Restoring a string bean patch">
+    <meta property="og:description" content="A patient farm diary after heavy rain: manual weeding, weed control, crop care and organic mulch in a string bean patch.">
+    <meta property="og:url" content="https://current-situation.vercel.app/after-the-rain-string-bean-patch">
+    <meta property="og:site_name" content="Current Situation Farm Diary">
+    <meta property="og:locale" content="en_PH">
+    <meta property="article:tag" content="StringBeanFarming">
+    <meta property="article:tag" content="RainySeason">
+    <meta property="article:tag" content="WeedControl">
+    <meta property="article:tag" content="FarmDiary">
+    <meta property="article:tag" content="VegetablePatch">
+    <meta property="article:tag" content="ManualWeeding">
+    <meta property="article:tag" content="RuralLife">
+    <meta property="article:tag" content="CropCare">
+    <meta property="article:tag" content="OrganicMulch">
+    <meta property="article:tag" content="PhilippineAgriculture">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="After the rain: Restoring a string bean patch">
+    <meta name="twitter:description" content="Manual weeding, crop care, and organic mulch in a rain-soaked string bean patch.">
+    <meta name="twitter:label1" content="Hashtags">
+    <meta name="twitter:data1" content="#StringBeanFarming #RainySeason #WeedControl #FarmDiary #PhilippineAgriculture">
+
     <style>
         * {
             margin: 0;
@@ -146,6 +163,32 @@ video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
             font-weight: 500;
             border: 1px solid #cfdfbc;
         }
+        .hashtags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.6rem;
+            margin: 1.6rem 0 1rem;
+            padding: 1.2rem 1.3rem;
+            background: #f6faf1;
+            border-radius: 16px;
+            border: 1px dashed #c2d6ac;
+        }
+        .hashtags span {
+            background: #ffffff;
+            padding: 0.25rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #2d5e1a;
+            font-weight: 500;
+            border: 1px solid #d3e3bf;
+            transition: background 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+        .hashtags span:hover {
+            background: #e3efd5;
+            color: #1d3b13;
+        }
         blockquote {
             background: #f5f9ef;
             border-left: 6px solid #7ca85a;
@@ -163,6 +206,7 @@ video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
             h2 { font-size: 1.5rem; }
             p { font-size: 1rem; }
             .intro { padding: 1.2rem; }
+            .hashtags { padding: 1rem; }
         }
     </style>
 </head>
@@ -262,6 +306,62 @@ video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
                      (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
+
+            <section class="hashtags" aria-label="relevant hashtags">
+                <span>#StringBeanFarming</span>
+                <span>#BeanPatch</span>
+                <span>#VegetablePatch</span>
+                <span>#FarmDiary</span>
+                <span>#FarmingLife</span>
+                <span>#CropCare</span>
+                <span>#ManualWeeding</span>
+                <span>#WeedControl</span>
+                <span>#OrganicMulch</span>
+                <span>#RainySeason</span>
+                <span>#RuralLife</span>
+                <span>#PhilippineAgriculture</span>
+                <span>#WeedManagement</span>
+                <span>#HandWeeding</span>
+                <span>#OrganicFarming</span>
+                <span>#SoilCare</span>
+                <span>#CropMaintenance</span>
+                <span>#FarmWork</span>
+                <span>#VegetableGrowing</span>
+                <span>#LegumeFarming</span>
+                <span>#GreenManure</span>
+                <span>#Mulching</span>
+                <span>#AfterTheRain</span>
+                <span>#WetSeason</span>
+                <span>#MonsoonFarming</span>
+                <span>#TropicalFarming</span>
+                <span>#RainyDayFarm</span>
+                <span>#WeatherAndCrops</span>
+                <span>#RainySeasonCrops</span>
+                <span>#PinoyFarmer</span>
+                <span>#PhilippineFarming</span>
+                <span>#BukidLife</span>
+                <span>#AgriPhilippines</span>
+                <span>#Magsasaka</span>
+                <span>#LocalFarm</span>
+                <span>#FarmToTable</span>
+                <span>#SustainablePH</span>
+                <span>#FarmJournal</span>
+                <span>#Homesteading</span>
+                <span>#SimpleLiving</span>
+                <span>#BackToTheLand</span>
+                <span>#SlowLiving</span>
+                <span>#CountryLife</span>
+                <span>#FarmStories</span>
+                <span>#DiaryOfAFarmer</span>
+                <span>#StringBeans</span>
+                <span>#Weeding</span>
+                <span>#FarmLife</span>
+                <span>#Vegetables</span>
+                <span>#Agriculture</span>
+                <span>#OrganicFarm</span>
+                <span>#TropicalFarm</span>
+                <span>#PHAgriculture</span>
+            </section>
 
             <hr>
             <footer>
