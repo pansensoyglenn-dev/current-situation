@@ -215,22 +215,7 @@ video_url: "https://www.youtube.com/watch?v=ZmRTfEv_LQw"
         <article>
             <header>
                 <h1>After the rain: Restoring a string bean patch</h1>
-                <div class="meta-info">
-                    <span>📅 Farm diary — rainy season</span>
-                    <span>📍 Philippine agriculture</span>
-                </div>
-                <div class="tags" aria-label="topic tags">
-                    <span>string bean farming</span>
-                    <span>rainy season</span>
-                    <span>weed control</span>
-                    <span>farm diary</span>
-                    <span>vegetable patch</span>
-                    <span>manual weeding</span>
-                    <span>rural life</span>
-                    <span>crop care</span>
-                    <span>organic mulch</span>
-                    <span>Philippine agriculture</span>
-                </div>
+               
             </header>
 
             <div class="intro">
