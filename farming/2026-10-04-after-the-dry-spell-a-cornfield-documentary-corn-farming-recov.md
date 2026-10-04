@@ -4,7 +4,7 @@ date: 2026-10-04
 category: farming
 category_name: "Farming"
 content_type: html
-tags: ["farming zamboanga agriculture farm documentary real farming documentary life on the farm rural life philippines corn field update corn growth update corn plant growth young corn plants corn fertilizer application triple 14 fertilizer 14 14 14 fertilizer npk fertilizer for corn ammonium fertilizer fertilizing corn second fertilizer application weed control in corn weeding corn field corn pest control corn insect infestation worm infestation in corn corn leaf damage corn ear damage fall armyworm corn corn tasseling corn silking corn crop monitoring farming after rain rainy season farming hillside corn farm from seed to harvest agriculture documentary farm work philippines"]
+tags: ["cornfarming", "philippineagriculture", "farmdocumentary", "cornfield", "farmingph"]
 has_photo: true
 has_video: true
 video_url: "https://www.youtube.com/watch?v=UgpInGRqgH4"
