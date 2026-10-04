@@ -1,12 +1,13 @@
 ---
-title: Babaylan in Pre-Colonial Philippines: Roles and History
+title: "Babaylan in Pre-Colonial Philippines: Roles and History"
 date: 2026-09-23
 category: history
-category_name: History
+category_name: "History"
 content_type: html
-tags: [babaylan, pre-colonial philippines, philippine history, filipino history, indigenous philippine culture, indigenous religion philippines]
+tags: ["babaylan", "pre-colonial philippines", "philippine history", "filipino history", "indigenous philippine culture", "indigenous religion philippines"]
 has_photo: true
 has_video: true
+video_url: "https://www.youtube.com/watch?v=YGiJ_V96uwQ"
 ---
 
 <!doctype html>
