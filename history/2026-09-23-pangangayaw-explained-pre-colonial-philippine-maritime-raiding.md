@@ -1,12 +1,13 @@
 ---
-title: Pangangayaw Explained: Pre-Colonial Philippine Maritime Raiding
+title: "Pangangayaw Explained: Pre-Colonial Philippine Maritime Raiding"
 date: 2026-09-23
 category: history
-category_name: History
+category_name: "History"
 content_type: html
-tags: [pangangayaw, pre-colonial philippines, philippine history, maritime raiding, sea raiding, visayan warriors]
+tags: ["pangangayaw", "pre-colonial philippines", "philippine history", "maritime raiding", "sea raiding", "visayan warriors"]
 has_photo: true
 has_video: true
+video_url: "https://www.youtube.com/watch?v=44unoqcyLh0"
 ---
 
 <!DOCTYPE html>
