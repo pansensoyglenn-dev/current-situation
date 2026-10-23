@@ -1,14 +1,15 @@
 const { put } = require('@vercel/blob');
-const { applyCors, readRawBody } = require('./_lib');
+const { applyCors, isAuthorized, readRawBody } = require('./_lib');
 
-// POST /api/upload?filename=photo.jpg&contentType=image/jpeg
-// Body: the raw file bytes (the client sends the File/Blob object directly
-// as the fetch body — no multipart form parsing needed).
-// Returns { url } — a public, permanent URL to store on the article.
 module.exports = async (req, res) => {
   if (applyCors(req, res)) return;
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'method not allowed' });
+    return;
+  }
+
+  if (!isAuthorized(req)) {
+    res.status(401).json({ error: 'unauthorized' });
     return;
   }
 
@@ -23,8 +24,6 @@ module.exports = async (req, res) => {
       return;
     }
 
-    // Explicitly pass the token so the SDK never falls back to OIDC or
-    // silently fails when the env var is present but not auto-detected.
     const token = process.env.BLOB_READ_WRITE_TOKEN;
 
     const pathname = `${Date.now()}-${filename}`;
