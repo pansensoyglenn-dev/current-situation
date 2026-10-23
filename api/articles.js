@@ -1,11 +1,21 @@
 const { sql, applyCors, readJsonBody } = require('./_lib');
+const crypto = require('crypto');
 
-// GET    /api/articles          -> list every article, newest first
-// POST   /api/articles          -> create one article, returns it with its new id
-// PUT    /api/articles?id=5     -> update one article
-// DELETE /api/articles?id=5     -> delete one article
+function isAuthorized(req) {
+  const expected = process.env.ADMIN_KEY || '';
+  const given = String(req.headers['x-admin-key'] || '');
+  if (!expected || !given) return false;
+  const a = Buffer.from(given), b = Buffer.from(expected);
+  return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
 module.exports = async (req, res) => {
   if (applyCors(req, res)) return;
+
+  if (req.method !== 'GET' && !isAuthorized(req)) {
+    res.status(401).json({ error: 'unauthorized' });
+    return;
+  }
 
   try {
     if (req.method === 'GET') {
