@@ -429,9 +429,26 @@ function showToast(msg, type = 'info', duration = 3000) {
   toastTimer = setTimeout(() => t.classList.remove('show'), duration);
 }
 
+function getAdminKey() {
+  let k = localStorage.getItem('pc_admin_key') || '';
+  if (!k) {
+    k = (prompt('Enter your admin key to save changes:') || '').trim();
+    if (k) localStorage.setItem('pc_admin_key', k);
+  }
+  return k;
+}
+
+function adminHeaders(extra) {
+  return Object.assign({ 'X-Admin-Key': getAdminKey() }, extra || {});
+}
+
 function apiUrl(path) { return `${location.origin}/api/${path}`; }
 
 async function apiErrorMessage(res, fallback) {
+  if (res.status === 401) {
+    localStorage.removeItem('pc_admin_key');
+    return 'Admin key rejected — you will be asked for it again';
+  }
   try {
     const data = await res.json();
     if (data && data.error) return `${data.error} (${res.status})`;
@@ -447,7 +464,7 @@ async function apiListArticles() {
 async function apiCreateArticle(payload) {
   const res = await fetch(apiUrl('articles'), {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: adminHeaders({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(payload)
   });
   if (!res.ok) throw new Error(await apiErrorMessage(res, 'Could not save article'));
@@ -456,14 +473,17 @@ async function apiCreateArticle(payload) {
 async function apiUpdateArticle(id, payload) {
   const res = await fetch(apiUrl(`articles?id=${id}`), {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+    headers: adminHeaders({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(payload)
   });
   if (!res.ok) throw new Error(await apiErrorMessage(res, 'Could not update article'));
   return res.json();
 }
 async function apiDeleteArticle(id) {
-  const res = await fetch(apiUrl(`articles?id=${id}`), { method: 'DELETE' });
+  const res = await fetch(apiUrl(`articles?id=${id}`), {
+    method: 'DELETE',
+    headers: adminHeaders()
+  });
   if (!res.ok && res.status !== 404) throw new Error(await apiErrorMessage(res, 'Could not delete article'));
 }
 
@@ -477,7 +497,11 @@ async function apiUploadPhoto(file) {
     filename: toSend.name || 'photo.jpg',
     contentType: toSend.type || 'image/jpeg'
   });
-  const res = await fetch(apiUrl(`upload?${qs}`), { method: 'POST', body: toSend });
+  const res = await fetch(apiUrl(`upload?${qs}`), {
+    method: 'POST',
+    headers: adminHeaders(),
+    body: toSend
+  });
   if (!res.ok) throw new Error(await apiErrorMessage(res, 'Photo upload failed'));
   const data = await res.json();
   return data.url;
